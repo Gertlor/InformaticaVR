@@ -2,11 +2,20 @@
 <html lang="en">
   <head>
     <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
-    <title></title>
+    <title>InformaticaVR</title>
   </head>
   <body>
     <a-scene id="js--scene">
-
+      <a-entity id="js--rig" position="0 0 0">
+        <a-entity id="js--camera" camera look-controls>
+          <a-entity cursor="fuse: true; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.009; radiusOuter: 0.012"
+                    material="color: orange; shader: flat">
+          </a-entity>
+        </a-entity>
+      </a-entity>
+      
     </a-scene>
     <script type="text/javascript" src="main.js"></script>
   </body>
