@@ -16,8 +16,8 @@
       <a-entity id="js--rig" position="0 1.7 7">
         <a-entity id="js--camera" camera look-controls wasd-controls>
           <a-entity cursor="fuse: true; fuseTimeout: 500"
-                    position="0 0 -1"
-                    geometry="primitive: ring; radiusInner: 0.009; radiusOuter: 0.012"
+                    position="0 0 -0.5"
+                    geometry="primitive: ring; radiusInner: 0.0045; radiusOuter: 0.006"
                     material="color: orange; shader: flat">
           </a-entity>
         </a-entity>
@@ -47,7 +47,21 @@
 
       <a-entity id="outerWallLefttPR" geometry="primitive: plane; height: 4; width: 2" material="src: #whiteWallTexture; repeat: 0.6 1; side: double" position="2 2 4.5" rotation="0 -180 0"></a-entity>
       <a-entity id="outerWallRightPR" geometry="primitive: plane; height: 4; width: 2" material="src: #whiteWallTexture; repeat: 0.6 1; side: double" position="-2 2 4.5" rotation="0 -180 0"></a-entity>
-      
+
+<!--            Teleportation pads-->
+      <a-entity id="js--initialPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="0 0.01 6" rotation="-90 0 0"></a-entity>
+
+      <a-entity id="js--middleRoomPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="0 0.01 2" rotation="-90 0 0"></a-entity>
+      <a-entity id="js--programmingBordPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="0 0.01 -4" rotation="-90 0 0"></a-entity>
+
+      <a-entity id="js--leftRoomPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 6" rotation="-90 0 0"></a-entity>
+      <a-entity id="js--studentPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 -4" rotation="-90 0 0"></a-entity>
+      <a-entity id="js--studentPad2" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 1" rotation="-90 0 0"></a-entity>
+
+      <a-entity id="js--rightRoomPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="6.5 0.01 6" rotation="-90 0 0"></a-entity>
+      <a-entity id="js--teacherPad" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -4" rotation="-90 0 0"></a-entity>
+      <a-entity id="js--teacherPad2" geometry="primitive: circle; radius: 1" material="src: textures/lightground.png; transparent: true" position="6.5 0.01 1" rotation="-90 0 0"></a-entity>
+
     </a-scene>
     <script type="text/javascript" src="main.js"></script>
   </body>
