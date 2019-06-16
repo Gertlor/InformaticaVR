@@ -67,7 +67,7 @@ rightRoomPad.onmouseenter = () => {
 rightRoomPad2.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.7 -2");
+        cameraRig.setAttribute("position", "6.5 1.7 -3");
     }, timeoutTime)
 };
 

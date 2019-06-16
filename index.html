@@ -12,17 +12,34 @@
         <a-img id="floorTexture" src="textures/wood_floor.jpg"></a-img>
         <a-img id="ceilingTexture" src="textures/ceiling.jpg"></a-img>
 
-        <a-asset-item id="student-obj" src="models/student.obj"></a-asset-item>
-        <a-asset-item id="student-mtl" src="models/student.mtl"></a-asset-item>
         <!-- Teacher by Scott https://poly.google.com/view/64AXoVNn5E1 -->
         <a-asset-item id="teacher-obj" src="models/teacher.obj"></a-asset-item>
         <a-asset-item id="teacher-mtl" src="models/teacher.mtl"></a-asset-item>
+
+        <!-- Chair by Ryan Donaldson https://poly.google.com/view/3txPAhYeu-x -->
+        <a-asset-item id="chair-obj" src="models/chair.obj"></a-asset-item>
+        <a-asset-item id="chair-mtl" src="models/chair.mtl"></a-asset-item>
+
+        <!--Table by Google https://poly.google.com/view/8cnrwlAWqx7 -->
+<!--        <a-asset-item id="table-obj" src="models/studentTable.obj"></a-asset-item>-->
+<!--        <a-asset-item id="table-mtl" src="models/studentTable.mtl"></a-asset-item>-->
+
+        <!-- Student in a Chair by Ben Weinberg https://poly.google.com/view/eRfCBdODR30 -->
+        <a-asset-item id="studentChair-obj" src="models/chair-student.obj"></a-asset-item>
+        <a-asset-item id="studentChair-mtl" src="models/chair-student.mtl"></a-asset-item>
+
+        <a-asset-item id="bluestudentChair-obj" src="models/blueStudent.obj"></a-asset-item>
+        <a-asset-item id="bluestudentChair-mtl" src="models/blueStudent.mtl"></a-asset-item>
+
+        <!-- Window by Justin Randall https://poly.google.com/view/dwBpM-aSA_t -->
+<!--        <a-asset-item id="window-obj" src="models/window.obj"></a-asset-item>-->
+<!--        <a-asset-item id="window-mtl" src="models/window.mtl"></a-asset-item>-->
 
     </a-assets>
 
     <!--      Camera and Pointer-->
     <a-entity id="js--rig" position="0 1.7 7">
-        <a-entity id="js--camera" camera look-controls>
+        <a-entity id="js--camera" camera look-controls wasd-controls>
             <a-entity cursor="fuse: true; fuseTimeout: 500"
                       position="0 0 -0.5"
                       geometry="primitive: ring; radiusInner: 0.0045; radiusOuter: 0.006"
@@ -107,20 +124,58 @@
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 6"
               rotation="-90 0 0"></a-entity>
     <a-entity id="js--rightRoomPad2" geometry="primitive: circle; radius: 0.5"
-              material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -2"
+              material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -3"
               rotation="-90 0 0"></a-entity>
     <a-entity id="js--teacherPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 1"
               rotation="-90 0 0"></a-entity>
 
     <!--        Models-->
-    <a-entity obj-model="obj: #student-obj; mtl: #student-mtl" position="-5 0.01 -5" scale="0.03 0.03 0.03" rotation="0 -45 0"></a-entity>
-    <a-entity obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="4 0.01 -5" scale="0.001 0.001 0.001" rotation="-90 0 -45"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.3 -5" scale="1.3 1.3 1.3" rotation="0 -45 8"></a-entity>
+    <a-entity obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="4 0.01 -5" scale="0.0012 0.0012 0.0012" rotation="-90 0 -45"></a-entity>
 
+<!--    Models Right Room-->
+    <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" scale="1.3 1.3 1.3" rotation="0 140 8" position="4 1.2 -2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="5 0.4 -2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="4 0.4 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 180 8" position="5 1.2 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="4 0.4 2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="5 0.4 2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 155 8" position="4 1.2 4" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 190 8" position="5 1.2 4" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="9 0.4 -2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="8 0.4 -2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="9 0.4 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" scale="1.3 1.3 1.3" rotation="0 145 8" position="8 1.2 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 160 8" position="9 1.2 2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 160 8" position="8 1.2 2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78"  position="9 0.4 4" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 190 8" position="8 1.2 4" rotation="0 180 0"></a-entity>
+
+<!--    <a-entity obj-model="obj: #window-obj; mtl: #window-mtl" position="0 0.1 5" rotation="0 0 0"></a-entity>-->
+
+<!--    Models Left Room-->
+    <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" scale="1.3 1.3 1.3" position="-4 1.2 -2" rotation="0 180 8"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="-5 1.2 -2" rotation="0 183 8"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-4 0.4 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-5 0.4 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-4 0.4 2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" scale="1.3 1.3 1.3" position="-5 1.2 2" rotation="0 150 8"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-4 0.4 4" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-5 0.4 4" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-9 0.4 -2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="-8 1.2 -2" rotation="0 168 8"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-9 0.4 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-8 0.4 0" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-9 0.4 2" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="-8 1.2 2" rotation="0 155 8"></a-entity>
+    <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="-9 1.2 4" rotation="0 160 8"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-8 0.4 4" rotation="0 180 0"></a-entity>
+    <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-8 0.4 4" rotation="0 180 0"></a-entity>
 
 </a-scene>
 <script type="text/javascript" src="main.js"></script>
-<script src="/__/firebase/6.2.0/firebase-app.js"></script>
-<script src="/__/firebase/init.js"></script>
+<!--<script src="/__/firebase/6.2.0/firebase-app.js"></script>-->
+<!--<script src="/__/firebase/init.js"></script>-->
 </body>
 </html>
