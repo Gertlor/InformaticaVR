@@ -12,8 +12,11 @@
         <a-img id="floorTexture" src="textures/wood_floor.jpg"></a-img>
         <a-img id="ceilingTexture" src="textures/ceiling.jpg"></a-img>
 
-        <a-asset-item id="teacherObj" src="models/teacher.obj"></a-asset-item>
-        <a-asset-item id="teacherMtl" src="models/teacher.mtl"></a-asset-item>
+        <a-asset-item id="student-obj" src="models/student.obj"></a-asset-item>
+        <a-asset-item id="student-mtl" src="models/student.mtl"></a-asset-item>
+        <!-- Teacher by Scott https://poly.google.com/view/64AXoVNn5E1 -->
+        <a-asset-item id="teacher-obj" src="models/teacher.obj"></a-asset-item>
+        <a-asset-item id="teacher-mtl" src="models/teacher.mtl"></a-asset-item>
 
     </a-assets>
 
@@ -104,14 +107,16 @@
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 6"
               rotation="-90 0 0"></a-entity>
     <a-entity id="js--rightRoomPad2" geometry="primitive: circle; radius: 0.5"
-              material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -4"
+              material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -2"
               rotation="-90 0 0"></a-entity>
     <a-entity id="js--teacherPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 1"
               rotation="-90 0 0"></a-entity>
 
     <!--        Models-->
-    <a-entity obj-model="obj: #teacherObj; mtl: #teacherMtl" position="0 0 5" scale="0.2 0.2 0.2"></a-entity>
+    <a-entity obj-model="obj: #student-obj; mtl: #student-mtl" position="-5 0.01 -5" scale="0.03 0.03 0.03" rotation="0 -45 0"></a-entity>
+    <a-entity obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="4 0.01 -5" scale="0.001 0.001 0.001" rotation="-90 0 -45"></a-entity>
+
 
 </a-scene>
 <script type="text/javascript" src="main.js"></script>
