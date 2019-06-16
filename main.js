@@ -18,63 +18,63 @@ let timeoutTime = 1500;
 initialPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "0 1.7 7");
+        cameraRig.setAttribute("position", "0 1.85 7");
     }, timeoutTime)
 };
 
 middleRoomPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "0 1.7 2");
+        cameraRig.setAttribute("position", "0 1.85 2");
     }, timeoutTime)
 };
 
 programmingBordPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "0 1.7 -4");
+        cameraRig.setAttribute("position", "0 1.85 -4");
     }, timeoutTime)
 };
 
 leftRoomPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "-6.5 1.7 6");
+        cameraRig.setAttribute("position", "-6.5 1.85 6");
     }, timeoutTime)
 };
 
 leftRoomPad2.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "-6.5 1.7 -4");
+        cameraRig.setAttribute("position", "-6.5 1.85 -4");
     }, timeoutTime)
 };
 
 studentPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "-6.5 1.7 1");
+        cameraRig.setAttribute("position", "-6.5 1.85 1");
     }, timeoutTime)
 };
 
 rightRoomPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.7 6");
+        cameraRig.setAttribute("position", "6.5 1.85 6");
     }, timeoutTime)
 };
 
 rightRoomPad2.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.7 -3");
+        cameraRig.setAttribute("position", "6.5 1.85 -3");
     }, timeoutTime)
 };
 
 teacherPad.onmouseenter = () => {
     teleportAudio.play();
     setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.7 1");
+        cameraRig.setAttribute("position", "6.5 1.85 1");
     }, timeoutTime)
 };
 
