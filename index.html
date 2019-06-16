@@ -8,8 +8,8 @@
 <a-scene id="js--scene">
     <!--      Assets-->
     <a-assets>
-        <a-img id="whiteWallTexture" src="textures/white_wall.jpg"></a-img>
-        <a-img id="floorTexture" src="textures/wood_floor.jpg"></a-img>
+        <a-img id="whiteWallTexture" src="textures/red_wall.jpg"></a-img>
+        <a-img id="floorTexture" src="textures/lightblue_carpet_floor.jpg"></a-img>
         <a-img id="ceilingTexture" src="textures/ceiling.jpg"></a-img>
 
         <!-- Teacher by Emmy Muller https://poly.google.com/view/6zjF33saYxI -->
@@ -59,49 +59,49 @@ w
     <a-entity light="type: directional; color: #FFF; intensity: 0.2" position="0 2.9 0"></a-entity>
 
     <!--      Floor and Extern Walls-->
-    <a-entity id="floor" geometry="primitive: plane; height: 15; width: 20" material="src: #floorTexture; repeat: 3 3"
+    <a-entity id="floor" geometry="primitive: plane; height: 15; width: 20" material="src: #floorTexture; repeat: 25 25"
               position="0 0 0" rotation="-90 0 0"></a-entity>
     <a-entity id="ceiling" geometry="primitive: plane; height: 15; width: 20"
               material="src: #ceilingTexture; repeat: 20 20 " position="0 4 0" rotation="90 0 0"></a-entity>
 
     <a-entity id="externWallNorth" geometry="primitive: plane; height: 4; width: 20"
-              material="src: #whiteWallTexture; repeat: 5 1; side: double" position="0 2 -7.5"></a-entity>
+              material="src: #whiteWallTexture; repeat: 5 4; side: double" position="0 2 -7.5"></a-entity>
     <a-entity id="externWallSouth" geometry="primitive: plane; height: 4; width: 20"
-              material="src: #whiteWallTexture; repeat: 5 1; side: double" position="0 2 7.5"
+              material="src: #whiteWallTexture; repeat: 5 4; side: double" position="0 2 7.5"
               rotation="0 180 0"></a-entity>
     <a-entity id="externWallWest" geometry="primitive: plane; height: 4; width: 15"
-              material="src: #whiteWallTexture; repeat: 5 1; side: double" position="-10 2 0"
+              material="src: #whiteWallTexture; repeat: 5 4; side: double" position="-10 2 0"
               rotation="0 90 0"></a-entity>
     <a-entity id="externWallEast" geometry="primitive: plane; height: 4; width: 15"
-              material="src: #whiteWallTexture; repeat: 5 1; side: double" position="10 2 0"
+              material="src: #whiteWallTexture; repeat: 5 4; side: double" position="10 2 0"
               rotation="0 -90 0"></a-entity>
 
     <!--      Rooms-->
     <a-entity id="rightCorridorWallPR" geometry="primitive: plane; height: 4; width: 5"
-              material="src: #whiteWallTexture; repeat: 1.5 1; side: double" position="1 2 2"
+              material="src: #whiteWallTexture; repeat: 1.5 4; side: double" position="1 2 2"
               rotation="0 -90 0"></a-entity>
     <a-entity id="leftCorridorWallPR" geometry="primitive: plane; height: 4; width: 5"
-              material="src: #whiteWallTexture; repeat: 1.5 1; side: double" position="-1 2 2"
+              material="src: #whiteWallTexture; repeat: 1.5 4; side: double" position="-1 2 2"
               rotation="0 -90 0"></a-entity>
 
     <a-entity id="innerWallRightPR" geometry="primitive: plane; height: 4; width: 2"
-              material="src: #whiteWallTexture; repeat: 0.6 1; side: double" position="2 2 -0.5"
+              material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="2 2 -0.5"
               rotation="0 -180 0"></a-entity>
     <a-entity id="innerWallRight2PR" geometry="primitive: plane; height: 4; width: 12"
-              material="src: #whiteWallTexture; repeat: 2.5 1; side: double" position="3 2 -1.5"
+              material="src: #whiteWallTexture; repeat: 2.5 4; side: double" position="3 2 -1.5"
               rotation="0 -90 0"></a-entity>
     <a-entity id="innerWallLeft2PR" geometry="primitive: plane; height: 4; width: 12"
-              material="src: #whiteWallTexture; repeat: 2.5 1; side: double" position="-3 2 -1.5"
+              material="src: #whiteWallTexture; repeat: 2.5 4; side: double" position="-3 2 -1.5"
               rotation="0 90 0"></a-entity>
     <a-entity id="innerWallLeftPR" geometry="primitive: plane; height: 4; width: 2"
-              material="src: #whiteWallTexture; repeat: 0.6 1; side: double" position="-2 2 -0.5"
+              material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="-2 2 -0.5"
               rotation="0 -180 0"></a-entity>
 
     <a-entity id="outerWallLefttPR" geometry="primitive: plane; height: 4; width: 2"
-              material="src: #whiteWallTexture; repeat: 0.6 1; side: double" position="2 2 4.5"
+              material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="2 2 4.5"
               rotation="0 -180 0"></a-entity>
     <a-entity id="outerWallRightPR" geometry="primitive: plane; height: 4; width: 2"
-              material="src: #whiteWallTexture; repeat: 0.6 1; side: double" position="-2 2 4.5"
+              material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="-2 2 4.5"
               rotation="0 -180 0"></a-entity>
 
     <!--            Teleportation pads-->
@@ -144,7 +144,7 @@ w
     <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="0 0 -6.9" rotation="0 0 0"></a-entity>
     <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1.03 -6.7" scale="0.01 0.01 0.01" rotation="0 90 0"></a-entity>
     <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 0.3 -5.8" scale="0.78 0.78 0.78" rotation="0 180 0"></a-entity>
-
+    <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-2.83 1.3 -4.1" scale="3 3 3"></a-entity>
 
     <!--    Models Right Room-->
     <!--    Left-->
