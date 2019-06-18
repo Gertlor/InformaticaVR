@@ -44,6 +44,9 @@
         <!-- Door by Google https://poly.google.com/view/ch-fQ-Ruyog -->
         <a-asset-item id="door-obj" src="models/white_door.obj"></a-asset-item>
         <a-asset-item id="door-mtl" src="models/white_door.mtl"></a-asset-item>
+
+        <a-asset-item id="dialogbubble-obj" src="models/dialogbubble.obj"></a-asset-item>
+        <a-asset-item id="dialogbubble-mtl" src="models/dialogbubble.mtl"></a-asset-item>
     </a-assets>
 
     <!--      Camera and Pointer-->
@@ -110,38 +113,40 @@
     <!--            Teleportation pads-->
     <a-entity id="js--initialPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="0 0.01 6"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
 
     <a-entity id="js--middleRoomPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="0 0.01 2"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
     <a-entity id="js--programmingBordPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="0 0.01 -4"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
 
     <a-entity id="js--leftRoomPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 6"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
     <a-entity id="js--leftRoomPad2" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 -4"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
     <a-entity id="js--studentPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 1"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
 
     <a-entity id="js--rightRoomPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 6"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
     <a-entity id="js--rightRoomPad2" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -3"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
     <a-entity id="js--teacherPad" geometry="primitive: circle; radius: 0.5"
               material="src: textures/lightground.png; transparent: true" position="6.5 0.01 1"
-              rotation="-90 0 0"></a-entity>
+              rotation="-90 0 0" visible="false"></a-entity>
 
 <!--        Models-->
     <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -5" scale="1.3 1.3 1.3" rotation="6 -45 3.5"></a-entity>
-    <a-entity obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="4 0 -5" scale="2 2 2" rotation="0 -90 0"></a-entity>
+    <a-entity obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="1 0 5" scale="2 2 2" rotation="0 -140 0"></a-entity>
+    <a-entity obj-model="obj: #dialogbubble-obj; mtl: #dialogbubble-mtl" position="-0.12 2.7 5" scale="0.5 0.5 0.5"></a-entity>
+    <a-entity geometry="primitive: plane; width: 1.5; height: 0.65" material="opacity: 0" text="value: Welkom bij de opleiding Informatica van de Hogeschool Leiden!; width: 1.7; align: center" position="-0.12 2.7 5.02"></a-entity>
 
     <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="-0.67 1.3 7.50" scale="0.7 0.7 0.7" rotation="0 90 0"></a-entity>
     <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="0.67 1.3 7.50" scale="0.7 0.7 0.7" rotation="0 -90 0"></a-entity>

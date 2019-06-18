@@ -15,66 +15,66 @@ let timeoutTime = 1500;
 
 //      TELEPORTATION
 
-initialPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "0 1.85 7");
-    }, timeoutTime)
-};
-
-middleRoomPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "0 1.85 2");
-    }, timeoutTime)
-};
-
-programmingBordPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "0 1.85 -4");
-    }, timeoutTime)
-};
-
-leftRoomPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "-6.5 1.85 6");
-    }, timeoutTime)
-};
-
-leftRoomPad2.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "-6.5 1.85 -4");
-    }, timeoutTime)
-};
-
-studentPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "-6.5 1.85 1");
-    }, timeoutTime)
-};
-
-rightRoomPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.85 6");
-    }, timeoutTime)
-};
-
-rightRoomPad2.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.85 -3");
-    }, timeoutTime)
-};
-
-teacherPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        cameraRig.setAttribute("position", "6.5 1.85 1");
-    }, timeoutTime)
-};
+// initialPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "0 1.85 7");
+//     }, timeoutTime)
+// };
+//
+// middleRoomPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "0 1.85 2");
+//     }, timeoutTime)
+// };
+//
+// programmingBordPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "0 1.85 -4");
+//     }, timeoutTime)
+// };
+//
+// leftRoomPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "-6.5 1.85 6");
+//     }, timeoutTime)
+// };
+//
+// leftRoomPad2.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "-6.5 1.85 -4");
+//     }, timeoutTime)
+// };
+//
+// studentPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "-6.5 1.85 1");
+//     }, timeoutTime)
+// };
+//
+// rightRoomPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "6.5 1.85 6");
+//     }, timeoutTime)
+// };
+//
+// rightRoomPad2.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "6.5 1.85 -3");
+//     }, timeoutTime)
+// };
+//
+// teacherPad.onmouseenter = () => {
+//     teleportAudio.play();
+//     setTimeout(teleport = () => {
+//         cameraRig.setAttribute("position", "6.5 1.85 1");
+//     }, timeoutTime)
+// };
 
