@@ -110,7 +110,7 @@
             material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="-2 2 4.5"
             rotation="0 -180 0"></a-entity>
 
-  <!--            Teleportation pads-->
+  <!--            Teleportation pad-->
   <a-entity id="js--teleportationPad" geometry="primitive: circle; radius: 0.5"
             material="src: textures/lightground.png; transparent: true" position="0 0.01 6"
             rotation="-90 0 0" visible="false"></a-entity>
@@ -125,7 +125,12 @@
   <a-entity id="js--dialogText" geometry="primitive: plane; width: 1.5; height: 0.65" material="opacity: 0"
             text="value: Welkom bij de opleiding Informatica van de Hogeschool Leiden!; width: 1.7; align: center"
             position="-0.12 2.7 5.02"></a-entity>
-  <a-entity id="js--nextButton" visible="true" geometry="primitive: plane; width: 0.2; height: 0.13" text="value: Volgende; width: 1.5; align: center; color: lightgreen" material="opacity: 0;" position="0.35 2.4 5.04"></a-entity>
+  <a-entity id="js--nextButton" visible="true" geometry="primitive: plane; width: 0.2; height: 0.13"
+            text="value: Volgende; width: 1.5; align: center; color: lightgreen" material="opacity: 0;"
+            position="0.35 2.4 5.04"></a-entity>
+  <a-entity id="js--beginButton" visible="false" geometry="primitive: plane; width: 0.2; height: 0.13"
+            text="value: Beginnen; width: 1.5; align: center; color: green" material="opacity: 0"
+            position=""></a-entity>
 
   <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="-0.67 1.3 7.50" scale="0.7 0.7 0.7"
             rotation="0 90 0"></a-entity>
@@ -149,7 +154,6 @@
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 -2.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.25 1.03 -2.7" scale="0.0045 0.0045 0.0045"
             rotation="-90 0 -90"></a-entity>
-
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="4 0.3 0"
             rotation="0 150 0"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="0 180 8"
@@ -157,14 +161,11 @@
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 -0.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 -0.65" scale="0.0035 0.0035 0.0035"
             rotation="-90 0 -80"></a-entity>
-
-
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="4 0.3 1.6"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="5 0.3 1.6"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 1.3" rotation="0 0 0"></a-entity>
-
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="4 1.07 4"
             rotation="6 180 3.5"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="5 1.07 4"
@@ -174,17 +175,14 @@
             rotation="-90 0 -80"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 3.6" scale="0.0045 0.0045 0.0045"
             rotation="-90 0 -90"></a-entity>
-
   <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="6.5 1.3 -7.35" scale="3 3 3"
             rotation="0 -90 0"></a-entity>
-
   <!--    Right-->
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="9 0.3 -2.3"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="8 0.3 -2.3"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 -2.7" rotation="0 0 0"></a-entity>
-
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="9 0.3 0.3"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" scale="1.3 1.3 1.3" rotation="6 145 3.5"
@@ -192,7 +190,6 @@
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 -0.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8.25 1.03 -0.6" scale="0.0045 0.0045 0.0045"
             rotation="-90 0 -110"></a-entity>
-
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="6 160 3.5"
             position="9 1.07 2"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" rotation="6 160 3.5"
@@ -202,7 +199,6 @@
             rotation="-90 0 -110"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8 1.03 1.64" scale="0.0045 0.0045 0.0045"
             rotation="-90 0 -90"></a-entity>
-
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="9 0.3 3.7"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="8 1.07 4"
@@ -245,8 +241,6 @@
 
   <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-6.5 1.3 -7.35" scale="3 3 3"
             rotation="0 -90 0"></a-entity>
-
-
   <!--    Left-->
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-9 0.3 -3.5"
             rotation="0 0 0"></a-entity>
@@ -255,13 +249,11 @@
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 -2.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 -3" scale="0.0045 0.0045 0.0045"
             rotation="-90 160 -70"></a-entity>
-
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-9 0.3 -1.2"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-8 0.3 -1.3"
             rotation="0 180 0"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 -1.7" rotation="0 0 0"></a-entity>
-
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-9 0.3 0.5"
             rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="-8 1.07 0.5"
@@ -269,7 +261,6 @@
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 1.3" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 1" scale="0.0035 0.0035 0.0035"
             rotation="-90 160 -70"></a-entity>
-
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" scale="1.3 1.3 1.3" position="-9 1.07 2.7"
             rotation="6 160 3.5"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" scale="0.78 0.78 0.78" position="-8 0.3 3"
@@ -279,7 +270,6 @@
             rotation="-90 0 -70"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 2.3" scale="0.0035 0.0035 0.0035"
             rotation="-90 -10 -70"></a-entity>
-
 </a-scene>
 <script type="text/javascript" src="main.js"></script>
 <!--<script src="/__/firebase/6.2.0/firebase-app.js"></script>-->
