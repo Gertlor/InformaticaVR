@@ -19,12 +19,51 @@ let resultDiagram = document.getElementById("js--resultDiagram");
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
 
+sitOnChairForProgramming = () => {
+  
+};
+
 startFinalDialogUml = () => {
+  textIndex = 0;
+  finalUmlTextArray = [
+    "Goed Gedaan!!",
+    "En nu gaan we dit even programmeren, zit op de stoel naast mij."
+  ];
   classDiagram.onmouseenter = () => {};
   mainText.onmouseenter = () => {};
   helloWorldText.onmouseenter = () => {};
   cameraRig.setAttribute("position", "0 1.9 -2.5");
   cameraRig.setAttribute("rotation", "0 0 0");
+
+  dialogBox.setAttribute("position", " -1.5 2.7 -5");
+  dialogBox.setAttribute("rotation", "0 30 0");
+  dialogBox.setAttribute("visible", "true");
+
+  dialogText.setAttribute("position", " -1.46 2.7 -4.95");
+  dialogText.setAttribute("rotation", "0 30 0");
+  dialogText.setAttribute("text", "value: " + finalUmlTextArray[0]);
+  dialogText.setAttribute("text", "width: 1.9");
+  dialogText.setAttribute("visible", "true");
+
+  nextDialog.setAttribute("position", "-1 2.35 -4.8");
+  nextDialog.setAttribute("rotation", "0 30 0");
+  nextDialog.setAttribute("visible", "true");
+
+  nextDialog.onmouseenter = () => {
+    if(textIndex >= 0 && textIndex < finalUmlTextArray.length){
+      dialogText.setAttribute("text", "value: " + finalUmlTextArray[textIndex]);
+      textIndex++;
+      if(textIndex === finalUmlTextArray.length){
+        nextDialog.setAttribute("visible", "false");
+        beginButton.setAttribute("visible", "true");
+        beginButton.setAttribute("rotation","0 30 0");
+        beginButton.setAttribute("position", "-1.4 2.35 -4.8");
+        beginButton.onmouseenter = () => {
+          setTimeout(sitOnChairForProgramming, 1000)
+        };
+      }
+    }
+  }
 };
 
 makeCameraClassDiagram = () => {
@@ -209,5 +248,3 @@ startInitialDialog = () => {
 };
 
 startInitialDialog();
-
-
