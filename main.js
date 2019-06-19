@@ -1,8 +1,12 @@
 let cameraRig = document.getElementById("js--rig");
 let camera = document.getElementById("js--camera");
+let scene = document.getElementById("js--scene");
 
 let teleportationPad = document.getElementById("js--teleportationPad");
 let teleportAudio = new Audio("sound/teleportation.wav");
+
+let initialPanel = document.getElementById("js--initialPanel");
+let initialPanelButton = document.getElementById("js--initialPanelButton");
 
 let teacher = document.getElementById("js--teacher");
 let dialogBox = document.getElementById("js--dialogBox");
@@ -51,6 +55,7 @@ let prNextInstruction = document.getElementById("js--prNextInstruction");
 
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
+let cameraHeight;
 
 addTeleportationToRightRoom = () => {
 
@@ -62,7 +67,7 @@ finishProgrammingDialogWithTeacher = () => {
     "Ik ga nu even les geven, als je wilt mee doen wacht ik op je in het lokaal hiernaast, aan je linkerkant."
   ];
   prNextInstruction.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "0 1.9 -2.5");
+  cameraRig.setAttribute("position", "0 "+cameraHeight+" -2.5");
   cameraRig.setAttribute("rotation", "0 0 0");
 
   teacher.setAttribute("visible", "true");
@@ -81,8 +86,6 @@ finishProgrammingDialogWithTeacher = () => {
       }
     }
   }
-
-
 };
 
 finishProgrammingExercise = () => {
@@ -255,14 +258,13 @@ showProgrammingExercise = () => {
 
 sitOnChairForProgramming = () => {
   programmingChair.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "0 1.5 -6");
+  cameraRig.setAttribute("position", "0  "+(cameraHeight - 0.4)+"  -5.8");
   cameraRig.setAttribute("rotation", "-5 0 0");
   teacher.setAttribute("visible", "false");
   dialogBox.setAttribute("visible", "false");
   dialogText.setAttribute("visible", "false");
 
   showProgrammingExercise();
-
 };
 
 startFinalDialogUml = () => {
@@ -274,7 +276,7 @@ startFinalDialogUml = () => {
   classDiagram.onmouseenter = () => {};
   mainText.onmouseenter = () => {};
   helloWorldText.onmouseenter = () => {};
-  cameraRig.setAttribute("position", "0 1.9 -2.5");
+  cameraRig.setAttribute("position", "0  "+cameraHeight+"  -2.5");
   cameraRig.setAttribute("rotation", "0 0 0");
 
   dialogBox.setAttribute("position", " -1.5 2.7 -5");
@@ -403,7 +405,7 @@ startUmlDrawing = () => {
   dialogText.setAttribute("visible", "false");
   beginButton.setAttribute("visible", "false");
 
-  cameraRig.setAttribute("position", "-1 2 -4.12");
+  cameraRig.setAttribute("position", "-1  "+(cameraHeight+0.1)+"  -4.12");
   cameraRig.setAttribute("rotation", "0 90 0");
 
   drawFirstStageUml()
@@ -462,13 +464,23 @@ showTeleportationPad = () => {
     setTimeout(teleport = () => {
         dialogBox.setAttribute("visible", "false");
         dialogText.setAttribute("visible", "false");
-        cameraRig.setAttribute("position", "0 1.9 -2.5");
+        cameraRig.setAttribute("position", "0  "+cameraHeight+"  -2.5");
         startUmlDialog();
     }, timeoutTimeforTeleportation)
   }
 };
 
 startInitialDialog = () => {
+  initialPanel.remove();
+  initialPanelButton.remove();
+
+  teacher.setAttribute("visible", "true");
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("visible", "true");
+  nextDialog.setAttribute("visible", "true");
+
+  cameraRig.setAttribute("position", "0 " +cameraHeight+ " 7.3");
+
   let initialTextArray = [
     "Ik ben Gerrit en vandaag ga ik je rondleiden om een indruk te krijgen van de opleiding Informatica.",
     "Als eerst gaan we wat UML tekeken, ik zal op je wachten in de ruimte achter mij.\n\n" +
@@ -487,4 +499,16 @@ startInitialDialog = () => {
   }
 };
 
-startInitialDialog();
+checkIfVrModeIsOn = () => {
+  initialPanelButton.onmouseenter = () => {
+    if(scene.is('vr-mode')){
+      cameraHeight = 0.5;
+    } else {
+      cameraHeight = 1.9;
+    }
+    startInitialDialog();
+  }
+
+};
+
+checkIfVrModeIsOn();
