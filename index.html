@@ -138,16 +138,52 @@
             scale="0.7 0.7 0.7"></a-entity>
 
   <!--    Models Middle Room-->
+  <!--    Models UML Board-->
+  <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-2.83 1.3 -4.1" scale="3 3 3"></a-entity>
+  <a-entity id="js--classDiagram" geometry="primitive: plane; height: 0.5; width: 0.4" material="src: images/classDiagram.png; transparent: true; side: double" position="-2.88 2.7 -2.9" rotation="0 90 0"></a-entity>
+  <a-entity id="js--mainText" geometry="primitive: plane; height: 0.1; width: 0.2" material="color: red; opacity: 0; side: double" position="-2.88 2.3 -2.8" rotation="0 90 0" text="value: Main; color: black; width: 2; align: center"></a-entity>
+  <a-entity id="js--helloWorldText" geometry="primitive: plane; height: 0.1; width: 0.8" material="color: red; opacity: 0; side: double" position="-2.88 2.1 -3.05" rotation="0 90 0" text="value: +printHelloWorld(); color: black; width: 2; align: center"></a-entity>
+  <a-entity id="js--resultDiagram" geometry="primitive: plane; height: 2; width: 1.5" material="opacity: 0; color: yellow" position="-2.88 2.1 -4.9" rotation="0 90 0"></a-entity>
+  <!--    Models Programming Exercise-->
+  <a-entity id="js--programmingChair" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 0.3 -5.8" rotation="0 180 0"
+            scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="0 0 -6.9" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1.03 -6.7" rotation="0 90 0"
             scale="0.01 0.01 0.01"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 0.3 -5.8" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-2.83 1.3 -4.1" scale="3 3 3"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.5; width: 0.4" id="js--classDiagram" material="src: images/classDiagram.png; transparent: true; side: double" position="-2.88 2.7 -2.9" rotation="0 90 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.1; width: 0.2" id="js--mainText" material="color: red; opacity: 0; side: double" position="-2.88 2.3 -2.8" rotation="0 90 0" text="value: Main; color: black; width: 2; align: center"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.1; width: 0.8" id="js--helloWorldText" material="color: red; opacity: 0; side: double" position="-2.88 2.1 -3.05" rotation="0 90 0" text="value: +printHelloWorld(); color: black; width: 2; align: center"></a-entity>
-  <a-entity geometry="primitive: plane; height: 2; width: 1.5" id="js--resultDiagram" material="opacity: 0; color: yellow" position="-2.88 2.1 -4.9" rotation="0 90 0"></a-entity>
+
+  <a-entity id="js--prResultPlane" geometry="primitive: plane; height: 0.30; width: 0.60" visible="false" material="color: black; opacity: 1; side: double" position="-0.09 1.52 -6.59" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-Class" geometry="primitive: plane; height: 0.03; width: 0.15" visible="false" material="color: black; opacity: 0; side: double" position="-0.3 1.63 -6.605" text="value: public class Main {; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-MainMethod" geometry="primitive: plane; height: 0.03; width: 0.30" visible="false" material="color: black; opacity: 0; side: double" position="-0.2 1.60 -6.6" text="value: \tpublic static void main(String[] args) { ; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-MethodCall" geometry="primitive: plane; height: 0.03; width: 0.15" visible="false" material="color: black; opacity: 0; side: double" position="-0.25 1.57 -6.5905" text="value: \t\tprintHelloWorld(); color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-CloseMain" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 0; side: double" position="-0.34 1.54 -6.59" text="value: \t}; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+
+  <a-entity id="js--prResult-public" geometry="primitive: plane; height: 0.03; width: 0.05" visible="false" material="color: red; opacity: 0; side: double" position="-0.32 1.51 -6.587" text="value: \tpublic; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-void" geometry="primitive: plane; height: 0.03; width: 0.04" visible="false" material="color: red; opacity: 0; side: double" position="-0.27 1.51 -6.587" text="value: void; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-printHelloWorldMethod" geometry="primitive: plane; height: 0.03; width: 0.14" visible="false" material="color: red; opacity: 0; side: double" position="-0.17 1.51 -6.587" text="value:printHelloWorld() ; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-CurlyBracketOpen" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: red; opacity: 0; side: double" position="-0.09 1.513 -6.582" text="value: {; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-CurlyBracketClose" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: red; opacity: 0; side: double" position="-0.34 1.445 -6.575" text="value: }; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-print" geometry="primitive: plane; height: 0.03; width: 0.04" visible="true" material="color: red; opacity: 0; side: double" position="-0.30 1.48 -6.575" text="value: \t\tprint; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-printBracketOpen" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: red; opacity: 0; side: double" position="-0.27 1.48 -6.575" text="value: (; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-printQuoteOpen" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: red; opacity: 0; side: double" position="-0.26 1.48 -6.575" text="value: '; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-printHelloWorld" geometry="primitive: plane; height: 0.03; width: 0.1" visible="false" material="color: red; opacity: 0; side: double" position="-0.21 1.48 -6.575" text="value: Hello World; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-printQuoteClose" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: red; opacity: 0; side: double" position="-0.16 1.48 -6.575" text="value: '; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prResult-printBracketClose" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 0; side: double" position="-0.15 1.48 -6.575" text="value: ); color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+
+  <a-entity id="js--prResult-CloseClass" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 0; side: double" position="-0.36 1.42 -6.575" text="value: }; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+
+  <a-entity id="js--prChoose-Public" geometry="primitive: plane; height: 0.03; width: 0.05" visible="false" material="color: black; opacity: 1; side: double" position="-0.36 1.35 -6.55" text="value: public; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-Void" geometry="primitive: plane; height: 0.03; width: 0.04" visible="false" material="color: black; opacity: 1; side: double" position="-0.23 1.35 -6.55" text="value: void; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-printHelloWorld" geometry="primitive: plane; height: 0.03; width: 0.14" visible="false" material="color: black; opacity: 1; side: double" position="-0.13 1.35 -6.55" text="value: printHelloWorld(); color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-openCurlyBracket" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 1; side: double" position="-0.32 1.35 -6.55" text="value: {; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-closeCurlyBracket" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 1; side: double" position="-0.04 1.35 -6.55" text="value: }; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-print" geometry="primitive: plane; height: 0.03; width: 0.04" visible="false" material="color: black; opacity: 1; side: double" position="-0.28 1.35 -6.55" text="value: print; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-openBracket" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 1; side: double" position="-0.01 1.35 -6.55" text="value: (; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-quote" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 1; side: double" position="0.05 1.35 -6.55" text="value: '; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-HelloWorld" geometry="primitive: plane; height: 0.03; width: 0.10" visible="false" material="color: black; opacity: 1; side: double" position="0.12 1.35 -6.55" text="value: Hello World; color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prChoose-closeBracket" geometry="primitive: plane; height: 0.03; width: 0.02" visible="false" material="color: black; opacity: 1; side: double" position="0.02 1.35 -6.55" text="value: ); color: white; width: 0.4; align: center" rotation="-9 0 0"></a-entity>
+
+  <a-entity id="js--prInstructions" geometry="primitive: plane; height: 0.1; width: 0.40" visible="false" material="color: white; opacity: 1; side: double" position="-0.19 1.27 -6.548" text="value: Instructions; color: black; width: 0.4; align: left" rotation="-9 0 0"></a-entity>
+  <a-entity id="js--prNextInstruction" geometry="primitive: plane; height: 0.1; width: 0.1" visible="false" material="src: images/arrowRight.png; transparent: true;" position="0.07 1.27 -6.548" rotation="-9 0 0"></a-entity>
   <!--    Models Right Room-->
   <!--    Left-->
   <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="4 1.07 -2" rotation="6 140 3.5"
