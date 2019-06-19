@@ -17,10 +17,205 @@ let resultDiagram = document.getElementById("js--resultDiagram");
 
 let programmingChair = document.getElementById("js--programmingChair");
 
+let prResultPlane = document.getElementById("js--prResultPlane");
+let prResultClass = document.getElementById("js--prResult-Class");
+let prResultMainMethod = document.getElementById("js--prResult-MainMethod");
+let prResultMethodCall = document.getElementById("js--prResult-MethodCall");
+let prResultCloseMain = document.getElementById("js--prResult-CloseMain");
+
+let prResultPublic = document.getElementById("js--prResult-public");
+let prResultVoid = document.getElementById("js--prResult-void");
+let prResultPrintHelloWorldMethod= document.getElementById("js--prResult-printHelloWorldMethod");
+let prResultCurlyBracketOpen = document.getElementById("js--prResult-CurlyBracketOpen");
+let prResultCurlyBracketClose = document.getElementById("js--prResult-CurlyBracketClose");
+let prResultPrint = document.getElementById("js--prResult-print");
+let prResultPrintBracketOpen= document.getElementById("js--prResult-printBracketOpen");
+let prResultPrintQuoteOpen = document.getElementById("js--prResult-printQuoteOpen");
+let prResultPrintHelloWorld = document.getElementById("js--prResult-printHelloWorld");
+let prResultPrintQuoteClose = document.getElementById("js--prResult-printQuoteClose");
+let prResultPrintBracketClose = document.getElementById("js--prResult-printBracketClose");
+
+let prResultCloseClass = document.getElementById("js--prResult-CloseClass");
+let prChoosePublic = document.getElementById("js--prChoose-Public");
+let prChooseVoid = document.getElementById("js--prChoose-Void");
+let prChoosePrintHelloWorld = document.getElementById("js--prChoose-printHelloWorld");
+let prChooseOpenCurlyBracket = document.getElementById("js--prChoose-openCurlyBracket");
+let prChooseCloseCurlyBracket = document.getElementById("js--prChoose-closeCurlyBracket");
+let prChoosePrint = document.getElementById("js--prChoose-print");
+let prChooseOpenBracket = document.getElementById("js--prChoose-openBracket");
+let prChooseQuote = document.getElementById("js--prChoose-quote");
+let prChooseHelloWorld = document.getElementById("js--prChoose-HelloWorld");
+let prChooseCloseBracket = document.getElementById("js--prChoose-closeBracket");
+let prInstructions = document.getElementById("js--prInstructions");
+let prNextInstruction = document.getElementById("js--prNextInstruction");
+
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
 
+finishProgrammingExercise = () => {
+
+};
+
+programmingExerciseSetCurlyCloseBracketOnResult = () => {
+  prChooseCloseCurlyBracket.onmouseenter=()=>{};
+  prChooseCloseCurlyBracket.setAttribute("text", "color: white");
+  prResultCurlyBracketClose.setAttribute("visible", "true");
+
+  setTimeout(finishProgrammingExercise, 1000);
+};
+
+programmingExerciseSetCloseBracketOnResult = () => {
+  prChooseCloseBracket.onmouseenter=()=>{};
+  prChooseCloseBracket.setAttribute("text", "color: white");
+  prResultPrintBracketClose.setAttribute("visible", "true");
+
+  prChooseCloseCurlyBracket.setAttribute("text", "color: red");
+  prChooseCloseCurlyBracket.onmouseenter = () => {
+    programmingExerciseSetCurlyCloseBracketOnResult()
+  }
+};
+
+programmingExerciseSetCloseQuoteOnResult = () => {
+  prChooseQuote.onmouseenter=()=>{};
+  prChooseQuote.setAttribute("text", "color: white");
+  prResultPrintQuoteClose.setAttribute("visible", "true");
+
+  prChooseCloseBracket.setAttribute("text", "color: red");
+  prChooseCloseBracket.onmouseenter = () => {
+    programmingExerciseSetCloseBracketOnResult()
+  }
+};
+
+programmingExerciseSetHelloWorldOnResult = () => {
+  prChooseHelloWorld.onmouseenter=()=>{};
+  prChooseHelloWorld.setAttribute("text", "color: white");
+  prResultPrintHelloWorld.setAttribute("visible", "true");
+
+  prChooseQuote.setAttribute("text", "color: red");
+  prChooseQuote.onmouseenter = () => {
+    programmingExerciseSetCloseQuoteOnResult()
+  }
+};
+
+programmingExerciseSetOpenQuotetOnResult = () => {
+  prChooseQuote.onmouseenter=()=>{};
+  prChooseQuote.setAttribute("text", "color: white");
+  prResultPrintQuoteOpen.setAttribute("visible", "true");
+
+  prChooseHelloWorld.setAttribute("text", "color: red");
+  prChooseHelloWorld.onmouseenter = () => {
+    programmingExerciseSetHelloWorldOnResult()
+  }
+};
+
+programmingExerciseSetOpenBracketOnResult = () => {
+  prChooseOpenBracket.onmouseenter=()=>{};
+  prChooseOpenBracket.setAttribute("text", "color: white");
+  prResultPrintBracketOpen.setAttribute("visible", "true");
+
+  prChooseQuote.setAttribute("text", "color: red");
+  prChooseQuote.onmouseenter = () => {
+    programmingExerciseSetOpenQuotetOnResult()
+  }
+};
+
+programmingExerciseSetPrintOnResult = () => {
+  prChoosePrint.onmouseenter=()=>{};
+  prChoosePrint.setAttribute("text", "color: white");
+  prResultPrint.setAttribute("visible", "true");
+
+  prChooseOpenBracket.setAttribute("text", "color: red");
+  prChooseOpenBracket.onmouseenter = () => {
+    programmingExerciseSetOpenBracketOnResult()
+  }
+};
+
+programmingExerciseSetCurlyBraceOpenOnResult = () => {
+  prChooseOpenCurlyBracket.onmouseenter=()=>{};
+  prChooseOpenCurlyBracket.setAttribute("text", "color: white");
+  prResultCurlyBracketOpen.setAttribute("visible", "true");
+
+  prChoosePrint.setAttribute("text", "color: red");
+  prChoosePrint.onmouseenter = () => {
+    programmingExerciseSetPrintOnResult()
+  }
+};
+
+programmingExerciseSetHelloWorldMethodOnResult = () => {
+  prChoosePrintHelloWorld.onmouseenter=()=>{};
+  prChoosePrintHelloWorld.setAttribute("text", "color: white");
+  prResultPrintHelloWorldMethod.setAttribute("visible", "true");
+
+  prChooseOpenCurlyBracket.setAttribute("text", "color: red");
+  prChooseOpenCurlyBracket.onmouseenter = () => {
+    programmingExerciseSetCurlyBraceOpenOnResult()
+  }
+};
+
+programmingExerciseSetVoidOnResult = () => {
+  prChooseVoid.onmouseenter=()=>{};
+  prChooseVoid.setAttribute("text", "color: white");
+  prResultVoid.setAttribute("visible", "true");
+
+  prChoosePrintHelloWorld.setAttribute("text", "color: red");
+  prChoosePrintHelloWorld.onmouseenter = () => {
+    programmingExerciseSetHelloWorldMethodOnResult()
+  }
+};
+
+programmingExerciseSetPublicOnResult = () => {
+  prChoosePublic.onmouseenter=()=>{};
+  prChoosePublic.setAttribute("text", "color: white");
+  prResultPublic.setAttribute("visible", "true");
+
+  prChooseVoid.setAttribute("text", "color: red");
+  prChooseVoid.onmouseenter = () => {
+    programmingExerciseSetVoidOnResult()
+  }
+
+
+};
+
 startProgrammingExercise = () => {
+  prNextInstruction.onmouseenter=()=>{};
+
+  prInstructions.setAttribute("text", "value: Instructies: \n Selecteer de juiste stuk code en kijk hoe het op het scherm verschijnt");
+  prNextInstruction.setAttribute("visible", "false");
+
+  prChoosePublic.setAttribute("visible", "true");
+  prChooseVoid.setAttribute("visible", "true");
+  prChoosePrintHelloWorld.setAttribute("visible", "true");
+  prChooseOpenCurlyBracket.setAttribute("visible", "true");
+  prChooseCloseCurlyBracket.setAttribute("visible", "true");
+  prChoosePrint.setAttribute("visible", "true");
+  prChooseOpenBracket.setAttribute("visible", "true");
+  prChooseQuote.setAttribute("visible", "true");
+  prChooseHelloWorld.setAttribute("visible", "true");
+  prChooseCloseBracket.setAttribute("visible", "true");
+
+  prChoosePublic.setAttribute("text", "color: yellow");
+
+  prChoosePublic.onmouseenter = () => {
+    programmingExerciseSetPublicOnResult();
+  };
+
+};
+
+showProgrammingExercise = () => {
+  prResultPlane.setAttribute("visible", "true");
+  prResultClass.setAttribute("visible", "true");
+  prResultMainMethod.setAttribute("visible", "true");
+  prResultMethodCall.setAttribute("visible", "true");
+  prResultCloseMain.setAttribute("visible", "true");
+  prResultCloseClass.setAttribute("visible", "true");
+
+  prInstructions.setAttribute("visible", "true");
+  prInstructions.setAttribute("text", "value: Intructies: \n We hebben al wat werk voor je gedaan en een classe Main gemaakt met een main methode die je methode printHelloWorld() roept.");
+  prNextInstruction.setAttribute("visible", "true");
+
+  prNextInstruction.onmouseenter = () => {
+    startProgrammingExercise();
+  };
 
 };
 
@@ -31,7 +226,7 @@ sitOnChairForProgramming = () => {
   dialogBox.setAttribute("visible", "false");
   dialogText.setAttribute("visible", "false");
 
-  startProgrammingExercise();
+  showProgrammingExercise();
 
 };
 
