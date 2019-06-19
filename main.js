@@ -52,8 +52,45 @@ let prNextInstruction = document.getElementById("js--prNextInstruction");
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
 
-finishProgrammingExercise = () => {
+addTeleportationToRightRoom = () => {
 
+};
+
+finishProgrammingDialogWithTeacher = () => {
+  let finishProgrammingDialogArray = [
+    "Dat was niet zo moeilijk, was het?",
+    "Ik ga nu even les geven, als je wilt mee doen wacht ik op je in het lokaal hiernaast, aan je linkerkant."
+  ];
+  prNextInstruction.onmouseenter=()=>{};
+  cameraRig.setAttribute("position", "0 1.9 -2.5");
+  cameraRig.setAttribute("rotation", "0 0 0");
+
+  teacher.setAttribute("visible", "true");
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("text", "value: "+ finishProgrammingDialogArray[0]);
+  dialogText.setAttribute("visible", "true");
+  nextDialog.setAttribute("visible", "true");
+  textIndex = 1;
+  nextDialog.onmouseenter = () => {
+    if(textIndex >= 0 && textIndex < finishProgrammingDialogArray.length){
+      dialogText.setAttribute("text", "value: " + finishProgrammingDialogArray[textIndex]);
+      textIndex++;
+      if(textIndex === finishProgrammingDialogArray.length){
+        nextDialog.setAttribute("visible", "false");
+        addTeleportationToRightRoom();
+      }
+    }
+  }
+
+
+};
+
+finishProgrammingExercise = () => {
+  prInstructions.setAttribute("text", "value: Gefeliciteerd! Je hebt je eerste programma gemaakt!\n Druk op de pijl om verder te gaan.");
+  prNextInstruction.setAttribute("visible", "true");
+  prNextInstruction.onmouseenter = () => {
+    finishProgrammingDialogWithTeacher()
+  }
 };
 
 programmingExerciseSetCurlyCloseBracketOnResult = () => {
@@ -172,8 +209,6 @@ programmingExerciseSetPublicOnResult = () => {
   prChooseVoid.onmouseenter = () => {
     programmingExerciseSetVoidOnResult()
   }
-
-
 };
 
 startProgrammingExercise = () => {
@@ -193,12 +228,11 @@ startProgrammingExercise = () => {
   prChooseHelloWorld.setAttribute("visible", "true");
   prChooseCloseBracket.setAttribute("visible", "true");
 
-  prChoosePublic.setAttribute("text", "color: yellow");
+  prChoosePublic.setAttribute("text", "color: red");
 
   prChoosePublic.onmouseenter = () => {
     programmingExerciseSetPublicOnResult();
   };
-
 };
 
 showProgrammingExercise = () => {
@@ -220,6 +254,7 @@ showProgrammingExercise = () => {
 };
 
 sitOnChairForProgramming = () => {
+  programmingChair.onmouseenter=()=>{};
   cameraRig.setAttribute("position", "0 1.5 -6");
   cameraRig.setAttribute("rotation", "-5 0 0");
   teacher.setAttribute("visible", "false");
@@ -231,7 +266,7 @@ sitOnChairForProgramming = () => {
 };
 
 startFinalDialogUml = () => {
-  textIndex = 0;
+  textIndex = 1;
   let finalUmlTextArray = [
     "Goed Gedaan!!",
     "En nu gaan we dit even programmeren, zit op de stoel naast mij."
@@ -363,6 +398,7 @@ drawFirstStageUml = () => {
 };
 
 startUmlDrawing = () => {
+  beginButton.onmouseenter=()=>{};
   dialogBox.setAttribute("visible", "false");
   dialogText.setAttribute("visible", "false");
   beginButton.setAttribute("visible", "false");
