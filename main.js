@@ -1,6 +1,5 @@
 let cameraRig = document.getElementById("js--rig");
 let camera = document.getElementById("js--camera");
-let scene = document.getElementById("js--scene");
 
 let teleportationPad = document.getElementById("js--teleportationPad");
 let teleportAudio = new Audio("sound/teleportation.wav");
@@ -16,16 +15,29 @@ let mainText = document.getElementById("js--mainText");
 let helloWorldText = document.getElementById("js--helloWorldText");
 let resultDiagram = document.getElementById("js--resultDiagram");
 
+let programmingChair = document.getElementById("js--programmingChair");
+
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
 
+startProgrammingExercise = () => {
+
+};
+
 sitOnChairForProgramming = () => {
-  
+  cameraRig.setAttribute("position", "0 1.5 -6");
+  cameraRig.setAttribute("rotation", "-5 0 0");
+  teacher.setAttribute("visible", "false");
+  dialogBox.setAttribute("visible", "false");
+  dialogText.setAttribute("visible", "false");
+
+  startProgrammingExercise();
+
 };
 
 startFinalDialogUml = () => {
   textIndex = 0;
-  finalUmlTextArray = [
+  let finalUmlTextArray = [
     "Goed Gedaan!!",
     "En nu gaan we dit even programmeren, zit op de stoel naast mij."
   ];
@@ -55,11 +67,8 @@ startFinalDialogUml = () => {
       textIndex++;
       if(textIndex === finalUmlTextArray.length){
         nextDialog.setAttribute("visible", "false");
-        beginButton.setAttribute("visible", "true");
-        beginButton.setAttribute("rotation","0 30 0");
-        beginButton.setAttribute("position", "-1.4 2.35 -4.8");
-        beginButton.onmouseenter = () => {
-          setTimeout(sitOnChairForProgramming, 1000)
+        programmingChair.onmouseenter = () => {
+          setTimeout(sitOnChairForProgramming, 500)
         };
       }
     }
