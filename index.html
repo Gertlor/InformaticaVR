@@ -47,6 +47,8 @@
 
     <a-asset-item id="dialogbubble-obj" src="models/dialogbubble.obj"></a-asset-item>
     <a-asset-item id="dialogbubble-mtl" src="models/dialogbubble.mtl"></a-asset-item>
+
+    <a-asset-item id="exclamation-obj" src="models/exclamation.obj"></a-asset-item>
   </a-assets>
 
   <!--      Camera and Pointer-->
@@ -191,6 +193,10 @@
   <a-entity id="js--prInstructions" geometry="primitive: plane; height: 0.1; width: 0.40" visible="false" material="color: white; opacity: 1; side: double" position="-0.19 1.27 -6.548" text="value: Instructions; color: black; width: 0.4; align: left" rotation="-9 0 0"></a-entity>
   <a-entity id="js--prNextInstruction" geometry="primitive: plane; height: 0.1; width: 0.1" visible="false" material="src: images/arrowRight.png; transparent: true;" position="0.07 1.27 -6.548" rotation="-9 0 0"></a-entity>
   <!--    Models Right Room-->
+  <a-entity id="js--exclamation" obj-model="obj: #exclamation-obj" visible="false" material="color: #f9b640" position="8 1.8 2" rotation="0 40 0" scale="0.4 0.4 0.4"></a-entity>
+  <a-entity id="js--jaButton" geometry="primitive: plane; width: 0.2; height: 0.13" material="opacity: 0;" position="0.35 2.4 5.04" text="value: Ja; width: 1.5; align: center; color: lightgreen" visible="false"></a-entity>
+  <a-entity id="js--neeButton" geometry="primitive: plane; width: 0.2; height: 0.13" material="opacity: 0;" position="0.35 2.4 5.04" text="value: Nee; width: 1.5; align: center; color: red" visible="false"></a-entity>
+
   <!--    Left-->
   <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="4 1.07 -2" rotation="6 140 3.5"
             scale="1.3 1.3 1.3"></a-entity>
@@ -201,7 +207,7 @@
             scale="0.0045 0.0045 0.0045"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="4 0.3 0" rotation="0 150 0"
             scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="5 1.07 0" rotation="0 180 8"
+  <a-entity id="js--askedStudent3" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="5 1.07 0" rotation="0 180 8"
             rotation="6 180 3.5" scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 -0.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 -0.65" rotation="-90 0 -80"
@@ -211,7 +217,7 @@
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="5 0.3 1.6" rotation="0 180 0"
             scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 1.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="4 1.07 4" rotation="6 180 3.5"
+  <a-entity id="js--askedStudent2" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="4 1.07 4" rotation="6 180 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="5 1.07 4" rotation="6 180 3.5"
             scale="1.3 1.3 1.3"></a-entity>
@@ -237,7 +243,7 @@
             scale="0.0045 0.0045 0.0045"></a-entity>
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="9 1.07 2" rotation="6 160 3.5"
             scale="1.3 1.3 1.3"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="8 1.07 2" rotation="6 160 3.5"
+  <a-entity id="js--askedStudent1" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="8 1.07 2" rotation="6 160 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 1.3" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8.90 1.03 1.3" rotation="-90 0 -110"
@@ -246,7 +252,7 @@
             scale="0.0045 0.0045 0.0045"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 3.7" rotation="0 180 0"
             scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="8 1.07 4" rotation="6 180 3.5"
+  <a-entity  obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="8 1.07 4" rotation="6 180 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 3.3" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="7.80 1.03 3.6" rotation="-90 0 -70"
