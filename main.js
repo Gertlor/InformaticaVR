@@ -55,13 +55,44 @@ let prChooseCloseBracket = document.getElementById("js--prChoose-closeBracket");
 let prInstructions = document.getElementById("js--prInstructions");
 let prNextInstruction = document.getElementById("js--prNextInstruction");
 
+let sittingChairRightRoom = document.getElementById("js--sittingChairRightRoom");
+
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
 let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
+startTeacherLesson = () => {
+  let lessonTextArray = [
+    ""
+  ]
 
+};
+
+startAskingExerciseDialog = () => {
+  teleportationPad.onmouseenter=()=>{};
+  teleportationPad.setAttribute("visible", "false");
+  dialogBox.setAttribute("position", "7 2.7 -6");
+  dialogBox.setAttribute("rotation", "0 0 0");
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("position", "6.95 2.7 -5.98");
+  dialogText.setAttribute("text", "value: He, leuk dat je bent gekomen, je kan op de stoel aan je rechterkant zitten.");
+  dialogText.setAttribute("rotation", "0 0 0");
+  dialogText.setAttribute("visible", "true");
+
+  sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
+  sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
+
+  sittingChairRightRoom.onmouseenter = () => {
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "8 "+(cameraHeight-0.4)+" -2.3");
+      startTeacherLesson();
+      sittingChairRightRoom.setAttribute("rotation", "0 180 0");
+      sittingChairRightRoom.setAttribute("position", "8 0.3 -2.1");
+    }), 500);
+  };
+};
 
 teleportToRightRoom3 = () => {
   teleportationPad.setAttribute("position", "6.5 0.01 -3");
@@ -69,6 +100,7 @@ teleportToRightRoom3 = () => {
     teleportAudio.play();
     setTimeout((teleport = () => {
       cameraRig.setAttribute("position", "6.5 "+cameraHeight+" -3");
+      startAskingExerciseDialog();
     }), timeoutTimeforTeleportation);
   };
 };
@@ -286,7 +318,7 @@ showProgrammingExercise = () => {
   prResultCloseClass.setAttribute("visible", "true");
 
   prInstructions.setAttribute("visible", "true");
-  prInstructions.setAttribute("text", "value: Intructies: \n We hebben al wat werk voor je gedaan en een classe Main gemaakt met een main methode die je methode printHelloWorld() roept.");
+  prInstructions.setAttribute("text", "value: Intructies: \n We hebben al wat werk voor je gedaan en een klasse Main gemaakt met een main methode die je methode printHelloWorld() roept.");
   prNextInstruction.setAttribute("visible", "true");
 
   prNextInstruction.onmouseenter = () => {
@@ -456,7 +488,7 @@ startUmlDialog = () => {
   teleportationPad.setAttribute("visible", "false");
 
   let umlTextArray = [
-    "We gaan een klassendiagram tekenen van de classe Main.java met een methode printHelloWorld().",
+    "We gaan een klassendiagram tekenen van de klasse Main.java met een methode printHelloWorld().",
     "Om deze opdracht te realiseren moet je de componenten pakken die je nodig hebt en deze op de goede plek zetten op het bord."
   ];
   textIndex = 1;
