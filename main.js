@@ -2,8 +2,9 @@ let cameraRig = document.getElementById("js--rig");
 let camera = document.getElementById("js--camera");
 let scene = document.getElementById("js--scene");
 
-let teleportationPad = document.getElementById("js--teleportationPad");
 let teleportAudio = new Audio("sound/teleportation.wav");
+
+let teleportationPad = document.getElementById("js--teleportationPad");
 
 let initialPanel = document.getElementById("js--initialPanel");
 let initialPanelUp = document.getElementById("js--initialPanelUp");
@@ -55,14 +56,296 @@ let prChooseCloseBracket = document.getElementById("js--prChoose-closeBracket");
 let prInstructions = document.getElementById("js--prInstructions");
 let prNextInstruction = document.getElementById("js--prNextInstruction");
 
+let sittingChairRightRoom = document.getElementById("js--sittingChairRightRoom");
+let exclamationMark = document.getElementById("js--exclamation");
+let askStudent1 = document.getElementById("js--askedStudent1");
+let askStudent2 = document.getElementById("js--askedStudent2");
+let askStudent3 = document.getElementById("js--askedStudent3");
+let jaButton = document.getElementById("js--jaButton");
+let neeButton = document.getElementById("js--neeButton");
+
+//askedStudent3 - position="5 1.8 0"
+
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
 let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
-addTeleportationToRightRoom = () => {
+endAskingExercise = () => {
+  dialogBox.setAttribute("visible", "false");
+  dialogText.setAttribute("visible", "false");
+  jaButton.onmouseenter=()=>{};
+  neeButton.onmouseenter=()=>{};
 
+
+};
+
+askThirdQuestion = () => {
+  askStudent3.onmouseenter=()=>{};
+  cameraRig.setAttribute("position", "6 "+cameraHeight+" -1");
+
+  exclamationMark.setAttribute("visible", "false");
+  dialogBox.setAttribute("position", "5.579 1.81 0.04");
+  dialogBox.setAttribute("rotation", "0 150 0");
+  dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+  dialogText.setAttribute("position", "5.596 1.8 0");
+  dialogText.setAttribute("rotation", "0 150 0");
+  dialogText.setAttribute("scale", "0.5 0.5 0.5");
+  dialogText.setAttribute("text", "value: Wie is nou de vader van wie?");
+
+  jaButton.setAttribute("position", "5.618 1.735 -0.046");
+  jaButton.setAttribute("rotation", "0 150 0");
+  jaButton.setAttribute("visible", "true");
+  neeButton.setAttribute("position", "5.590 1.675 -0.017");
+  neeButton.setAttribute("rotation", "0 150 0");
+  neeButton.setAttribute("visible", "true");
+
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("visible", "true");
+  jaButton.setAttribute("geometry", "width: 0.6; height: 0.05");
+  neeButton.setAttribute("geometry", "width: 0.6; height: 0.05");
+
+  jaButton.setAttribute("text", "value: Anakin is de vader van Luke; width: 1;");
+  neeButton.setAttribute("text", "value: Luke is de vader van Anakin; width: 1;");
+
+  jaButton.onmouseenter = () => {
+    dialogText.setAttribute("text", "value: The force is strong with this one.");
+    dialogText.setAttribute("geometry", "width: 0.6; height: 0.05");
+    neeButton.setAttribute("visible", "false");
+    jaButton.setAttribute("visible", "false");
+
+    setTimeout(endAskingExercise, 3000);
+
+  };
+  neeButton.onmouseenter = () => {
+    dialogText.setAttribute("text", "value:  Be mindful of your thoughts. They’ll betray you.");
+    jaButton.setAttribute("visible", "false");
+    neeButton.setAttribute("visible", "false");
+    setTimeout(endAskingExercise, 3000);
+
+  };
+};
+
+showThirdExclamationMark = () => {
+  dialogBox.setAttribute("visible", "false");
+  dialogText.setAttribute("visible", "false");
+  jaButton.onmouseenter=()=>{};
+  neeButton.onmouseenter=()=>{};
+
+  exclamationMark.setAttribute("visible", "true");
+  exclamationMark.setAttribute("position", "5 1.8 0");
+  askStudent3.onmouseenter = () => {
+    askThirdQuestion()
+  }
+};
+
+askSecondQuestion = () => {
+  askStudent2.onmouseenter=()=>{};
+  cameraRig.setAttribute("position", "6 "+cameraHeight+" 2.3");
+
+  exclamationMark.setAttribute("visible", "false");
+  dialogBox.setAttribute("position", "4.519 1.81 4.08");
+  dialogBox.setAttribute("rotation", "0 140 0");
+  dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+  dialogText.setAttribute("position", "4.519 1.8 4.069");
+  dialogText.setAttribute("rotation", "0 140 0");
+  dialogText.setAttribute("scale", "0.5 0.5 0.5");
+  dialogText.setAttribute("text", "value: Als a=1 en b=2, is a+b(b*4) = 16; width: 2.4 ");
+
+  jaButton.setAttribute("position", "4.450 1.666 3.969");
+  jaButton.setAttribute("rotation", "0 140 0");
+  jaButton.setAttribute("visible", "true");
+  neeButton.setAttribute("position", "4.562 1.665 4.099");
+  neeButton.setAttribute("rotation", "0 140 0");
+  neeButton.setAttribute("visible", "true");
+
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("visible", "true");
+
+  jaButton.onmouseenter = () => {
+    dialogText.setAttribute("text", "value: Hmm, ik kom op 17 uit... raar.");
+    jaButton.setAttribute("visible", "false");
+    neeButton.setAttribute("visible", "false");
+    setTimeout(showThirdExclamationMark, 3000);
+
+  };
+  neeButton.onmouseenter = () => {
+    dialogText.setAttribute("text", "value: Oh ja, het is 17! Bedankt!");
+    jaButton.setAttribute("visible", "false");
+    neeButton.setAttribute("visible", "false");
+    setTimeout(showThirdExclamationMark, 3000);
+  };
+};
+
+showSecondExclamationMark = () => {
+  dialogBox.setAttribute("visible", "false");
+  dialogText.setAttribute("visible", "false");
+  jaButton.onmouseenter=()=>{};
+  neeButton.onmouseenter=()=>{};
+
+  exclamationMark.setAttribute("visible", "true");
+  exclamationMark.setAttribute("position", "4 1.8 4");
+  askStudent2.onmouseenter = () => {
+    askSecondQuestion();
+  }
+};
+
+askFirstQuestion = () => {
+  askStudent1.onmouseenter=()=>{};
+  cameraRig.setAttribute("position", "6.8 "+cameraHeight+" 0.5");
+
+  exclamationMark.setAttribute("visible", "false");
+  dialogBox.setAttribute("position", "8.4 1.8 1.5");
+  dialogBox.setAttribute("rotation", "0 220 0");
+  dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+  dialogText.setAttribute("position", "8.385 1.8 1.5");
+  dialogText.setAttribute("rotation", "0 220 0");
+  dialogText.setAttribute("scale", "0.5 0.5 0.5");
+  dialogText.setAttribute("text", "value: In java, moet ik na elk statement een puntkomma toevoegen?");
+
+  jaButton.setAttribute("position", "8.3 1.641 1.560");
+  jaButton.setAttribute("rotation", "0 210 0");
+  jaButton.setAttribute("visible", "true");
+  neeButton.setAttribute("position", "8.456 1.649 1.40");
+  neeButton.setAttribute("rotation", "0 210 0");
+  neeButton.setAttribute("visible", "true");
+
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("visible", "true");
+
+  jaButton.onmouseenter = () => {
+    dialogText.setAttribute("text", "value: Ja, dat dacht ik ook, bedankt!");
+    jaButton.setAttribute("visible", "false");
+    neeButton.setAttribute("visible", "false");
+    setTimeout(showSecondExclamationMark, 3000);
+
+  };
+  neeButton.onmouseenter = () => {
+    dialogText.setAttribute("text", "value: Hmmm, volgens Gerrit is het wel zo...");
+    jaButton.setAttribute("visible", "false");
+    neeButton.setAttribute("visible", "false");
+    setTimeout(showSecondExclamationMark, 3000);
+
+  };
+
+};
+
+showExclamationMark = () => {
+  teleportationPad.onmouseenter=()=>{};
+  teleportationPad.setAttribute("visible","false");
+  teacher.setAttribute("position", "8.3 0 -6");
+  teacher.setAttribute("rotation", "0 220 0");
+  dialogBox.setAttribute("visible", "false");
+  dialogText.setAttribute("visible", "false");
+
+  exclamationMark.setAttribute("visible", "true");
+  askStudent1.onmouseenter = () => {
+    askFirstQuestion();
+  }
+};
+
+teleportToCenterOfRightRoom = () => {
+
+  teleportationPad.setAttribute("position", "6.5 0.01 0");
+  teleportationPad.setAttribute("visible", "true");
+  teleportationPad.onmouseenter = () => {
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" 0");
+      showExclamationMark();
+    }), timeoutTimeforTeleportation);
+  }
+};
+
+startAskingExercise = () => {
+  nextDialog.onmouseenter=()=>{};
+  nextDialog.setAttribute("visible", "false");
+  teacher.setAttribute("position", "8.3 0 -5");
+  teacher.setAttribute("rotation", "0 240 0");
+  dialogBox.setAttribute("position", "7 2.7 -5");
+  dialogBox.setAttribute("rotation", "0 0 0");
+  dialogText.setAttribute("position", "7 2.7 -4.98");
+  dialogText.setAttribute("rotation", "0 0 0");
+  dialogText.setAttribute("text", "value: Ik zie dat jij geen laptop hebt. Als je wilt kan je opstaan en je medestudenten helpen met de opdrachten.");
+
+  teleportToCenterOfRightRoom()
+};
+
+startTeacherLesson = () => {
+  sittingChairRightRoom.onmouseenter=()=>{};
+  sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
+  sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
+  dialogText.setAttribute("text", "value: Nu gaan we beginnen met de opdrachten van vorige week, als jullie vragen hebben kunnen ze jullie gerust stellen.");
+  nextDialog.setAttribute("position", "7.3 2.35 -5.97");
+  nextDialog.setAttribute("rotation", "0 0 0");
+  nextDialog.setAttribute("visible", "true");
+
+  nextDialog.onmouseenter = () => {
+    setTimeout(startAskingExercise, 500);
+  }
+
+};
+
+startAskingExerciseDialog = () => {
+  teleportationPad.onmouseenter=()=>{};
+  teleportationPad.setAttribute("visible", "false");
+  dialogBox.setAttribute("position", "7 2.7 -6");
+  dialogBox.setAttribute("rotation", "0 0 0");
+  dialogBox.setAttribute("visible", "true");
+  dialogText.setAttribute("position", "7 2.7 -5.98");
+  dialogText.setAttribute("text", "value: He, leuk dat je bent gekomen, je kan op de stoel aan je rechterkant zitten.");
+  dialogText.setAttribute("rotation", "0 0 0");
+  dialogText.setAttribute("visible", "true");
+
+  sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
+  sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
+
+  sittingChairRightRoom.onmouseenter = () => {
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "8 "+(cameraHeight-0.4)+" -2.3");
+      startTeacherLesson();
+      sittingChairRightRoom.setAttribute("rotation", "0 180 0");
+      sittingChairRightRoom.setAttribute("position", "8 0.3 -2.1");
+    }), 500);
+  };
+};
+
+teleportToRightRoom3 = () => {
+  teleportationPad.setAttribute("position", "6.5 0.01 -3");
+  teleportationPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" -3");
+      startAskingExerciseDialog();
+    }), timeoutTimeforTeleportation);
+  };
+};
+
+teleportToRightRoom2 = () => {
+  teacher.setAttribute("position", "8.3 0 -6");
+  teacher.setAttribute("rotation", "0 220 0");
+  dialogText.setAttribute("visible", "false");
+  dialogBox.setAttribute("visible", "false");
+  teleportationPad.setAttribute("position", "6.5 0.01 6");
+  teleportationPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" 6");
+      teleportToRightRoom3();
+    }), timeoutTimeforTeleportation);
+  };
+};
+
+teleportToRightRoom1 = () => {
+    teleportationPad.setAttribute("position", "0 0.01 6");
+    teleportationPad.setAttribute("visible", "true");
+    teleportationPad.onmouseenter = () => {
+      teleportAudio.play();
+      setTimeout((teleport = () => {
+        cameraRig.setAttribute("position", "0 "+cameraHeight+" 6");
+        teleportToRightRoom2();
+      }), timeoutTimeforTeleportation);
+    };
 };
 
 finishProgrammingDialogWithTeacher = () => {
@@ -86,7 +369,7 @@ finishProgrammingDialogWithTeacher = () => {
       textIndex++;
       if(textIndex === finishProgrammingDialogArray.length){
         nextDialog.setAttribute("visible", "false");
-        addTeleportationToRightRoom();
+        teleportToRightRoom1();
       }
     }
   }
@@ -251,7 +534,7 @@ showProgrammingExercise = () => {
   prResultCloseClass.setAttribute("visible", "true");
 
   prInstructions.setAttribute("visible", "true");
-  prInstructions.setAttribute("text", "value: Intructies: \n We hebben al wat werk voor je gedaan en een classe Main gemaakt met een main methode die je methode printHelloWorld() roept.");
+  prInstructions.setAttribute("text", "value: Intructies: \n We hebben al wat werk voor je gedaan en een klasse Main gemaakt met een main methode die je methode printHelloWorld() roept.");
   prNextInstruction.setAttribute("visible", "true");
 
   prNextInstruction.onmouseenter = () => {
@@ -417,8 +700,11 @@ startUmlDrawing = () => {
 };
 
 startUmlDialog = () => {
+  teleportationPad.onmouseenter=()=>{};
+  teleportationPad.setAttribute("visible", "false");
+
   let umlTextArray = [
-    "We gaan een klassendiagram tekenen van de classe Main.java met een methode printHelloWorld().",
+    "We gaan een klassendiagram tekenen van de klasse Main.java met een methode printHelloWorld().",
     "Om deze opdracht te realiseren moet je de componenten pakken die je nodig hebt en deze op de goede plek zetten op het bord."
   ];
   textIndex = 1;
