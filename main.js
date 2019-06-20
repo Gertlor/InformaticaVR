@@ -61,8 +61,43 @@ let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
-addTeleportationToRightRoom = () => {
 
+
+teleportToRightRoom3 = () => {
+  teleportationPad.setAttribute("position", "6.5 0.01 -3");
+  teleportationPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" -3");
+    }), timeoutTimeforTeleportation);
+  };
+};
+
+teleportToRightRoom2 = () => {
+  teacher.setAttribute("position", "8.3 0 -6");
+  teacher.setAttribute("rotation", "0 220 0");
+  dialogText.setAttribute("visible", "false");
+  dialogBox.setAttribute("visible", "false");
+  teleportationPad.setAttribute("position", "6.5 0.01 6");
+  teleportationPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" 6");
+      teleportToRightRoom3();
+    }), timeoutTimeforTeleportation);
+  };
+};
+
+teleportToRightRoom1 = () => {
+    teleportationPad.setAttribute("position", "0 0.01 6");
+    teleportationPad.setAttribute("visible", "true");
+    teleportationPad.onmouseenter = () => {
+      teleportAudio.play();
+      setTimeout((teleport = () => {
+        cameraRig.setAttribute("position", "0 "+cameraHeight+" 6");
+        teleportToRightRoom2();
+      }), timeoutTimeforTeleportation);
+    };
 };
 
 finishProgrammingDialogWithTeacher = () => {
@@ -86,7 +121,7 @@ finishProgrammingDialogWithTeacher = () => {
       textIndex++;
       if(textIndex === finishProgrammingDialogArray.length){
         nextDialog.setAttribute("visible", "false");
-        addTeleportationToRightRoom();
+        teleportToRightRoom1();
       }
     }
   }
@@ -417,6 +452,9 @@ startUmlDrawing = () => {
 };
 
 startUmlDialog = () => {
+  teleportationPad.onmouseenter=()=>{};
+  teleportationPad.setAttribute("visible", "false");
+
   let umlTextArray = [
     "We gaan een klassendiagram tekenen van de classe Main.java met een methode printHelloWorld().",
     "Om deze opdracht te realiseren moet je de componenten pakken die je nodig hebt en deze op de goede plek zetten op het bord."
