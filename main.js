@@ -64,7 +64,6 @@ let askStudent3 = document.getElementById("js--askedStudent3");
 let jaButton = document.getElementById("js--jaButton");
 let neeButton = document.getElementById("js--neeButton");
 
-//askedStudent3 - position="5 1.8 0"
 
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
@@ -72,13 +71,74 @@ let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
+addTeleportPadsToEverywhere = () => {
+
+};
+
+startFinalPhase = () => {
+nextDialog.onmouseenter=()=>{};
+
+addTeleportPadsToEverywhere()
+
+};
+
+startFinalDialog = () => {
+  teleportationPad.onmouseenter=()=>{};
+  teleportationPad.setAttribute("visible", "false");
+
+  let finalDialogArray = [
+    "Dat was alles voor vandaag! Ik hoop dat je het leuk hebt gehad.",
+    "Je kan nu vrij rondlopen, misschien hebben andere studenten nog wat te zeggen,",
+    "of als je wilt, mag je naar huis gaan.",
+    "Als je meer vragen hebt over de opleiding kan je bij ons website terecht.",
+    "Bedankt voor je komst en tot ziens!"
+  ];
+
+  dialogBox.setAttribute("position", "7 2.7 -6");
+  dialogBox.setAttribute("rotation", "0 0 0");
+  dialogBox.setAttribute("visible", "true");
+  dialogBox.setAttribute("scale", "0.5 0.5 0.5");
+  dialogText.setAttribute("scale", "1 1 1");
+  dialogText.setAttribute("position", "7 2.7 -5.98");
+  dialogText.setAttribute("text", "value: " + finalDialogArray[0] + "; width: 1.7");
+  dialogText.setAttribute("rotation", "0 0 0");
+  dialogText.setAttribute("visible", "true");
+  nextDialog.setAttribute("position", "7.373 2.433 -5.822");
+  nextDialog.setAttribute("rotation", "0 0 0");
+  nextDialog.setAttribute("visible", "true");
+
+  textIndex = 1;
+  nextDialog.onmouseenter = () => {
+    if(textIndex >= 0 && textIndex < finalDialogArray.length){
+      dialogText.setAttribute("text", "value: " + finalDialogArray[textIndex]);
+      textIndex++;
+      if(textIndex === finalDialogArray.length){
+        nextDialog.setAttribute("visible", "false");
+        startFinalPhase();
+      }
+    }
+  }
+
+};
+
+teleportToTeacherForFinalDialog = () => {
+  teleportationPad.setAttribute("position", "6.5 0.01 -3");
+  teleportationPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout((teleport = () => {
+      cameraRig.setAttribute("position", "6.5 " + cameraHeight + " -3");
+      startFinalDialog()
+    }), timeoutTimeforTeleportation);
+  };
+};
+
 endAskingExercise = () => {
   dialogBox.setAttribute("visible", "false");
   dialogText.setAttribute("visible", "false");
   jaButton.onmouseenter=()=>{};
   neeButton.onmouseenter=()=>{};
 
-
+  setTimeout(teleportToTeacherForFinalDialog, 1500);
 };
 
 askThirdQuestion = () => {
@@ -92,7 +152,7 @@ askThirdQuestion = () => {
   dialogText.setAttribute("position", "5.596 1.8 0");
   dialogText.setAttribute("rotation", "0 150 0");
   dialogText.setAttribute("scale", "0.5 0.5 0.5");
-  dialogText.setAttribute("text", "value: Wie is nou de vader van wie?");
+  dialogText.setAttribute("text", "value: Welke furry soort leeft op de forest moon van Endor?");
 
   jaButton.setAttribute("position", "5.618 1.735 -0.046");
   jaButton.setAttribute("rotation", "0 150 0");
@@ -106,8 +166,8 @@ askThirdQuestion = () => {
   jaButton.setAttribute("geometry", "width: 0.6; height: 0.05");
   neeButton.setAttribute("geometry", "width: 0.6; height: 0.05");
 
-  jaButton.setAttribute("text", "value: Anakin is de vader van Luke; width: 1;");
-  neeButton.setAttribute("text", "value: Luke is de vader van Anakin; width: 1;");
+  jaButton.setAttribute("text", "value: Ewoks; width: 1;");
+  neeButton.setAttribute("text", "value: Wookies; width: 1;");
 
   jaButton.onmouseenter = () => {
     dialogText.setAttribute("text", "value: The force is strong with this one.");
@@ -119,7 +179,7 @@ askThirdQuestion = () => {
 
   };
   neeButton.onmouseenter = () => {
-    dialogText.setAttribute("text", "value:  Be mindful of your thoughts. They’ll betray you.");
+    dialogText.setAttribute("text", "value:  Be mindful of your thoughts. \nThey will betray you.");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
     setTimeout(endAskingExercise, 3000);
