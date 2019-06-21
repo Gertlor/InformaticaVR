@@ -2,9 +2,18 @@ let cameraRig = document.getElementById("js--rig");
 let camera = document.getElementById("js--camera");
 let scene = document.getElementById("js--scene");
 
-let teleportAudio = new Audio("sound/teleportation.wav");
-
 let teleportationPad = document.getElementById("js--teleportationPad");
+let initialPad = document.getElementById("js--initialPad");
+let middleRoomPad = document.getElementById("js--middleRoomPad");
+let middleRoomPad2 = document.getElementById("js--middleRoomPad2");
+let leftRoomPad = document.getElementById("js--leftRoomPad");
+let leftRoomPad2 = document.getElementById("js--leftRoomPad2");
+let leftRoomPad3 = document.getElementById("js--leftRoomPad3");
+let rightRoomPad = document.getElementById("js--rightRoomPad");
+let rightRoomPad2 = document.getElementById("js--rightRoomPad2");
+let rightRoomPad3 = document.getElementById("js--rightRoomPad3");
+
+let teleportAudio = new Audio("sound/teleportation.wav");
 
 let initialPanel = document.getElementById("js--initialPanel");
 let initialPanelUp = document.getElementById("js--initialPanelUp");
@@ -61,9 +70,12 @@ let exclamationMark = document.getElementById("js--exclamation");
 let askStudent1 = document.getElementById("js--askedStudent1");
 let askStudent2 = document.getElementById("js--askedStudent2");
 let askStudent3 = document.getElementById("js--askedStudent3");
+let askStudent4 = document.getElementById("js--askedStudent4");
+let askStudent5 = document.getElementById("js--askedStudent5");
+let askStudent6 = document.getElementById("js--askedStudent6");
+let askStudent7 = document.getElementById("js--askedStudent7");
 let jaButton = document.getElementById("js--jaButton");
 let neeButton = document.getElementById("js--neeButton");
-
 
 let timeoutTimeforTeleportation = 1500;
 let textIndex;
@@ -71,14 +83,219 @@ let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
+
+//Voor beter leesbaarheid van de code, lees van beneden naar boven.
+
+addConversationStudent3 = () => {
+  askStudent3.onmouseenter = () => {
+    dialogBox.setAttribute("position", "5.579 1.81 0.04");
+    dialogBox.setAttribute("rotation", "0 150 0");
+    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "5.596 1.8 0");
+    dialogText.setAttribute("rotation", "0 150 0");
+    dialogText.setAttribute("scale", "0.5 0.5 0.5");
+    dialogText.setAttribute("text", "value: Star Wars films zijn mijn lievelings films.");
+
+    dialogBox.setAttribute("visible", "true");
+    dialogText.setAttribute("visible", "true");
+  };
+
+  askStudent3.onmouseleave = () => {
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+  };
+};
+
+addConversationStudent1 = () => {
+  askStudent1.onmouseenter = () => {
+    dialogBox.setAttribute("position", "8.4 1.8 1.5");
+    dialogBox.setAttribute("rotation", "0 220 0");
+    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "8.385 1.8 1.5");
+    dialogText.setAttribute("rotation", "0 220 0");
+    dialogText.setAttribute("scale", "0.5 0.5 0.5");
+    dialogText.setAttribute("text", "value: De opleiding bestaat uit 4 specialisaties,\n SE, BDAM, IAT en FICT");
+
+    dialogBox.setAttribute("visible", "true");
+    dialogText.setAttribute("visible", "true");
+  };
+
+  askStudent1.onmouseleave = () => {
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+  };
+};
+
+addConversationStudent4 = () => {
+  askStudent4.onmouseenter = () => {
+    dialogBox.setAttribute("position", "-5.627 1.770 0.55");
+    dialogBox.setAttribute("rotation", "0 -20 0");
+    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "-5.621 1.770 0.565");
+    dialogText.setAttribute("rotation", "0 -20 0");
+    dialogText.setAttribute("scale", "0.5 0.5 0.5");
+    dialogText.setAttribute("text", "value: Ik ben een Software Engineering student\n Wij werken veel met software en we ontwerpen en implementeren systemen.");
+
+    dialogBox.setAttribute("visible", "true");
+    dialogText.setAttribute("visible", "true");
+  };
+
+  askStudent4.onmouseleave = () => {
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+  };
+};
+
+addConversationStudent5 = () => {
+  askStudent5.onmouseenter = () => {
+    dialogBox.setAttribute("position", "-8.512 1.770 0.813");
+    dialogBox.setAttribute("rotation", "0 40 0");
+    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "-8.502 1.770 0.836");
+    dialogText.setAttribute("rotation", "0 40 0");
+    dialogText.setAttribute("scale", "0.5 0.5 0.5");
+    dialogText.setAttribute("text", "value: Ik ben een IAT student. \n Wij werken met nieuwe technologieën en innovaties. \n De interactie tussen gebruikers en systemen is heel belangrijk");
+
+    dialogBox.setAttribute("visible", "true");
+    dialogText.setAttribute("visible", "true");
+  };
+
+  askStudent5.onmouseleave = () => {
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+  };
+};
+
+addConversationStudent6 = () => {
+  askStudent6.onmouseenter = () => {
+    dialogBox.setAttribute("position", "-8.534 1.77 -3.255");
+    dialogBox.setAttribute("rotation", "0 40 0");
+    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "-8.540 1.77 -3.224");
+    dialogText.setAttribute("rotation", "0 40 0");
+    dialogText.setAttribute("scale", "0.5 0.5 0.5");
+    dialogText.setAttribute("text", "value: Ik ben een BDAM student.\n Data speelt steeds belangrijke rol in de maatschappij,\n wij werken veel met het behandelen en visualiseren van de data.");
+
+    dialogBox.setAttribute("visible", "true");
+    dialogText.setAttribute("visible", "true");
+  };
+
+  askStudent6.onmouseleave = () => {
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+  };
+};
+
+addConversationStudent7 = () => {
+  askStudent7.onmouseenter = () => {
+    dialogBox.setAttribute("position", "-5.627 1.77 -3.634");
+    dialogBox.setAttribute("rotation", "0 -20 0");
+    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "-5.621 1.77 -3.618");
+    dialogText.setAttribute("rotation", "0 -20 0");
+    dialogText.setAttribute("scale", "0.5 0.5 0.5");
+    dialogText.setAttribute("text", "value: Ik ben een FICT student. \n Wij doen veel onderzoek en verslaglegging. \n Ons doel is de veiligheid binnen de IT");
+
+    dialogBox.setAttribute("visible", "true");
+    dialogText.setAttribute("visible", "true");
+  };
+
+  askStudent7.onmouseleave = () => {
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+  };
+};
+
+addStudentsConversations = () => {
+  addConversationStudent1();
+  addConversationStudent7();
+  addConversationStudent3();
+  addConversationStudent4();
+  addConversationStudent5();
+  addConversationStudent6();
+};
+
 addTeleportPadsToEverywhere = () => {
 
+  initialPad.setAttribute("visible", "true");
+  middleRoomPad.setAttribute("visible", "true");
+  middleRoomPad2.setAttribute("visible", "true");
+  leftRoomPad.setAttribute("visible", "true");
+  leftRoomPad2.setAttribute("visible", "true");
+  leftRoomPad3.setAttribute("visible", "true");
+  rightRoomPad.setAttribute("visible", "true");
+  rightRoomPad2.setAttribute("visible", "true");
+  rightRoomPad3.setAttribute("visible", "true");
+
+  initialPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "0  " + cameraHeight + "  7");
+    }, timeoutTimeforTeleportation)
+  };
+
+  middleRoomPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "0  " + cameraHeight + "  2");
+    }, timeoutTimeforTeleportation)
+  };
+
+  middleRoomPad2.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "0  " + cameraHeight + "  -4");
+    }, timeoutTimeforTeleportation)
+  };
+
+  leftRoomPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  6");
+    }, timeoutTimeforTeleportation)
+  };
+
+  leftRoomPad2.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  1.5");
+    }, timeoutTimeforTeleportation)
+  };
+
+  leftRoomPad3.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  -2.5");
+    }, timeoutTimeforTeleportation)
+  };
+
+  rightRoomPad.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  6");
+    }, timeoutTimeforTeleportation)
+  };
+
+  rightRoomPad2.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  1.5");
+    }, timeoutTimeforTeleportation)
+  };
+
+  rightRoomPad3.onmouseenter = () => {
+    teleportAudio.play();
+    setTimeout(teleport = () => {
+      cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  -1");
+    }, timeoutTimeforTeleportation)
+  };
 };
 
 startFinalPhase = () => {
 nextDialog.onmouseenter=()=>{};
 
-addTeleportPadsToEverywhere()
+addTeleportPadsToEverywhere();
+addStudentsConversations();
 
 };
 
@@ -122,6 +339,7 @@ startFinalDialog = () => {
 };
 
 teleportToTeacherForFinalDialog = () => {
+  teleportationPad.setAttribute("visible", "true");
   teleportationPad.setAttribute("position", "6.5 0.01 -3");
   teleportationPad.onmouseenter = () => {
     teleportAudio.play();
@@ -152,7 +370,7 @@ askThirdQuestion = () => {
   dialogText.setAttribute("position", "5.596 1.8 0");
   dialogText.setAttribute("rotation", "0 150 0");
   dialogText.setAttribute("scale", "0.5 0.5 0.5");
-  dialogText.setAttribute("text", "value: Welke furry soort leeft op de forest moon van Endor?");
+  dialogText.setAttribute("text", "value: Welke furry soort leeft op de \nforest moon van Endor?");
 
   jaButton.setAttribute("position", "5.618 1.735 -0.046");
   jaButton.setAttribute("rotation", "0 150 0");
