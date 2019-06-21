@@ -77,16 +77,23 @@ let askStudent7 = document.getElementById("js--askedStudent7");
 let jaButton = document.getElementById("js--jaButton");
 let neeButton = document.getElementById("js--neeButton");
 
-let timeoutTimeforTeleportation = 1500;
+let askedStudent1Pad = document.getElementById("js--askedStudent1Pad");
+let askedStudent3Pad = document.getElementById("js--askedStudent3Pad");
+let askedStudent4Pad = document.getElementById("js--askedStudent4Pad");
+let askedStudent5Pad = document.getElementById("js--askedStudent5Pad");
+let askedStudent6Pad = document.getElementById("js--askedStudent6Pad");
+let askedStudent7Pad = document.getElementById("js--askedStudent7Pad");
+
+let timeoutTimeforTeleportation = 0;
 let textIndex;
 let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
-
 //Voor beter leesbaarheid van de code, van beneden naar boven lezen.
 
 addConversationStudent3 = () => {
+  askedStudent3Pad.setAttribute("visible", "true");
   askStudent3.onmouseenter = () => {
     dialogBox.setAttribute("position", "5.579 1.81 0.04");
     dialogBox.setAttribute("rotation", "0 150 0");
@@ -107,6 +114,7 @@ addConversationStudent3 = () => {
 };
 
 addConversationStudent1 = () => {
+  askedStudent1Pad.setAttribute("visible", "true");
   askStudent1.onmouseenter = () => {
     dialogBox.setAttribute("position", "8.4 1.8 1.5");
     dialogBox.setAttribute("rotation", "0 220 0");
@@ -127,6 +135,7 @@ addConversationStudent1 = () => {
 };
 
 addConversationStudent4 = () => {
+  askedStudent4Pad.setAttribute("visible", "true");
   askStudent4.onmouseenter = () => {
     dialogBox.setAttribute("position", "-5.627 1.770 0.55");
     dialogBox.setAttribute("rotation", "0 -20 0");
@@ -147,6 +156,7 @@ addConversationStudent4 = () => {
 };
 
 addConversationStudent5 = () => {
+  askedStudent5Pad.setAttribute("visible", "true");
   askStudent5.onmouseenter = () => {
     dialogBox.setAttribute("position", "-8.512 1.770 0.813");
     dialogBox.setAttribute("rotation", "0 40 0");
@@ -167,6 +177,7 @@ addConversationStudent5 = () => {
 };
 
 addConversationStudent6 = () => {
+  askedStudent6Pad.setAttribute("visible", "true");
   askStudent6.onmouseenter = () => {
     dialogBox.setAttribute("position", "-8.534 1.77 -3.255");
     dialogBox.setAttribute("rotation", "0 40 0");
@@ -187,6 +198,7 @@ addConversationStudent6 = () => {
 };
 
 addConversationStudent7 = () => {
+  askedStudent7Pad.setAttribute("visible", "true");
   askStudent7.onmouseenter = () => {
     dialogBox.setAttribute("position", "-5.627 1.77 -3.634");
     dialogBox.setAttribute("rotation", "0 -20 0");
@@ -217,85 +229,134 @@ addStudentsConversations = () => {
 
 addTeleportPadsToEverywhere = () => {
 
-  initialPad.setAttribute("visible", "true");
-  middleRoomPad.setAttribute("visible", "true");
-  middleRoomPad2.setAttribute("visible", "true");
-  leftRoomPad.setAttribute("visible", "true");
-  leftRoomPad2.setAttribute("visible", "true");
-  leftRoomPad3.setAttribute("visible", "true");
-  rightRoomPad.setAttribute("visible", "true");
-  rightRoomPad2.setAttribute("visible", "true");
-  rightRoomPad3.setAttribute("visible", "true");
-
   initialPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "0  " + cameraHeight + "  7");
+    addTeleportPadsToEverywhere();
+    initialPad.setAttribute("visible", "false");
+    leftRoomPad.setAttribute("visible", "true");
+    rightRoomPad.setAttribute("visible", "true");
+    middleRoomPad.setAttribute("visible", "true");
+    middleRoomPad2.setAttribute("visible", "false");
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "0  " + cameraHeight + "  7");
+      cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" 7; dur: 3000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   middleRoomPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "0  " + cameraHeight + "  2");
+    addTeleportPadsToEverywhere();
+    initialPad.setAttribute("visible", "true");
+    middleRoomPad2.setAttribute("visible", "true");
+    middleRoomPad.setAttribute("visible", "false");
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "0  " + cameraHeight + "  2");
+      cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" 2; dur: 3000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   middleRoomPad2.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "0  " + cameraHeight + "  -4");
+    addTeleportPadsToEverywhere();
+    middleRoomPad.setAttribute("visible", "true");
+    middleRoomPad2.setAttribute("visible", "false");
+    initialPad.setAttribute("visible", "false");
+    initialPad.onmouseenter=()=>{};
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "0  " + cameraHeight + "  -4");
+      cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -4; dur: 3000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   leftRoomPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  6");
+    addTeleportPadsToEverywhere();
+    initialPad.setAttribute("visible", "true");
+    leftRoomPad2.setAttribute("visible", "true");
+    leftRoomPad.setAttribute("visible", "false");
+    rightRoomPad.setAttribute("visible", "false");
+    leftRoomPad3.setAttribute("visible", "false");
+    leftRoomPad3.onmouseenter=()=>{};
+    rightRoomPad.onmouseenter=()=>{};
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  6");
+      cameraRig.setAttribute("animation", "property: position; to: -6.5 "+cameraHeight+" 6; dur: 3000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   leftRoomPad2.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  1.5");
+    addTeleportPadsToEverywhere();
+    leftRoomPad.setAttribute("visible", "true");
+    leftRoomPad3.setAttribute("visible", "true");
+    leftRoomPad2.setAttribute("visible", "false");
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  1.5");
+      cameraRig.setAttribute("animation", "property: position; to: -6.5 "+cameraHeight+" 1.5; dur: 3000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   leftRoomPad3.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  -2.5");
+    addTeleportPadsToEverywhere();
+    leftRoomPad2.setAttribute("visible", "true");
+    leftRoomPad3.setAttribute("visible", "false");
+    leftRoomPad.setAttribute("visible", "false");
+    leftRoomPad.onmouseenter=()=>{};
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  -2.5");
+      cameraRig.setAttribute("animation", "property: position; to: -6.5 "+cameraHeight+" -2.5; dur: 3000; easing: linear");
     }, timeoutTimeforTeleportation)
+
   };
 
   rightRoomPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  6");
+    addTeleportPadsToEverywhere();
+    initialPad.setAttribute("visible", "true");
+    rightRoomPad2.setAttribute("visible", "true");
+    rightRoomPad.setAttribute("visible", "false");
+    rightRoomPad3.setAttribute("visible", "false");
+    leftRoomPad.setAttribute("visible", "false");
+    rightRoomPad3.onmouseenter=()=>{};
+    leftRoomPad.onmouseenter=()=>{};
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  6");
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 6; dur: 4000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   rightRoomPad2.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  1.5");
+    addTeleportPadsToEverywhere();
+    rightRoomPad3.setAttribute("visible", "true");
+    rightRoomPad.setAttribute("visible", "true");
+    rightRoomPad2.setAttribute("visible", "false");
+
+    setTimeout(() => {
+      // cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  1.5");
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 1; dur: 2000; easing: linear");
     }, timeoutTimeforTeleportation)
   };
 
   rightRoomPad3.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-      cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  -1");
+    addTeleportPadsToEverywhere();
+    rightRoomPad2.setAttribute("visible", "true");
+    rightRoomPad3.setAttribute("visible", "false");
+    rightRoomPad.setAttribute("visible", "false");
+    rightRoomPad.onmouseenter=()=>{};
+
+    setTimeout(() => {
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" -1; dur: 2000; easing: linear");
+      // cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  -1");
     }, timeoutTimeforTeleportation)
   };
 };
 
 startFinalPhase = () => {
-nextDialog.onmouseenter=()=>{};
-
-addTeleportPadsToEverywhere();
-addStudentsConversations();
+  nextDialog.onmouseenter=()=>{};
+  rightRoomPad3.setAttribute("visible", "true");
+  addTeleportPadsToEverywhere();
+  addStudentsConversations();
 
 };
 
@@ -335,22 +396,21 @@ startFinalDialog = () => {
       }
     }
   }
-
 };
 
 teleportToTeacherForFinalDialog = () => {
   teleportationPad.setAttribute("visible", "true");
   teleportationPad.setAttribute("position", "6.5 0.01 -3");
   teleportationPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout((teleport = () => {
-      cameraRig.setAttribute("position", "6.5 " + cameraHeight + " -3");
-      startFinalDialog()
+    setTimeout((() => {
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" -3; dur: 2000; easing: linear");
+      setTimeout(startFinalDialog, 2000);
     }), timeoutTimeforTeleportation);
   };
 };
 
 endAskingExercise = () => {
+
   dialogBox.setAttribute("visible", "false");
   dialogText.setAttribute("visible", "false");
   jaButton.onmouseenter=()=>{};
@@ -361,7 +421,6 @@ endAskingExercise = () => {
 
 askThirdQuestion = () => {
   askStudent3.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "6 "+cameraHeight+" -1");
 
   exclamationMark.setAttribute("visible", "false");
   dialogBox.setAttribute("position", "5.579 1.81 0.04");
@@ -414,13 +473,14 @@ showThirdExclamationMark = () => {
   exclamationMark.setAttribute("visible", "true");
   exclamationMark.setAttribute("position", "5 1.8 0");
   askStudent3.onmouseenter = () => {
-    askThirdQuestion()
+    cameraRig.setAttribute("animation", "property: position; to: 6 "+cameraHeight+" -1; dur: 2000; easing: linear");
+   setTimeout(askThirdQuestion, 2300);
   }
 };
 
 askSecondQuestion = () => {
   askStudent2.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "6 "+cameraHeight+" 2.3");
+  cameraRig.setAttribute("animation", "property: position; to: 6 "+cameraHeight+" 2.3; dur: 1500; easing: linear");
 
   exclamationMark.setAttribute("visible", "false");
   dialogBox.setAttribute("position", "4.519 1.81 4.08");
@@ -471,7 +531,7 @@ showSecondExclamationMark = () => {
 
 askFirstQuestion = () => {
   askStudent1.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "6.8 "+cameraHeight+" 0.5");
+  cameraRig.setAttribute("animation", "property: position; to: 6.8 "+cameraHeight+" 0.5; dur: 1000; easing: linear");
 
   exclamationMark.setAttribute("visible", "false");
   dialogBox.setAttribute("position", "8.4 1.8 1.5");
@@ -504,9 +564,7 @@ askFirstQuestion = () => {
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
     setTimeout(showSecondExclamationMark, 3000);
-
   };
-
 };
 
 showExclamationMark = () => {
@@ -528,9 +586,9 @@ teleportToCenterOfRightRoom = () => {
   teleportationPad.setAttribute("position", "6.5 0.01 0");
   teleportationPad.setAttribute("visible", "true");
   teleportationPad.onmouseenter = () => {
-    setTimeout((teleport = () => {
-      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" 0");
-      showExclamationMark();
+    setTimeout((() => {
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 0; dur: 2000; easing: linear");
+      setTimeout(showExclamationMark, 2000);
     }), timeoutTimeforTeleportation);
   }
 };
@@ -577,13 +635,18 @@ startAskingExerciseDialog = () => {
 
   sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
   sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
+  teleportationPad.setAttribute("position", "8 0.01 -1.8");
+  teleportationPad.setAttribute("visible", "true");
 
   sittingChairRightRoom.onmouseenter = () => {
-    setTimeout((teleport = () => {
-      cameraRig.setAttribute("position", "8 "+(cameraHeight-0.4)+" -2.3");
-      startTeacherLesson();
-      sittingChairRightRoom.setAttribute("rotation", "0 180 0");
-      sittingChairRightRoom.setAttribute("position", "8 0.3 -2.1");
+    setTimeout((() => {
+      cameraRig.setAttribute("animation", "property: position; to: 8 "+(cameraHeight-0.4)+" -2.3; dur: 1000; easing: linear");
+      setTimeout(()=>{
+        startTeacherLesson();
+        sittingChairRightRoom.setAttribute("rotation", "0 180 0");
+        sittingChairRightRoom.setAttribute("position", "8 0.3 -2.1");
+        teleportationPad.setAttribute("visible", "false");
+      },1000)
     }), 500);
   };
 };
@@ -591,10 +654,9 @@ startAskingExerciseDialog = () => {
 teleportToRightRoom3 = () => {
   teleportationPad.setAttribute("position", "6.5 0.01 -3");
   teleportationPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout((teleport = () => {
-      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" -3");
-      startAskingExerciseDialog();
+    setTimeout(( () => {
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" -3; dur: 5000; easing: linear");
+      setTimeout(startAskingExerciseDialog,5000);
     }), timeoutTimeforTeleportation);
   };
 };
@@ -606,10 +668,10 @@ teleportToRightRoom2 = () => {
   dialogBox.setAttribute("visible", "false");
   teleportationPad.setAttribute("position", "6.5 0.01 6");
   teleportationPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout((teleport = () => {
-      cameraRig.setAttribute("position", "6.5 "+cameraHeight+" 6");
-      teleportToRightRoom3();
+    setTimeout((() => {
+      cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 6; dur: 4500; easing: linear");
+
+      setTimeout(teleportToRightRoom3,4500);
     }), timeoutTimeforTeleportation);
   };
 };
@@ -618,10 +680,10 @@ teleportToRightRoom1 = () => {
     teleportationPad.setAttribute("position", "0 0.01 6");
     teleportationPad.setAttribute("visible", "true");
     teleportationPad.onmouseenter = () => {
-      teleportAudio.play();
-      setTimeout((teleport = () => {
-        cameraRig.setAttribute("position", "0 "+cameraHeight+" 6");
-        teleportToRightRoom2();
+      setTimeout(( () => {
+        cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" 6; dur: 5000; easing: linear");
+
+        setTimeout(teleportToRightRoom2, 5000);
       }), timeoutTimeforTeleportation);
     };
 };
@@ -632,9 +694,7 @@ finishProgrammingDialogWithTeacher = () => {
     "Ik ga nu even les geven, als je wilt mee doen wacht ik op je in het lokaal hiernaast, aan je linkerkant."
   ];
   prNextInstruction.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "0 "+cameraHeight+" -2.5");
-  cameraRig.setAttribute("rotation", "0 0 0");
-
+  cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 2500; easing: linear");
   teacher.setAttribute("visible", "true");
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("text", "value: "+ finishProgrammingDialogArray[0]);
@@ -657,7 +717,7 @@ finishProgrammingExercise = () => {
   prInstructions.setAttribute("text", "value: Gefeliciteerd! Je hebt je eerste programma gemaakt!\n Druk op de pijl om verder te gaan.");
   prNextInstruction.setAttribute("visible", "true");
   prNextInstruction.onmouseenter = () => {
-    finishProgrammingDialogWithTeacher()
+    setTimeout(finishProgrammingDialogWithTeacher, 500);
   }
 };
 
@@ -804,6 +864,9 @@ startProgrammingExercise = () => {
 };
 
 showProgrammingExercise = () => {
+  teacher.setAttribute("visible", "false");
+  dialogBox.setAttribute("visible", "false");
+  dialogText.setAttribute("visible", "false");
   prResultPlane.setAttribute("visible", "true");
   prResultClass.setAttribute("visible", "true");
   prResultMainMethod.setAttribute("visible", "true");
@@ -818,18 +881,15 @@ showProgrammingExercise = () => {
   prNextInstruction.onmouseenter = () => {
     startProgrammingExercise();
   };
-
 };
 
 sitOnChairForProgramming = () => {
+  teleportationPad.setAttribute("visible", "false");
   programmingChair.onmouseenter=()=>{};
-  cameraRig.setAttribute("position", "0  "+(cameraHeight - 0.4)+" "+cameraDepthProgramming);
-  cameraRig.setAttribute("rotation", "-5 0 0");
-  teacher.setAttribute("visible", "false");
-  dialogBox.setAttribute("visible", "false");
-  dialogText.setAttribute("visible", "false");
+  nextDialog.onmouseenter=()=>{};
+  cameraRig.setAttribute("animation", "property: position; to: 0 "+(cameraHeight-0.4)+" "+cameraDepthProgramming+"; dur: 2000; easing: linear");
 
-  showProgrammingExercise();
+  setTimeout(showProgrammingExercise, 2000);
 };
 
 startFinalDialogUml = () => {
@@ -841,8 +901,7 @@ startFinalDialogUml = () => {
   classDiagram.onmouseenter = () => {};
   mainText.onmouseenter = () => {};
   helloWorldText.onmouseenter = () => {};
-  cameraRig.setAttribute("position", "0  "+cameraHeight+"  -2.5");
-  cameraRig.setAttribute("rotation", "0 0 0");
+  cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 1000; easing: linear");
 
   dialogBox.setAttribute("position", " -1.5 2.7 -5");
   dialogBox.setAttribute("rotation", "0 30 0");
@@ -864,6 +923,8 @@ startFinalDialogUml = () => {
       textIndex++;
       if(textIndex === finalUmlTextArray.length){
         nextDialog.setAttribute("visible", "false");
+        teleportationPad.setAttribute("visible", "true");
+        teleportationPad.setAttribute("position", "0 0.01 -5.8");
         programmingChair.onmouseenter = () => {
           setTimeout(sitOnChairForProgramming, 500)
         };
@@ -916,6 +977,20 @@ makeHelloWorldTextForDiagram = () => {
   return cameraHelloWorldText;
 };
 
+changeUmlResultDiagram = (source, itemToDeleteId, isUmlDone) => {
+  resultDiagram.onmouseenter = () => {
+    resultDiagram.setAttribute("material", "src: "+source+"; opacity: 0.9");
+    if(document.getElementById(itemToDeleteId)){
+      document.getElementById(itemToDeleteId).remove();
+    }
+    if(isUmlDone){
+      setTimeout(startFinalDialogUml, 500);
+    }
+  };
+
+  return true;
+};
+
 removeCameraChildren = () => {
   if(document.getElementById('js--camera-classDiagram')){
     document.getElementById('js--camera-classDiagram').remove();
@@ -926,22 +1001,12 @@ removeCameraChildren = () => {
   }
 };
 
-changeUmlResultDiagram = (source, itemToDeleteId, isUmlDone) => {
-  resultDiagram.onmouseenter = () => {
-    resultDiagram.setAttribute("material", "src: "+source+"; opacity: 0.9");
-    document.getElementById(itemToDeleteId).remove();
-    if(isUmlDone){
-      setTimeout(startFinalDialogUml, 500);
-    }
-  };
-};
-
 drawLastStageUml = () => {
   mainText.onmouseenter=()=>{};
   helloWorldText.onmouseenter = () => {
     removeCameraChildren();
     camera.appendChild(makeHelloWorldTextForDiagram());
-    changeUmlResultDiagram("images/classDiagramStage2.png", "js--camera-helloWorldText", true );
+    changeUmlResultDiagram("images/classDiagramStage2.png", "js--camera-helloWorldText", true )
   };
 };
 
@@ -950,8 +1015,9 @@ drawSecondStageUml = () => {
   mainText.onmouseenter = () => {
     removeCameraChildren();
     camera.appendChild(makeMainTextForDiagram());
-    changeUmlResultDiagram("images/classDiagramStage1.png", "js--camera-mainText", false);
-    drawLastStageUml();
+    if(changeUmlResultDiagram("images/classDiagramStage1.png", "js--camera-mainText", false)){
+      drawLastStageUml();
+    }
   };
 };
 
@@ -960,8 +1026,9 @@ drawFirstStageUml = () => {
     removeCameraChildren();
     camera.appendChild(makeCameraClassDiagram());
     resultDiagram.setAttribute("material", "opacity: 0.4");
-    changeUmlResultDiagram("images/classDiagram.png", "js--camera-classDiagram", false);
-    drawSecondStageUml();
+    if(changeUmlResultDiagram("images/classDiagram.png", "js--camera-classDiagram", false)){
+      drawSecondStageUml();
+    }
   };
 };
 
@@ -971,11 +1038,11 @@ startUmlDrawing = () => {
   dialogText.setAttribute("visible", "false");
   beginButton.setAttribute("visible", "false");
 
-  cameraRig.setAttribute("position", cameraDepthUmlExercise+"  "+(cameraHeight+0.1)+"  -4.12");
-  cameraRig.setAttribute("rotation", "0 90 0");
-
-  drawFirstStageUml()
-
+  cameraRig.setAttribute("animation", "property: position; to: "+cameraDepthUmlExercise +" "+(cameraHeight+0.1)+" -4.12; dur: 1000; easing: linear");
+  setTimeout( () => {
+    cameraRig.setAttribute("animation", "property: rotation; to: 0 60 0; dur: 2000; easing: linear");
+  },1000);
+  setTimeout(drawFirstStageUml, 2000);
 };
 
 startUmlDialog = () => {
@@ -988,7 +1055,6 @@ startUmlDialog = () => {
   ];
   textIndex = 1;
 
-  cameraRig.setAttribute("rotation", "0 30 0");
   teacher.setAttribute("position", "-0.5 0 -6");
   teacher.setAttribute("rotation", "0 -100 0");
 
@@ -1016,10 +1082,8 @@ startUmlDialog = () => {
         beginButton.setAttribute("rotation","0 30 0");
         beginButton.setAttribute("position", "-1.4 2.35 -4.8");
         beginButton.onmouseenter = () => {
-          setTimeout(draw = () => {
-            startUmlDrawing();
-          }, 500)
-        };
+          setTimeout(startUmlDrawing,500);
+        }
       }
     }
   }
@@ -1029,13 +1093,12 @@ showTeleportationPad = () => {
   teleportationPad.setAttribute("visible", "true");
   teleportationPad.setAttribute("position", "0 0.01 -2.5");
   teleportationPad.onmouseenter = () => {
-    teleportAudio.play();
-    setTimeout(teleport = () => {
-        dialogBox.setAttribute("visible", "false");
-        dialogText.setAttribute("visible", "false");
-        cameraRig.setAttribute("position", "0  "+cameraHeight+"  -2.5");
-        startUmlDialog();
-    }, timeoutTimeforTeleportation)
+    dialogBox.setAttribute("visible", "false");
+    dialogText.setAttribute("visible", "false");
+    cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 4500; easing: linear");
+    setTimeout(() => {
+      startUmlDialog();
+    }, 4500)
   }
 };
 
