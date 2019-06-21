@@ -118,17 +118,30 @@
             material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="-2 2 4.5"
             rotation="0 -180 0"></a-entity>
 
-  <!--            Teleportation pad-->
+  <!--            Teleportation pads-->
   <a-entity geometry="primitive: circle; radius: 0.5" id="js--teleportationPad"
             material="src: textures/lightground.png; transparent: true" position="0 0.01 6"
             rotation="-90 0 0" visible="false"></a-entity>
+
+  <a-entity id="js--initialPad" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="0 0.01 6" rotation="-90 0 0"></a-entity>
+
+  <a-entity id="js--middleRoomPad" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="0 0.01 2" rotation="-90 0 0"></a-entity>
+  <a-entity id="js--middleRoomPad2" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="0 0.01 -4" rotation="-90 0 0"></a-entity>
+
+  <a-entity id="js--leftRoomPad" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 6" rotation="-90 0 0"></a-entity>
+  <a-entity id="js--leftRoomPad2" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 1.5" rotation="-90 0 0"></a-entity>
+  <a-entity id="js--leftRoomPad3" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="-6.5 0.01 -2.5" rotation="-90 0 0"></a-entity>
+
+  <a-entity id="js--rightRoomPad" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="6.5 0.01 6" rotation="-90 0 0"></a-entity>
+  <a-entity id="js--rightRoomPad2" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="6.5 0.01 1" rotation="-90 0 0"></a-entity>
+  <a-entity id="js--rightRoomPad3" geometry="primitive: circle; radius: 0.5" visible="false" material="src: textures/lightground.png; transparent: true" position="6.5 0.01 -1.5" rotation="-90 0 0"></a-entity>
 
   <!--        Models-->
   <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -5" rotation="6 -45 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity id="js--teacher" obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="1 0 5" rotation="0 -140 0"
             scale="2 2 2" visible="false"></a-entity>
-  <a-entity id="js--dialogBox" obj-model="obj: #dialogbubble-obj; mtl: #dialogbubble-mtl" position="-0.12 2.7 5"
+  <a-entity id="js--dialogBox" obj-model="obj: #dialogbubble-obj; mtl: #dialogbubble-mtl" side="double" position="-0.12 2.7 5"
             scale="0.5 0.5 0.5" visible="false"></a-entity>
   <a-entity id="js--dialogText" geometry="primitive: plane; width: 1.5; height: 0.65" material="opacity: 0"
             position="-0.12 2.7 5.02" visible="false"
@@ -262,7 +275,7 @@
   <!--    Right-->
   <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="-4 1.07 -3.5"
             rotation="6 -30 3.5" scale="1.3 1.3 1.3"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -3.5" rotation="6 -20 3.5"
+  <a-entity id="js--askedStudent7" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -3.5" rotation="6 -20 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-4.5 0 -2.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4.8 1.03 -3" rotation="-90 180 -70"
@@ -278,7 +291,7 @@
 
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 0.5" rotation="0 0 0"
             scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="-5 1.07 0.5"
+  <a-entity id="js--askedStudent4" obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="-5 1.07 0.5"
             rotation="6 -10 3.5" scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-4.5 0 1.3" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4.8 1.03 1" rotation="-90 180 -70"
@@ -295,7 +308,7 @@
   <!--    Left-->
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 -3.5" rotation="0 0 0"
             scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-8 1.07 -3.5" rotation="6 -30 3.5"
+  <a-entity id="js--askedStudent6" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-8 1.07 -3.5" rotation="6 -30 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 -2.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 -3" rotation="-90 160 -70"
@@ -307,7 +320,7 @@
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 -1.7" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 0.5" rotation="0 0 0"
             scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-8 1.07 0.5" rotation="6 -25 3.5"
+  <a-entity id="js--askedStudent5" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-8 1.07 0.5" rotation="6 -25 3.5"
             scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 1.3" rotation="0 0 0"></a-entity>
   <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 1" rotation="-90 160 -70"
