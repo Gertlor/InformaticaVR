@@ -930,14 +930,14 @@ changeUmlResultDiagram = (source, itemToDeleteId, isUmlDone) => {
   resultDiagram.onmouseenter = () => {
     resultDiagram.setAttribute("material", "src: "+source+"; opacity: 0.9");
     document.getElementById(itemToDeleteId).remove();
+    if(isUmlDone){
+      setTimeout(startFinalDialogUml, 500);
+    }
   };
-
-  if(isUmlDone){
-    setTimeout(startFinalDialogUml, 1000);
-  }
 };
 
 drawLastStageUml = () => {
+  mainText.onmouseenter=()=>{};
   helloWorldText.onmouseenter = () => {
     removeCameraChildren();
     camera.appendChild(makeHelloWorldTextForDiagram());
@@ -946,12 +946,13 @@ drawLastStageUml = () => {
 };
 
 drawSecondStageUml = () => {
+  classDiagram.onmouseenter=()=>{};
   mainText.onmouseenter = () => {
     removeCameraChildren();
     camera.appendChild(makeMainTextForDiagram());
     changeUmlResultDiagram("images/classDiagramStage1.png", "js--camera-mainText", false);
+    drawLastStageUml();
   };
-  drawLastStageUml();
 };
 
 drawFirstStageUml = () => {
@@ -960,8 +961,8 @@ drawFirstStageUml = () => {
     camera.appendChild(makeCameraClassDiagram());
     resultDiagram.setAttribute("material", "opacity: 0.4");
     changeUmlResultDiagram("images/classDiagram.png", "js--camera-classDiagram", false);
+    drawSecondStageUml();
   };
-  drawSecondStageUml();
 };
 
 startUmlDrawing = () => {
