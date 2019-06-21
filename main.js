@@ -84,7 +84,7 @@ let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
 
-//Voor beter leesbaarheid van de code, lees van beneden naar boven.
+//Voor beter leesbaarheid van de code, van beneden naar boven lezen.
 
 addConversationStudent3 = () => {
   askStudent3.onmouseenter = () => {
