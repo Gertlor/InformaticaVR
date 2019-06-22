@@ -1223,6 +1223,8 @@ startInitialDialog = () => {
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("visible", "true");
   nextDialog.setAttribute("visible", "true");
+  askStudent7.components.sound.playSound();
+  askStudent1.components.sound.playSound();
   dialogText.components.sound.playSound();
   setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
 
