@@ -13,8 +13,6 @@ let rightRoomPad = document.getElementById("js--rightRoomPad");
 let rightRoomPad2 = document.getElementById("js--rightRoomPad2");
 let rightRoomPad3 = document.getElementById("js--rightRoomPad3");
 
-let teleportAudio = new Audio("sound/teleportation.wav");
-
 let initialPanel = document.getElementById("js--initialPanel");
 let initialPanelUp = document.getElementById("js--initialPanelUp");
 let initialPanelButtonUp = document.getElementById("js--initialPanelButtonUp");
@@ -90,7 +88,7 @@ let cameraHeight;
 let cameraDepthProgramming;
 let cameraDepthUmlExercise;
 
-//Voor beter leesbaarheid van de code, van beneden naar boven lezen.
+//Voor beter leesbaarheid en begrip van de code, van beneden naar boven lezen.
 
 addConversationStudent3 = () => {
   askedStudent3Pad.setAttribute("visible", "true");
@@ -102,7 +100,7 @@ addConversationStudent3 = () => {
     dialogText.setAttribute("rotation", "0 150 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: Star Wars films zijn mijn lievelings films.");
-
+    dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
@@ -123,7 +121,7 @@ addConversationStudent1 = () => {
     dialogText.setAttribute("rotation", "0 220 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: De opleiding bestaat uit 4 specialisaties,\n SE, BDAM, IAT en FICT");
-
+    dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
@@ -144,7 +142,7 @@ addConversationStudent4 = () => {
     dialogText.setAttribute("rotation", "0 -20 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: Ik ben een Software Engineering student\n Wij werken veel met software en we ontwerpen en implementeren systemen.");
-
+    dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
@@ -165,7 +163,7 @@ addConversationStudent5 = () => {
     dialogText.setAttribute("rotation", "0 40 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: Ik ben een IAT student. \n Wij werken met nieuwe technologieën en innovaties. \n De interactie tussen gebruikers en systemen is heel belangrijk");
-
+    dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
@@ -186,7 +184,7 @@ addConversationStudent6 = () => {
     dialogText.setAttribute("rotation", "0 40 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: Ik ben een BDAM student.\n Data speelt steeds belangrijke rol in de maatschappij,\n wij werken veel met het behandelen en visualiseren van de data.");
-
+    dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
@@ -207,7 +205,7 @@ addConversationStudent7 = () => {
     dialogText.setAttribute("rotation", "0 -20 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: Ik ben een FICT student. \n Wij doen veel onderzoek en verslaglegging. \n Ons doel is de veiligheid binnen de IT");
-
+    dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
@@ -238,8 +236,9 @@ addTeleportPadsToEverywhere = () => {
     middleRoomPad2.setAttribute("visible", "false");
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "0  " + cameraHeight + "  7");
       cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" 7; dur: 3000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 3000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -250,8 +249,9 @@ addTeleportPadsToEverywhere = () => {
     middleRoomPad.setAttribute("visible", "false");
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "0  " + cameraHeight + "  2");
       cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" 2; dur: 3000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 3000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -263,8 +263,9 @@ addTeleportPadsToEverywhere = () => {
     initialPad.onmouseenter=()=>{};
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "0  " + cameraHeight + "  -4");
       cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -4; dur: 3000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 3000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -279,8 +280,9 @@ addTeleportPadsToEverywhere = () => {
     rightRoomPad.onmouseenter=()=>{};
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  6");
       cameraRig.setAttribute("animation", "property: position; to: -6.5 "+cameraHeight+" 6; dur: 3000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 3000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -291,8 +293,9 @@ addTeleportPadsToEverywhere = () => {
     leftRoomPad2.setAttribute("visible", "false");
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  1.5");
       cameraRig.setAttribute("animation", "property: position; to: -6.5 "+cameraHeight+" 1.5; dur: 3000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 3000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -304,8 +307,9 @@ addTeleportPadsToEverywhere = () => {
     leftRoomPad.onmouseenter=()=>{};
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "-6.5  " + cameraHeight + "  -2.5");
       cameraRig.setAttribute("animation", "property: position; to: -6.5 "+cameraHeight+" -2.5; dur: 3000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 3000);
     }, timeoutTimeforTeleportation)
 
   };
@@ -321,8 +325,9 @@ addTeleportPadsToEverywhere = () => {
     leftRoomPad.onmouseenter=()=>{};
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  6");
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 6; dur: 4000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 4000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -333,8 +338,9 @@ addTeleportPadsToEverywhere = () => {
     rightRoomPad2.setAttribute("visible", "false");
 
     setTimeout(() => {
-      // cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  1.5");
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 1; dur: 2000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2000);
     }, timeoutTimeforTeleportation)
   };
 
@@ -347,7 +353,8 @@ addTeleportPadsToEverywhere = () => {
 
     setTimeout(() => {
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" -1; dur: 2000; easing: linear");
-      // cameraRig.setAttribute("position", "6.5  " + cameraHeight + "  -1");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2000);
     }, timeoutTimeforTeleportation)
   };
 };
@@ -385,9 +392,14 @@ startFinalDialog = () => {
   nextDialog.setAttribute("rotation", "0 0 0");
   nextDialog.setAttribute("visible", "true");
 
+  dialogBox.components.sound.playSound();
+  setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2000);
+
   textIndex = 1;
   nextDialog.onmouseenter = () => {
     if(textIndex >= 0 && textIndex < finalDialogArray.length){
+      dialogBox.components.sound.playSound();
+      setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
       dialogText.setAttribute("text", "value: " + finalDialogArray[textIndex]);
       textIndex++;
       if(textIndex === finalDialogArray.length){
@@ -401,9 +413,12 @@ startFinalDialog = () => {
 teleportToTeacherForFinalDialog = () => {
   teleportationPad.setAttribute("visible", "true");
   teleportationPad.setAttribute("position", "6.5 0.01 -3");
+  teleportationPad.components.sound.playSound();
   teleportationPad.onmouseenter = () => {
     setTimeout((() => {
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" -3; dur: 2000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2000);
       setTimeout(startFinalDialog, 2000);
     }), timeoutTimeforTeleportation);
   };
@@ -430,6 +445,7 @@ askThirdQuestion = () => {
   dialogText.setAttribute("rotation", "0 150 0");
   dialogText.setAttribute("scale", "0.5 0.5 0.5");
   dialogText.setAttribute("text", "value: Welke furry soort leeft op de \nforest moon van Endor?");
+  dialogText.components.sound.playSound();
 
   jaButton.setAttribute("position", "5.618 1.735 -0.046");
   jaButton.setAttribute("rotation", "0 150 0");
@@ -447,6 +463,7 @@ askThirdQuestion = () => {
   neeButton.setAttribute("text", "value: Wookies; width: 1;");
 
   jaButton.onmouseenter = () => {
+    dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: The force is strong with this one.");
     dialogText.setAttribute("geometry", "width: 0.6; height: 0.05");
     neeButton.setAttribute("visible", "false");
@@ -456,6 +473,7 @@ askThirdQuestion = () => {
 
   };
   neeButton.onmouseenter = () => {
+    dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value:  Be mindful of your thoughts. \nThey will betray you.");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
@@ -472,8 +490,11 @@ showThirdExclamationMark = () => {
 
   exclamationMark.setAttribute("visible", "true");
   exclamationMark.setAttribute("position", "5 1.8 0");
+  exclamationMark.components.sound.playSound();
   askStudent3.onmouseenter = () => {
     cameraRig.setAttribute("animation", "property: position; to: 6 "+cameraHeight+" -1; dur: 2000; easing: linear");
+    cameraRig.components.sound.playSound();
+    setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2000);
    setTimeout(askThirdQuestion, 2300);
   }
 };
@@ -481,6 +502,8 @@ showThirdExclamationMark = () => {
 askSecondQuestion = () => {
   askStudent2.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 6 "+cameraHeight+" 2.3; dur: 1500; easing: linear");
+  cameraRig.components.sound.playSound();
+  setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 1500);
 
   exclamationMark.setAttribute("visible", "false");
   dialogBox.setAttribute("position", "4.519 1.81 4.08");
@@ -490,6 +513,7 @@ askSecondQuestion = () => {
   dialogText.setAttribute("rotation", "0 140 0");
   dialogText.setAttribute("scale", "0.5 0.5 0.5");
   dialogText.setAttribute("text", "value: Als a=1 en b=2, is a+b(b*4) = 16; width: 2.4 ");
+  dialogText.components.sound.playSound();
 
   jaButton.setAttribute("position", "4.450 1.666 3.969");
   jaButton.setAttribute("rotation", "0 140 0");
@@ -502,6 +526,7 @@ askSecondQuestion = () => {
   dialogText.setAttribute("visible", "true");
 
   jaButton.onmouseenter = () => {
+    dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: Hmm, ik kom op 17 uit... raar.");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
@@ -509,6 +534,7 @@ askSecondQuestion = () => {
 
   };
   neeButton.onmouseenter = () => {
+    dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: Oh ja, het is 17! Bedankt!");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
@@ -524,6 +550,8 @@ showSecondExclamationMark = () => {
 
   exclamationMark.setAttribute("visible", "true");
   exclamationMark.setAttribute("position", "4 1.8 4");
+  exclamationMark.components.sound.playSound();
+
   askStudent2.onmouseenter = () => {
     askSecondQuestion();
   }
@@ -532,6 +560,8 @@ showSecondExclamationMark = () => {
 askFirstQuestion = () => {
   askStudent1.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 6.8 "+cameraHeight+" 0.5; dur: 1000; easing: linear");
+  cameraRig.components.sound.playSound();
+  setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 1000);
 
   exclamationMark.setAttribute("visible", "false");
   dialogBox.setAttribute("position", "8.4 1.8 1.5");
@@ -542,6 +572,7 @@ askFirstQuestion = () => {
   dialogText.setAttribute("scale", "0.5 0.5 0.5");
   dialogText.setAttribute("text", "value: In java, moet ik na elk statement een puntkomma toevoegen?");
 
+  dialogText.components.sound.playSound();
   jaButton.setAttribute("position", "8.3 1.641 1.560");
   jaButton.setAttribute("rotation", "0 210 0");
   jaButton.setAttribute("visible", "true");
@@ -553,6 +584,7 @@ askFirstQuestion = () => {
   dialogText.setAttribute("visible", "true");
 
   jaButton.onmouseenter = () => {
+    dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: Ja, dat dacht ik ook, bedankt!");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
@@ -560,6 +592,7 @@ askFirstQuestion = () => {
 
   };
   neeButton.onmouseenter = () => {
+    dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: Hmmm, volgens Gerrit is het wel zo...");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
@@ -576,6 +609,7 @@ showExclamationMark = () => {
   dialogText.setAttribute("visible", "false");
 
   exclamationMark.setAttribute("visible", "true");
+  exclamationMark.components.sound.playSound();
   askStudent1.onmouseenter = () => {
     askFirstQuestion();
   }
@@ -585,9 +619,12 @@ teleportToCenterOfRightRoom = () => {
 
   teleportationPad.setAttribute("position", "6.5 0.01 0");
   teleportationPad.setAttribute("visible", "true");
+  teleportationPad.components.sound.playSound();
   teleportationPad.onmouseenter = () => {
     setTimeout((() => {
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 0; dur: 2000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2000);
       setTimeout(showExclamationMark, 2000);
     }), timeoutTimeforTeleportation);
   }
@@ -604,6 +641,9 @@ startAskingExercise = () => {
   dialogText.setAttribute("rotation", "0 0 0");
   dialogText.setAttribute("text", "value: Ik zie dat jij geen laptop hebt. Als je wilt kan je opstaan en je medestudenten helpen met de opdrachten.");
 
+  dialogBox.components.sound.playSound();
+  setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
+
   teleportToCenterOfRightRoom()
 };
 
@@ -615,6 +655,9 @@ startTeacherLesson = () => {
   nextDialog.setAttribute("position", "7.3 2.35 -5.97");
   nextDialog.setAttribute("rotation", "0 0 0");
   nextDialog.setAttribute("visible", "true");
+
+  dialogBox.components.sound.playSound();
+  setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
 
   nextDialog.onmouseenter = () => {
     setTimeout(startAskingExercise, 500);
@@ -632,6 +675,8 @@ startAskingExerciseDialog = () => {
   dialogText.setAttribute("text", "value: He, leuk dat je bent gekomen, je kan op de stoel aan je rechterkant zitten.");
   dialogText.setAttribute("rotation", "0 0 0");
   dialogText.setAttribute("visible", "true");
+  dialogBox.components.sound.playSound();
+  setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2000);
 
   sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
   sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
@@ -641,6 +686,8 @@ startAskingExerciseDialog = () => {
   sittingChairRightRoom.onmouseenter = () => {
     setTimeout((() => {
       cameraRig.setAttribute("animation", "property: position; to: 8 "+(cameraHeight-0.4)+" -2.3; dur: 1000; easing: linear");
+      sittingChairRightRoom.components.sound.playSound();
+      setTimeout(()=>{ sittingChairRightRoom.components.sound.stopSound()}, 1000);
       setTimeout(()=>{
         startTeacherLesson();
         sittingChairRightRoom.setAttribute("rotation", "0 180 0");
@@ -653,9 +700,12 @@ startAskingExerciseDialog = () => {
 
 teleportToRightRoom3 = () => {
   teleportationPad.setAttribute("position", "6.5 0.01 -3");
+  teleportationPad.components.sound.playSound();
   teleportationPad.onmouseenter = () => {
     setTimeout(( () => {
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" -3; dur: 5000; easing: linear");
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 5000);
       setTimeout(startAskingExerciseDialog,5000);
     }), timeoutTimeforTeleportation);
   };
@@ -667,10 +717,13 @@ teleportToRightRoom2 = () => {
   dialogText.setAttribute("visible", "false");
   dialogBox.setAttribute("visible", "false");
   teleportationPad.setAttribute("position", "6.5 0.01 6");
+  teleportationPad.components.sound.playSound();
+
   teleportationPad.onmouseenter = () => {
     setTimeout((() => {
       cameraRig.setAttribute("animation", "property: position; to: 6.5 "+cameraHeight+" 6; dur: 4500; easing: linear");
-
+      cameraRig.components.sound.playSound();
+      setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 4500);
       setTimeout(teleportToRightRoom3,4500);
     }), timeoutTimeforTeleportation);
   };
@@ -679,9 +732,12 @@ teleportToRightRoom2 = () => {
 teleportToRightRoom1 = () => {
     teleportationPad.setAttribute("position", "0 0.01 6");
     teleportationPad.setAttribute("visible", "true");
+    teleportationPad.components.sound.playSound();
     teleportationPad.onmouseenter = () => {
       setTimeout(( () => {
         cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" 6; dur: 5000; easing: linear");
+        cameraRig.components.sound.playSound();
+        setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 5000);
 
         setTimeout(teleportToRightRoom2, 5000);
       }), timeoutTimeforTeleportation);
@@ -695,14 +751,24 @@ finishProgrammingDialogWithTeacher = () => {
   ];
   prNextInstruction.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 2500; easing: linear");
+  cameraRig.components.sound.playSound();
+  setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2500);
+  programmingChair.components.sound.playSound();
+  setTimeout(()=>{ programmingChair.components.sound.stopSound()}, 1000);
+
   teacher.setAttribute("visible", "true");
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("text", "value: "+ finishProgrammingDialogArray[0]);
   dialogText.setAttribute("visible", "true");
   nextDialog.setAttribute("visible", "true");
+
+  dialogText.components.sound.playSound();
+
   textIndex = 1;
   nextDialog.onmouseenter = () => {
     if(textIndex >= 0 && textIndex < finishProgrammingDialogArray.length){
+      dialogBox.components.sound.playSound();
+      setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 1500);
       dialogText.setAttribute("text", "value: " + finishProgrammingDialogArray[textIndex]);
       textIndex++;
       if(textIndex === finishProgrammingDialogArray.length){
@@ -722,6 +788,8 @@ finishProgrammingExercise = () => {
 };
 
 programmingExerciseSetCurlyCloseBracketOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseCloseCurlyBracket.onmouseenter=()=>{};
   prChooseCloseCurlyBracket.setAttribute("text", "color: white");
   prResultCurlyBracketClose.setAttribute("visible", "true");
@@ -730,6 +798,8 @@ programmingExerciseSetCurlyCloseBracketOnResult = () => {
 };
 
 programmingExerciseSetCloseBracketOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseCloseBracket.onmouseenter=()=>{};
   prChooseCloseBracket.setAttribute("text", "color: white");
   prResultPrintBracketClose.setAttribute("visible", "true");
@@ -741,6 +811,8 @@ programmingExerciseSetCloseBracketOnResult = () => {
 };
 
 programmingExerciseSetCloseQuoteOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseQuote.onmouseenter=()=>{};
   prChooseQuote.setAttribute("text", "color: white");
   prResultPrintQuoteClose.setAttribute("visible", "true");
@@ -752,6 +824,8 @@ programmingExerciseSetCloseQuoteOnResult = () => {
 };
 
 programmingExerciseSetHelloWorldOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 1500);
   prChooseHelloWorld.onmouseenter=()=>{};
   prChooseHelloWorld.setAttribute("text", "color: white");
   prResultPrintHelloWorld.setAttribute("visible", "true");
@@ -763,6 +837,8 @@ programmingExerciseSetHelloWorldOnResult = () => {
 };
 
 programmingExerciseSetOpenQuotetOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseQuote.onmouseenter=()=>{};
   prChooseQuote.setAttribute("text", "color: white");
   prResultPrintQuoteOpen.setAttribute("visible", "true");
@@ -774,6 +850,8 @@ programmingExerciseSetOpenQuotetOnResult = () => {
 };
 
 programmingExerciseSetOpenBracketOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseOpenBracket.onmouseenter=()=>{};
   prChooseOpenBracket.setAttribute("text", "color: white");
   prResultPrintBracketOpen.setAttribute("visible", "true");
@@ -785,6 +863,8 @@ programmingExerciseSetOpenBracketOnResult = () => {
 };
 
 programmingExerciseSetPrintOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 1000);
   prChoosePrint.onmouseenter=()=>{};
   prChoosePrint.setAttribute("text", "color: white");
   prResultPrint.setAttribute("visible", "true");
@@ -796,6 +876,8 @@ programmingExerciseSetPrintOnResult = () => {
 };
 
 programmingExerciseSetCurlyBraceOpenOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseOpenCurlyBracket.onmouseenter=()=>{};
   prChooseOpenCurlyBracket.setAttribute("text", "color: white");
   prResultCurlyBracketOpen.setAttribute("visible", "true");
@@ -807,6 +889,8 @@ programmingExerciseSetCurlyBraceOpenOnResult = () => {
 };
 
 programmingExerciseSetHelloWorldMethodOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 1500);
   prChoosePrintHelloWorld.onmouseenter=()=>{};
   prChoosePrintHelloWorld.setAttribute("text", "color: white");
   prResultPrintHelloWorldMethod.setAttribute("visible", "true");
@@ -818,6 +902,8 @@ programmingExerciseSetHelloWorldMethodOnResult = () => {
 };
 
 programmingExerciseSetVoidOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 1000);
   prChooseVoid.onmouseenter=()=>{};
   prChooseVoid.setAttribute("text", "color: white");
   prResultVoid.setAttribute("visible", "true");
@@ -829,6 +915,8 @@ programmingExerciseSetVoidOnResult = () => {
 };
 
 programmingExerciseSetPublicOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 1000);
   prChoosePublic.onmouseenter=()=>{};
   prChoosePublic.setAttribute("text", "color: white");
   prResultPublic.setAttribute("visible", "true");
@@ -888,7 +976,10 @@ sitOnChairForProgramming = () => {
   programmingChair.onmouseenter=()=>{};
   nextDialog.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 0 "+(cameraHeight-0.4)+" "+cameraDepthProgramming+"; dur: 2000; easing: linear");
-
+  cameraRig.components.sound.playSound();
+  programmingChair.components.sound.playSound();
+  setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2000);
+  setTimeout(()=>{ programmingChair.components.sound.stopSound()}, 2000);
   setTimeout(showProgrammingExercise, 2000);
 };
 
@@ -901,6 +992,7 @@ startFinalDialogUml = () => {
   classDiagram.onmouseenter = () => {};
   mainText.onmouseenter = () => {};
   helloWorldText.onmouseenter = () => {};
+  resultDiagram.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 1000; easing: linear");
 
   dialogBox.setAttribute("position", " -1.5 2.7 -5");
@@ -917,14 +1009,19 @@ startFinalDialogUml = () => {
   nextDialog.setAttribute("rotation", "0 30 0");
   nextDialog.setAttribute("visible", "true");
 
+  dialogText.components.sound.playSound();
+
   nextDialog.onmouseenter = () => {
     if(textIndex >= 0 && textIndex < finalUmlTextArray.length){
       dialogText.setAttribute("text", "value: " + finalUmlTextArray[textIndex]);
       textIndex++;
+      dialogBox.components.sound.playSound();
+      setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 1500);
       if(textIndex === finalUmlTextArray.length){
         nextDialog.setAttribute("visible", "false");
         teleportationPad.setAttribute("visible", "true");
         teleportationPad.setAttribute("position", "0 0.01 -5.8");
+        teleportationPad.components.sound.playSound();
         programmingChair.onmouseenter = () => {
           setTimeout(sitOnChairForProgramming, 500)
         };
@@ -979,6 +1076,9 @@ makeHelloWorldTextForDiagram = () => {
 
 changeUmlResultDiagram = (source, itemToDeleteId, isUmlDone) => {
   resultDiagram.onmouseenter = () => {
+    resultDiagram.components.sound.playSound();
+    setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 1500);
+
     resultDiagram.setAttribute("material", "src: "+source+"; opacity: 0.9");
     if(document.getElementById(itemToDeleteId)){
       document.getElementById(itemToDeleteId).remove();
@@ -1039,6 +1139,8 @@ startUmlDrawing = () => {
   beginButton.setAttribute("visible", "false");
 
   cameraRig.setAttribute("animation", "property: position; to: "+cameraDepthUmlExercise +" "+(cameraHeight+0.1)+" -4.12; dur: 1000; easing: linear");
+  cameraRig.components.sound.playSound();
+  setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 1000);
   setTimeout( () => {
     cameraRig.setAttribute("animation", "property: rotation; to: 0 60 0; dur: 2000; easing: linear");
   },1000);
@@ -1072,10 +1174,15 @@ startUmlDialog = () => {
   nextDialog.setAttribute("rotation", "0 30 0");
   nextDialog.setAttribute("visible", "true");
 
+  dialogBox.components.sound.playSound();
+  setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2000);
+
   nextDialog.onmouseenter = () => {
     if(textIndex >= 0 && textIndex < umlTextArray.length){
       dialogText.setAttribute("text", "value: " + umlTextArray[textIndex]);
       textIndex++;
+      dialogBox.components.sound.playSound();
+      setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
       if(textIndex === umlTextArray.length){
         nextDialog.setAttribute("visible", "false");
         beginButton.setAttribute("visible", "true");
@@ -1092,10 +1199,14 @@ startUmlDialog = () => {
 showTeleportationPad = () => {
   teleportationPad.setAttribute("visible", "true");
   teleportationPad.setAttribute("position", "0 0.01 -2.5");
+  teleportationPad.components.sound.playSound();
   teleportationPad.onmouseenter = () => {
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
     cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 4500; easing: linear");
+    cameraRig.components.sound.playSound();
+    setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 4500);
+
     setTimeout(() => {
       startUmlDialog();
     }, 4500)
@@ -1112,6 +1223,8 @@ startInitialDialog = () => {
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("visible", "true");
   nextDialog.setAttribute("visible", "true");
+  dialogText.components.sound.playSound();
+  setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
 
   cameraRig.setAttribute("position", "0 " +cameraHeight+ " 7.3");
 
@@ -1125,6 +1238,9 @@ startInitialDialog = () => {
     if(textIndex >= 0 && textIndex < initialTextArray.length){
       dialogText.setAttribute("text", "value: " + initialTextArray[textIndex]);
       textIndex++;
+      dialogBox.components.sound.playSound();
+      setTimeout(()=>{ dialogText.components.sound.stopSound()}, 3000);
+
       if(textIndex === initialTextArray.length){
         nextDialog.setAttribute("visible", "false");
         showTeleportationPad()
@@ -1142,7 +1258,7 @@ window.mobilecheck = function(){
 checkIfVrModeIsOnAndStartAdventure = () => {
   if(scene.is('vr-mode') && mobilecheck()){
     cameraHeight = 0.5;
-    cameraDepthProgramming = -5.5;
+    cameraDepthProgramming = -6.5;
     cameraDepthUmlExercise = -0.5;
   } else {
     cameraHeight = 1.9;
