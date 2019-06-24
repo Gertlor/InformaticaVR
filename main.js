@@ -1258,7 +1258,7 @@ window.mobilecheck = function(){
 checkIfVrModeIsOnAndStartAdventure = () => {
   if(scene.is('vr-mode') && mobilecheck()){
     cameraHeight = 0.5;
-    cameraDepthProgramming = -5.5;
+    cameraDepthProgramming = -6;
     cameraDepthUmlExercise = -0.5;
   } else {
     cameraHeight = 1.9;
