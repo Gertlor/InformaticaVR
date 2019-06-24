@@ -1230,7 +1230,7 @@ startInitialDialog = () => {
 
   let initialTextArray = [
     "Ik ben Gerrit en vandaag ga ik je rondleiden om een indruk te krijgen van de opleiding Informatica.",
-    "Als eerst gaan we wat UML tekeken, ik zal op je wachten in de ruimte achter mij.\n\n" +
+    "Als eerst gaan we wat UML tekenen, ik zal op je wachten in de ruimte achter mij.\n\n" +
     "PS. Je kan het gele stip voor je gebruiken om daar naar toe te gaan."
   ];
   textIndex = 0;
