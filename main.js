@@ -183,7 +183,7 @@ addConversationStudent6 = () => {
     dialogText.setAttribute("position", "-8.540 1.77 -3.224");
     dialogText.setAttribute("rotation", "0 40 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
-    dialogText.setAttribute("text", "value: Ik ben een BDAM student.\n Data speelt steeds belangrijke rol in de maatschappij,\n wij werken veel met het behandelen en visualiseren van de data.");
+    dialogText.setAttribute("text", "value: Ik ben een BDAM student.\n Data speelt steeds een belangrijkere rol in de maatschappij,\n wij werken veel met het behandelen en visualiseren van data.");
     dialogText.components.sound.playSound();
     dialogBox.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
@@ -447,20 +447,18 @@ askThirdQuestion = () => {
   dialogText.setAttribute("text", "value: Welke furry soort leeft op de \nforest moon van Endor?");
   dialogText.components.sound.playSound();
 
-  jaButton.setAttribute("position", "5.618 1.735 -0.046");
+  jaButton.setAttribute("position", "5.492 1.674 -0.067");
   jaButton.setAttribute("rotation", "0 150 0");
   jaButton.setAttribute("visible", "true");
-  neeButton.setAttribute("position", "5.590 1.675 -0.017");
+  neeButton.setAttribute("position", "5.750 1.680 0.064");
   neeButton.setAttribute("rotation", "0 150 0");
   neeButton.setAttribute("visible", "true");
 
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("visible", "true");
-  jaButton.setAttribute("geometry", "width: 0.6; height: 0.05");
-  neeButton.setAttribute("geometry", "width: 0.6; height: 0.05");
 
-  jaButton.setAttribute("text", "value: Ewoks; width: 1;");
-  neeButton.setAttribute("text", "value: Wookies; width: 1;");
+  jaButton.setAttribute("text", "value: Ewoks");
+  neeButton.setAttribute("text", "value: Wookies");
 
   jaButton.onmouseenter = () => {
     dialogText.components.sound.playSound();
@@ -930,7 +928,7 @@ programmingExerciseSetPublicOnResult = () => {
 startProgrammingExercise = () => {
   prNextInstruction.onmouseenter=()=>{};
 
-  prInstructions.setAttribute("text", "value: Instructies: \n Selecteer de juiste stuk code en kijk hoe het op het scherm verschijnt");
+  prInstructions.setAttribute("text", "value: Instructies: \n Selecteer het juiste stuk code en kijk hoe het op het scherm verschijnt");
   prNextInstruction.setAttribute("visible", "false");
 
   prChoosePublic.setAttribute("visible", "true");
@@ -1005,7 +1003,7 @@ startFinalDialogUml = () => {
   dialogText.setAttribute("text", "width: 1.9");
   dialogText.setAttribute("visible", "true");
 
-  nextDialog.setAttribute("position", "-1 2.35 -4.8");
+  nextDialog.setAttribute("position", "-1.147 2.396 -5.060");
   nextDialog.setAttribute("rotation", "0 30 0");
   nextDialog.setAttribute("visible", "true");
 
@@ -1232,7 +1230,7 @@ startInitialDialog = () => {
 
   let initialTextArray = [
     "Ik ben Gerrit en vandaag ga ik je rondleiden om een indruk te krijgen van de opleiding Informatica.",
-    "Als eerst gaan we wat UML tekeken, ik zal op je wachten in de ruimte achter mij.\n\n" +
+    "Als eerst gaan we wat UML tekenen, ik zal op je wachten in de ruimte achter mij.\n\n" +
     "PS. Je kan het gele stip voor je gebruiken om daar naar toe te gaan."
   ];
   textIndex = 0;
@@ -1260,7 +1258,7 @@ window.mobilecheck = function(){
 checkIfVrModeIsOnAndStartAdventure = () => {
   if(scene.is('vr-mode') && mobilecheck()){
     cameraHeight = 0.5;
-    cameraDepthProgramming = -6.5;
+    cameraDepthProgramming = -6;
     cameraDepthUmlExercise = -0.5;
   } else {
     cameraHeight = 1.9;
