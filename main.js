@@ -95,6 +95,7 @@ let cameraDepthUmlExercise;
 addConversationStudent3 = () => {
   askedStudent3Pad.setAttribute("visible", "true");
   askStudent3.onmouseenter = () => {
+    askedStudent3Pad.setAttribute("visible", "false");
     dialogBox.setAttribute("position", "5.579 1.81 0.04");
     dialogBox.setAttribute("rotation", "0 150 0");
     dialogBox.setAttribute("scale", "0.25 0.25 0.25");
@@ -110,12 +111,14 @@ addConversationStudent3 = () => {
   askStudent3.onmouseleave = () => {
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
+    askedStudent3Pad.setAttribute("visible", "true");
   };
 };
 
 addConversationStudent1 = () => {
   askedStudent1Pad.setAttribute("visible", "true");
   askStudent1.onmouseenter = () => {
+    askedStudent1Pad.setAttribute("visible", "false");
     dialogBoxMirrored.setAttribute("position", "7.524 1.8 2.163");
     dialogBoxMirrored.setAttribute("rotation", "0 40 0");
     dialogBoxMirrored.setAttribute("scale", "0.25 0.25 0.25");
@@ -129,6 +132,7 @@ addConversationStudent1 = () => {
   };
 
   askStudent1.onmouseleave = () => {
+    askedStudent1Pad.setAttribute("visible", "true");
     dialogBoxMirrored.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
@@ -137,6 +141,7 @@ addConversationStudent1 = () => {
 addConversationStudent4 = () => {
   askedStudent4Pad.setAttribute("visible", "true");
   askStudent4.onmouseenter = () => {
+    askedStudent4Pad.setAttribute("visible", "false");
     dialogBox.setAttribute("position", "-5.627 1.770 0.55");
     dialogBox.setAttribute("rotation", "0 -20 0");
     dialogBox.setAttribute("scale", "0.25 0.25 0.25");
@@ -150,6 +155,7 @@ addConversationStudent4 = () => {
   };
 
   askStudent4.onmouseleave = () => {
+    askedStudent4Pad.setAttribute("visible", "true");
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
@@ -158,6 +164,7 @@ addConversationStudent4 = () => {
 addConversationStudent5 = () => {
   askedStudent5Pad.setAttribute("visible", "true");
   askStudent5.onmouseenter = () => {
+    askedStudent5Pad.setAttribute("visible", "false");
     dialogBoxMirrored.setAttribute("position", "-7.491 1.793 0.296");
     dialogBoxMirrored.setAttribute("rotation", "0 220 0");
     dialogBoxMirrored.setAttribute("scale", "0.25 0.25 0.25");
@@ -171,6 +178,7 @@ addConversationStudent5 = () => {
   };
 
   askStudent5.onmouseleave = () => {
+    askedStudent5Pad.setAttribute("visible", "true");
     dialogBoxMirrored.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
@@ -179,6 +187,7 @@ addConversationStudent5 = () => {
 addConversationStudent6 = () => {
   askedStudent6Pad.setAttribute("visible", "true");
   askStudent6.onmouseenter = () => {
+    askedStudent6Pad.setAttribute("visible", "false");
     dialogBoxMirrored.setAttribute("position", "-7.566 1.77 -3.696");
     dialogBoxMirrored.setAttribute("rotation", "0 220 0");
     dialogBoxMirrored.setAttribute("scale", "0.25 0.25 0.25");
@@ -192,6 +201,7 @@ addConversationStudent6 = () => {
   };
 
   askStudent6.onmouseleave = () => {
+    askedStudent6Pad.setAttribute("visible", "true");
     dialogBoxMirrored.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
@@ -200,6 +210,7 @@ addConversationStudent6 = () => {
 addConversationStudent7 = () => {
   askedStudent7Pad.setAttribute("visible", "true");
   askStudent7.onmouseenter = () => {
+    askedStudent7Pad.setAttribute("visible", "false");
     dialogBox.setAttribute("position", "-5.627 1.77 -3.634");
     dialogBox.setAttribute("rotation", "0 -20 0");
     dialogBox.setAttribute("scale", "0.25 0.25 0.25");
@@ -213,6 +224,7 @@ addConversationStudent7 = () => {
   };
 
   askStudent7.onmouseleave = () => {
+    askedStudent7Pad.setAttribute("visible", "true");
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
