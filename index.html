@@ -47,6 +47,8 @@
 
     <a-asset-item id="dialogbubble-obj" src="models/dialogbubble.obj"></a-asset-item>
     <a-asset-item id="dialogbubble-mtl" src="models/dialogbubble.mtl"></a-asset-item>
+    <a-asset-item id="dialogbubblemirrored-obj" src="models/dialogbubblemirrored.obj"></a-asset-item>
+    <a-asset-item id="dialogbubblemirrored-mtl" src="models/dialogbubblemirrored.mtl"></a-asset-item>
 
     <a-asset-item id="exclamation-obj" src="models/exclamation.obj"></a-asset-item>
 
@@ -163,15 +165,18 @@
   <a-entity id="js--teacher" obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="1 0 5" rotation="0 -140 0"
             scale="2 2 2" visible="false"></a-entity>
   <a-entity id="js--dialogBox" obj-model="obj: #dialogbubble-obj; mtl: #dialogbubble-mtl" position="-0.12 2.7 5" scale="0.5 0.5 0.5"
-            side="double" visible="false" sound="src: #talk1Sound; volume: 0.7;"></a-entity>
+            side="double" visible="false" sound="src: #talk1Sound; volume: 0.5;"></a-entity>
+  <a-entity id="js--dialogBoxMirrored" obj-model="obj: #dialogbubblemirrored-obj; mtl: #dialogbubblemirrored-mtl" position="-0.12 2.7 5" scale="0.5 0.5 0.5"
+            rotation="0 180 0" side="double" visible="false" sound="src: #talk1Sound; volume: 0.5;"></a-entity>
+
   <a-entity geometry="primitive: plane; width: 1.5; height: 0.65" id="js--dialogText" material="opacity: 0"
             position="-0.12 2.7 5.02" text="value: Welkom bij de opleiding Informatica van de Hogeschool Leiden!; width: 1.7; align: center"
-            visible="false" sound="src: #talk2Sound; volume: 0.9;"></a-entity>
-  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--nextButton" material="opacity: 0;"
-            position="0.35 2.4 5.04" text="value: Volgende; width: 1.5; align: center; color: lightgreen"
+            visible="false" sound="src: #talk2Sound; volume: 1;"></a-entity>
+  <a-entity geometry="primitive: plane; width: 0.22; height: 0.08" id="js--nextButton" material="opacity: 0.8; color: green;"
+            position="0 1.8 6.5" text="value: Volgende; width: 1; align: center; color: lightgreen"
             visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--beginButton" material="opacity: 0"
-            position="" text="value: Beginnen; width: 1.5; align: center; color: green"
+  <a-entity geometry="primitive: plane; width: 0.22; height: 0.08" id="js--beginButton" material="opacity: 0.8; color: green;"
+            position="0 1.8 6.5" text="value: Beginnen; width: 1; align: center; color: lightgreen"
             visible="false"></a-entity>
 
   <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="-0.67 1.3 7.50" rotation="0 90 0"
@@ -208,10 +213,10 @@
             text="value: \tpublic static void main(String[] args) { ; color: white; width: 0.4; align: center" visible="false"></a-entity>
   <a-entity geometry="primitive: plane; height: 0.03; width: 0.15" id="js--prResult-MethodCall" material="color: black; opacity: 0; side: double"
             position="-0.25 1.57 -6.5905" rotation="-9 0 0"
-            text="value: \t\tprintHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
+            text="value: \t\tprintHelloWorld()&#59;; color: white; width: 0.4; align: center" visible="false"></a-entity>
   <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CloseMain" material="color: black; opacity: 0; side: double"
             position="-0.34 1.54 -6.59" rotation="-9 0 0"
-            text="value: \t}; color: white; width: 0.4; align: center" visible="false"></a-entity>
+            text="value: \t}&#59;; color: white; width: 0.4; align: center" visible="false"></a-entity>
 
   <a-entity geometry="primitive: plane; height: 0.03; width: 0.05" id="js--prResult-public" material="color: red; opacity: 0; side: double"
             position="-0.32 1.51 -6.587" rotation="-9 0 0"
@@ -221,7 +226,7 @@
             text="value: void; color: white; width: 0.4; align: center" visible="false"></a-entity>
   <a-entity geometry="primitive: plane; height: 0.03; width: 0.14" id="js--prResult-printHelloWorldMethod" material="color: red; opacity: 0; side: double"
             position="-0.17 1.51 -6.587" rotation="-9 0 0"
-            text="value:printHelloWorld() ; color: white; width: 0.4; align: center" visible="false"></a-entity>
+            text="value:printHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
   <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CurlyBracketOpen" material="color: red; opacity: 0; side: double"
             position="-0.09 1.513 -6.582" rotation="-9 0 0"
             text="value: {; color: white; width: 0.4; align: center" visible="false"></a-entity>
