@@ -37,6 +37,7 @@ let prResultPlane = document.getElementById("js--prResultPlane");
 let prResultClass = document.getElementById("js--prResult-Class");
 let prResultMainMethod = document.getElementById("js--prResult-MainMethod");
 let prResultMethodCall = document.getElementById("js--prResult-MethodCall");
+let prResultSemicolonCloseMethodCall = document.getElementById("js--prResult-semicolonCloseMethodCall");
 let prResultCloseMain = document.getElementById("js--prResult-CloseMain");
 
 let prResultPublic = document.getElementById("js--prResult-public");
@@ -50,8 +51,9 @@ let prResultPrintQuoteOpen = document.getElementById("js--prResult-printQuoteOpe
 let prResultPrintHelloWorld = document.getElementById("js--prResult-printHelloWorld");
 let prResultPrintQuoteClose = document.getElementById("js--prResult-printQuoteClose");
 let prResultPrintBracketClose = document.getElementById("js--prResult-printBracketClose");
-
+let prResultSemicolonClosePrint = document.getElementById("js--prResult-semicolonClosePrint");
 let prResultCloseClass = document.getElementById("js--prResult-CloseClass");
+
 let prChoosePublic = document.getElementById("js--prChoose-Public");
 let prChooseVoid = document.getElementById("js--prChoose-Void");
 let prChoosePrintHelloWorld = document.getElementById("js--prChoose-printHelloWorld");
@@ -61,7 +63,9 @@ let prChoosePrint = document.getElementById("js--prChoose-print");
 let prChooseOpenBracket = document.getElementById("js--prChoose-openBracket");
 let prChooseQuote = document.getElementById("js--prChoose-quote");
 let prChooseHelloWorld = document.getElementById("js--prChoose-HelloWorld");
+let prChooseSemicolon = document.getElementById("js--prChoose-semicolon");
 let prChooseCloseBracket = document.getElementById("js--prChoose-closeBracket");
+
 let prInstructions = document.getElementById("js--prInstructions");
 let prNextInstruction = document.getElementById("js--prNextInstruction");
 
@@ -818,6 +822,19 @@ programmingExerciseSetCurlyCloseBracketOnResult = () => {
   setTimeout(finishProgrammingExercise, 1000);
 };
 
+programmingExerciseSetCloseSemicolonOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
+  prChooseSemicolon.onmouseenter=()=>{};
+  prChooseSemicolon.setAttribute("material", "src: images/semicolon.png");
+  prResultSemicolonClosePrint.setAttribute("visible", "true");
+
+  prChooseCloseCurlyBracket.setAttribute("text", "color: red");
+  prChooseCloseCurlyBracket.onmouseenter = () => {
+    programmingExerciseSetCurlyCloseBracketOnResult()
+  }
+};
+
 programmingExerciseSetCloseBracketOnResult = () => {
   prResultPlane.components.sound.playSound();
   setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
@@ -825,9 +842,9 @@ programmingExerciseSetCloseBracketOnResult = () => {
   prChooseCloseBracket.setAttribute("text", "color: white");
   prResultPrintBracketClose.setAttribute("visible", "true");
 
-  prChooseCloseCurlyBracket.setAttribute("text", "color: red");
-  prChooseCloseCurlyBracket.onmouseenter = () => {
-    programmingExerciseSetCurlyCloseBracketOnResult()
+  prChooseSemicolon.setAttribute("material", "src: images/semicolon_red.png");
+  prChooseSemicolon.onmouseenter = () => {
+    programmingExerciseSetCloseSemicolonOnResult()
   }
 };
 
@@ -857,7 +874,7 @@ programmingExerciseSetHelloWorldOnResult = () => {
   }
 };
 
-programmingExerciseSetOpenQuotetOnResult = () => {
+programmingExerciseSetOpenQuoteOnResult = () => {
   prResultPlane.components.sound.playSound();
   setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseQuote.onmouseenter=()=>{};
@@ -879,7 +896,7 @@ programmingExerciseSetOpenBracketOnResult = () => {
 
   prChooseQuote.setAttribute("text", "color: red");
   prChooseQuote.onmouseenter = () => {
-    programmingExerciseSetOpenQuotetOnResult()
+    programmingExerciseSetOpenQuoteOnResult()
   }
 };
 
@@ -964,6 +981,7 @@ startProgrammingExercise = () => {
   prChooseQuote.setAttribute("visible", "true");
   prChooseHelloWorld.setAttribute("visible", "true");
   prChooseCloseBracket.setAttribute("visible", "true");
+  prChooseSemicolon.setAttribute("visible", "true");
 
   prChoosePublic.setAttribute("text", "color: red");
 
@@ -980,6 +998,7 @@ showProgrammingExercise = () => {
   prResultClass.setAttribute("visible", "true");
   prResultMainMethod.setAttribute("visible", "true");
   prResultMethodCall.setAttribute("visible", "true");
+  prResultSemicolonCloseMethodCall.setAttribute("visible", "true");
   prResultCloseMain.setAttribute("visible", "true");
   prResultCloseClass.setAttribute("visible", "true");
 
