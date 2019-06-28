@@ -406,7 +406,7 @@ startFinalDialog = () => {
   dialogText.setAttribute("text", "value: " + finalDialogArray[0] + "; width: 1.7");
   dialogText.setAttribute("rotation", "0 0 0");
   dialogText.setAttribute("visible", "true");
-  nextDialog.setAttribute("position", "6.5 1.8 -3.8");
+  nextDialog.setAttribute("position", "6.5 1.85 -3.8");
   nextDialog.setAttribute("rotation", "0 0 0");
   nextDialog.setAttribute("visible", "true");
 
@@ -674,7 +674,7 @@ startTeacherLesson = () => {
   sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
   sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
   dialogText.setAttribute("text", "value: Nu kunnen jullie beginnen met de opdrachten van vorige week van IOOP, als jullie nog vragen hebben kunnen ze jullie gerust stellen.");
-  nextDialog.setAttribute("position", "8 1.4 -3.1");
+  nextDialog.setAttribute("position", "8 1.45 -3.1");
   nextDialog.setAttribute("rotation", "0 0 0");
   nextDialog.setAttribute("visible", "true");
 
@@ -1200,10 +1200,10 @@ startUmlDialog = () => {
   dialogText.setAttribute("text", "width: 1.7");
   dialogText.setAttribute("visible", "true");
 
-  nextDialog.setAttribute("position", "-0.45 1.8 -3.3");
+  nextDialog.setAttribute("position", "-0.45 1.85 -3.3");
   nextDialog.setAttribute("rotation", "0 28 0");
   nextDialog.setAttribute("visible", "true");
-  beginButton.setAttribute("position", "-0.990 1.8 -3.041");
+  beginButton.setAttribute("position", "-0.990 1.85 -3.041");
   beginButton.setAttribute("rotation", "0 90 0");
 
   dialogBox.components.sound.playSound();
@@ -1270,7 +1270,7 @@ startInitialDialog = () => {
 
   setTimeout(()=>{
     nextDialog.setAttribute("visible", "true");
-    nextDialog.setAttribute("position", "0 1.8 6.5");
+    nextDialog.setAttribute("position", "0 1.85 6.5");
     nextDialog.onmouseenter = () => {
       if(textIndex >= 0 && textIndex < initialTextArray.length){
         dialogText.setAttribute("text", "value: " + initialTextArray[textIndex]);
