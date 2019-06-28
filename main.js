@@ -1203,7 +1203,7 @@ startUmlDialog = () => {
   nextDialog.setAttribute("position", "-0.45 1.8 -3.3");
   nextDialog.setAttribute("rotation", "0 28 0");
   nextDialog.setAttribute("visible", "true");
-  beginButton.setAttribute("position", "-0.990 "+(cameraHeight-0.1)+ " -3.041");
+  beginButton.setAttribute("position", "-0.990 1.8 -3.041");
   beginButton.setAttribute("rotation", "0 90 0");
 
   dialogBox.components.sound.playSound();
