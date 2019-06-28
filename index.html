@@ -35,11 +35,21 @@
     <a-asset-item id="whiteboard-obj" src="models/whiteboard.obj"></a-asset-item>
     <a-asset-item id="whiteboard-mtl" src="models/whiteboard.mtl"></a-asset-item>
 
+    <!-- Trash by Google https://poly.google.com/view/0yT-YR5yO4L -->
+    <a-asset-item id="trash-obj" src="models/trash.obj"></a-asset-item>
+    <a-asset-item id="trash-mtl" src="models/trash.mtl"></a-asset-item>
+
+    <!-- Plant by Google https://poly.google.com/view/2ag6_uuqsnb -->
+    <a-asset-item id="plant-obj" src="models/plant.obj"></a-asset-item>
+    <a-asset-item id="plant-mtl" src="models/plant.mtl"></a-asset-item>
+
     <!-- Student in a Chair by Ben Weinberg https://poly.google.com/view/eRfCBdODR30 -->
     <a-asset-item id="studentChair-obj" src="models/chair-student.obj"></a-asset-item>
     <a-asset-item id="studentChair-mtl" src="models/chair-student.mtl"></a-asset-item>
-    <a-asset-item id="bluestudentChair-obj" src="models/blueStudent.obj"></a-asset-item>
     <a-asset-item id="bluestudentChair-mtl" src="models/blueStudent.mtl"></a-asset-item>
+    <a-asset-item id="yellowstudentChair-mtl" src="models/yellowStudent.mtl"></a-asset-item>
+    <a-asset-item id="pinkstudentChair-mtl" src="models/pinkStudent.mtl"></a-asset-item>
+    <a-asset-item id="greenstudentChair-mtl" src="models/greenStudent.mtl"></a-asset-item>
 
     <!-- Door by Google https://poly.google.com/view/ch-fQ-Ruyog -->
     <a-asset-item id="door-obj" src="models/white_door.obj"></a-asset-item>
@@ -47,6 +57,8 @@
 
     <a-asset-item id="dialogbubble-obj" src="models/dialogbubble.obj"></a-asset-item>
     <a-asset-item id="dialogbubble-mtl" src="models/dialogbubble.mtl"></a-asset-item>
+    <a-asset-item id="dialogbubblemirrored-obj" src="models/dialogbubblemirrored.obj"></a-asset-item>
+    <a-asset-item id="dialogbubblemirrored-mtl" src="models/dialogbubblemirrored.mtl"></a-asset-item>
 
     <a-asset-item id="exclamation-obj" src="models/exclamation.obj"></a-asset-item>
 
@@ -72,374 +84,208 @@
   </a-entity>
 
   <!--      Initial Panel-->
-  <a-entity geometry="primitive: plane; height: 1; width: 2;" id="js--initialPanelUp" material="color: purple; opacity: 0.9"
-            position="0 3 6"
-            text="value: Informatica VR \n\n Doe je VR Bril op en click op 'Beginnen'\n ; align: center; width: 1.5"></a-entity>
-  <a-entity geometry="primitive: plane; height: 1; width: 2;" id="js--initialPanel" material="color: purple; opacity: 0.9"
-            position="0 1.9 6"
-            text="value: Informatica VR \n\n Doe je VR Bril op en click op 'Beginnen'\n ; align: center; width: 1.5"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.10; width: 0.2;" id="js--initialPanelButtonUp" material="color: green; opacity: 0"
-            position="0 2.7 6.01" text="value: Beginnen; align: center; width: 1; color: green"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.10; width: 0.2;" id="js--initialPanelButton" material="color: green; opacity: 0"
-            position="0 1.6 6.01" text="value: Beginnen; align: center; width: 1; color: green"></a-entity>
+  <a-entity id="js--initialPanelUp" position="0 3 6" geometry="primitive: plane; height: 1; width: 2;" material="color: purple; opacity: 0.9" text="value: Informatica VR \n\n Doe je VR Bril op en click op 'Beginnen'\n ; align: center; width: 1.5"></a-entity>
+  <a-entity id="js--initialPanel" position="0 1.9 6" geometry="primitive: plane; height: 1; width: 2;" material="color: purple; opacity: 0.9" text="value: Informatica VR \n\n Doe je VR Bril op en click op 'Beginnen'\n ; align: center; width: 1.5"></a-entity>
+  <a-entity id="js--initialPanelButtonUp" position="0 2.7 6.01" geometry="primitive: plane; height: 0.10; width: 0.2;" material="color: green; opacity: 0" text="value: Beginnen; align: center; width: 1; color: green"></a-entity>
+  <a-entity id="js--initialPanelButton" position="0 1.6 6.01" geometry="primitive: plane; height: 0.10; width: 0.2;" material="color: green; opacity: 0" text="value: Beginnen; align: center; width: 1; color: green"></a-entity>
 
   <!--      Light-->
   <a-entity light="type: ambient; color: #BBB"></a-entity>
   <a-entity light="type: directional; color: #FFF; intensity: 0.2" position="0 2.9 0"></a-entity>
 
-  <!--      Floor and Extern Walls-->
-  <a-entity geometry="primitive: plane; height: 15; width: 20" id="floor" material="src: #floorTexture; repeat: 25 25"
-            position="0 0 0" rotation="-90 0 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 15; width: 20" id="ceiling"
-            material="src: #ceilingTexture; repeat: 20 20 " position="0 4 0" rotation="90 0 0"></a-entity>
+  <!--      Floor/Ceiling and Extern Walls-->
+  <a-entity id="floor" position="0 0 0" rotation="-90 0 0" geometry="primitive: plane; height: 15; width: 20" material="src: #floorTexture; repeat: 25 25"></a-entity>
+  <a-entity id="ceiling" position="0 4 0" rotation="90 0 0" geometry="primitive: plane; height: 15; width: 20" material="src: #ceilingTexture; repeat: 20 20"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 4; width: 20" id="externWallNorth"
-            material="src: #whiteWallTexture; repeat: 5 4; side: double" position="0 2 -7.5"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 20" id="externWallSouth"
-            material="src: #whiteWallTexture; repeat: 5 4; side: double" position="0 2 7.5"
-            rotation="0 180 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 15" id="externWallWest"
-            material="src: #whiteWallTexture; repeat: 5 4; side: double" position="-10 2 0"
-            rotation="0 90 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 15" id="externWallEast"
-            material="src: #whiteWallTexture; repeat: 5 4; side: double" position="10 2 0"
-            rotation="0 -90 0"></a-entity>
+  <a-entity id="externWallNorth" position="0 2 -7.5" geometry="primitive: plane; height: 4; width: 20" material="src: #whiteWallTexture; repeat: 5 4; side: double" ></a-entity>
+  <a-entity id="externWallSouth" position="0 2 7.5" rotation="0 180 0" geometry="primitive: plane; height: 4; width: 20" material="src: #whiteWallTexture; repeat: 5 4; side: double"></a-entity>
+  <a-entity id="externWallWest" position="-10 2 0" rotation="0 90 0" geometry="primitive: plane; height: 4; width: 15" material="src: #whiteWallTexture; repeat: 5 4; side: double"></a-entity>
+  <a-entity id="externWallEast" position="10 2 0" rotation="0 -90 0" geometry="primitive: plane; height: 4; width: 15" material="src: #whiteWallTexture; repeat: 5 4; side: double"></a-entity>
 
   <!--      Rooms-->
-  <a-entity geometry="primitive: plane; height: 4; width: 5" id="rightCorridorWallPR"
-            material="src: #whiteWallTexture; repeat: 1.5 4; side: double" position="1 2 2"
-            rotation="0 -90 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 5" id="leftCorridorWallPR"
-            material="src: #whiteWallTexture; repeat: 1.5 4; side: double" position="-1 2 2"
-            rotation="0 -90 0"></a-entity>
+  <a-entity id="rightCorridorWallPR" position="1 2 2" rotation="0 -90 0" geometry="primitive: plane; height: 4; width: 5" material="src: #whiteWallTexture; repeat: 1.5 4; side: double"></a-entity>
+  <a-entity id="leftCorridorWallPR" position="-1 2 2" rotation="0 -90 0" geometry="primitive: plane; height: 4; width: 5" material="src: #whiteWallTexture; repeat: 1.5 4; side: double"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 4; width: 2" id="innerWallRightPR"
-            material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="2 2 -0.5"
-            rotation="0 -180 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 12" id="innerWallRight2PR"
-            material="src: #whiteWallTexture; repeat: 2.5 4; side: double" position="3 2 -1.5"
-            rotation="0 -90 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 12" id="innerWallLeft2PR"
-            material="src: #whiteWallTexture; repeat: 2.5 4; side: double" position="-3 2 -1.5"
-            rotation="0 90 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 2" id="innerWallLeftPR"
-            material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="-2 2 -0.5"
-            rotation="0 -180 0"></a-entity>
+  <a-entity id="innerWallRightPR" position="2 2 -0.5" rotation="0 -180 0" geometry="primitive: plane; height: 4; width: 2" material="src: #whiteWallTexture; repeat: 0.6 4; side: double"></a-entity>
+  <a-entity id="innerWallRight2PR" position="3 2 -1.5" rotation="0 -90 0" geometry="primitive: plane; height: 4; width: 12" material="src: #whiteWallTexture; repeat: 2.5 4; side: double"></a-entity>
+  <a-entity id="innerWallLeft2PR" position="-3 2 -1.5" rotation="0 90 0" geometry="primitive: plane; height: 4; width: 12" material="src: #whiteWallTexture; repeat: 2.5 4; side: double"></a-entity>
+  <a-entity id="innerWallLeftPR" position="-2 2 -0.5" rotation="0 -180 0" geometry="primitive: plane; height: 4; width: 2" material="src: #whiteWallTexture; repeat: 0.6 4; side: double"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 4; width: 2" id="outerWallLefttPR"
-            material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="2 2 4.5"
-            rotation="0 -180 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 4; width: 2" id="outerWallRightPR"
-            material="src: #whiteWallTexture; repeat: 0.6 4; side: double" position="-2 2 4.5"
-            rotation="0 -180 0"></a-entity>
+  <a-entity id="outerWallLefttPR" position="2 2 4.5" rotation="0 -180 0" geometry="primitive: plane; height: 4; width: 2" material="src: #whiteWallTexture; repeat: 0.6 4; side: double"></a-entity>
+  <a-entity id="outerWallRightPR" position="-2 2 4.5" rotation="0 -180 0" geometry="primitive: plane; height: 4; width: 2" material="src: #whiteWallTexture; repeat: 0.6 4; side: double"></a-entity>
 
   <!--            Teleportation pads-->
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--teleportationPad"
-            material="src: textures/lightground.png; transparent: true" position="0 0.01 6"
-            rotation="-90 0 0" visible="false" sound="src: #teleportSound; volume: 0.7"></a-entity>
+  <a-entity id="js--teleportationPad" position="0 0.01 6" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true" sound="src: #teleportSound; volume: 0.7"></a-entity>
 
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--initialPad" material="src: textures/lightground.png; transparent: true"
-            position="0 0.01 6" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--middleRoomPad" material="src: textures/lightground.png; transparent: true"
-            position="0 0.01 2" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--middleRoomPad2" material="src: textures/lightground.png; transparent: true"
-            position="0 0.01 -4" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--leftRoomPad" material="src: textures/lightground.png; transparent: true"
-            position="-6.5 0.01 6" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--leftRoomPad2" material="src: textures/lightground.png; transparent: true"
-            position="-6.5 0.01 1.5" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--leftRoomPad3" material="src: textures/lightground.png; transparent: true"
-            position="-6.5 0.01 -2.5" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--rightRoomPad" material="src: textures/lightground.png; transparent: true"
-            position="6.5 0.01 6" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--rightRoomPad2" material="src: textures/lightground.png; transparent: true"
-            position="6.5 0.01 1" rotation="-90 0 0" visible="false"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--rightRoomPad3" material="src: textures/lightground.png; transparent: true"
-            position="6.5 0.01 -1" rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity id="js--initialPad" position="0 0.01 6" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--middleRoomPad" position="0 0.01 2" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--middleRoomPad2" position="0 0.01 -4" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--leftRoomPad" position="-6.5 0.01 6" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--leftRoomPad2" position="-6.5 0.01 1.5" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--leftRoomPad3" position="-6.5 0.01 -2.5" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--rightRoomPad" position="6.5 0.01 6" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--rightRoomPad2" position="6.5 0.01 1" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" id="js--rightRoomPad2" material="src: textures/lightground.png; transparent: true"></a-entity>
+  <a-entity id="js--rightRoomPad3" position="6.5 0.01 -1" rotation="-90 0 0" visible="false" geometry="primitive: circle; radius: 0.5" material="src: textures/lightground.png; transparent: true"></a-entity>
 
   <!--        Models-->
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -5" rotation="6 -45 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity id="js--teacher" obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="1 0 5" rotation="0 -140 0"
-            scale="2 2 2" visible="false"></a-entity>
-  <a-entity id="js--dialogBox" obj-model="obj: #dialogbubble-obj; mtl: #dialogbubble-mtl" position="-0.12 2.7 5" scale="0.5 0.5 0.5"
-            side="double" visible="false" sound="src: #talk1Sound; volume: 0.7;"></a-entity>
-  <a-entity geometry="primitive: plane; width: 1.5; height: 0.65" id="js--dialogText" material="opacity: 0"
-            position="-0.12 2.7 5.02" text="value: Welkom bij de opleiding Informatica van de Hogeschool Leiden!; width: 1.7; align: center"
-            visible="false" sound="src: #talk2Sound; volume: 0.9;"></a-entity>
-  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--nextButton" material="opacity: 0;"
-            position="0.35 2.4 5.04" text="value: Volgende; width: 1.5; align: center; color: lightgreen"
-            visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--beginButton" material="opacity: 0"
-            position="" text="value: Beginnen; width: 1.5; align: center; color: green"
-            visible="false"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #yellowstudentChair-mtl" position="-5 1.07 -5" rotation="6 -45 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--teacher" obj-model="obj: #teacher-obj; mtl: #teacher-mtl" position="1 0 5" rotation="0 -140 0" scale="2 2 2" visible="false"></a-entity>
+  <a-entity id="js--dialogBox" obj-model="obj: #dialogbubble-obj; mtl: #dialogbubble-mtl" position="-0.12 2.7 5" scale="0.5 0.5 0.5" side="double" visible="false" sound="src: #talk1Sound; volume: 0.5;"></a-entity>
+  <a-entity id="js--dialogBoxMirrored" obj-model="obj: #dialogbubblemirrored-obj; mtl: #dialogbubblemirrored-mtl" position="-0.12 2.7 5" scale="0.5 0.5 0.5" rotation="0 180 0" side="double" visible="false" sound="src: #talk1Sound; volume: 0.5;"></a-entity>
 
-  <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="-0.67 1.3 7.50" rotation="0 90 0"
-            scale="0.7 0.7 0.7"></a-entity>
-  <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="0.67 1.3 7.50" rotation="0 -90 0"
-            scale="0.7 0.7 0.7"></a-entity>
+  <a-entity geometry="primitive: plane; width: 1.5; height: 0.65" id="js--dialogText" material="opacity: 0" position="-0.12 2.7 5.02" text="value: Welkom bij de opleiding Informatica van de Hogeschool Leiden!; width: 1.7; align: center" visible="false" sound="src: #talk2Sound; volume: 1;"></a-entity>
+  <a-entity geometry="primitive: plane; width: 0.22; height: 0.08" id="js--nextButton" material="opacity: 0.8; color: green;" position="0 1.8 6.5" text="value: Volgende; width: 1; align: center; color: lightgreen" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; width: 0.22; height: 0.08" id="js--beginButton" material="opacity: 0.8; color: green;" position="0 1.8 6.5" text="value: Beginnen; width: 1; align: center; color: lightgreen" visible="false"></a-entity>
+
+  <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="-0.67 1.3 7.50" rotation="0 90 0" scale="0.7 0.7 0.7"></a-entity>
+  <a-entity obj-model="obj: #door-obj; mtl: #door-mtl" position="0.67 1.3 7.50" rotation="0 -90 0" scale="0.7 0.7 0.7"></a-entity>
+
+  <a-entity obj-model="obj: #trash-obj; mtl: #trash-mtl" position="-2.45086 0.3566 -0.83333" rotation="" scale="0.005 0.005 0.005"></a-entity>
+  <a-entity obj-model="obj: #trash-obj; mtl: #trash-mtl" position="-1.94359 0.3566 4.8992" rotation="" scale="0.005 0.005 0.005"></a-entity>
+  <a-entity obj-model="obj: #trash-obj; mtl: #trash-mtl" position="-9.49023 0.3566 -7.21475" rotation="" scale="0.005 0.005 0.005"></a-entity>
+  <a-entity obj-model="obj: #trash-obj; mtl: #trash-mtl" position="9.49023 0.3566 -7.21475" rotation="" scale="0.005 0.005 0.005"></a-entity>
+
+  <a-entity obj-model="obj: #plant-obj; mtl: #plant-mtl" position="-8.99409 0 7.00492" rotation="" scale="0.2 0.2 0.2"></a-entity>
+  <a-entity obj-model="obj: #plant-obj; mtl: #plant-mtl" position="8.99409 0 7.00492" rotation="" scale="0.2 0.2 0.2"></a-entity>
+
 
   <!--    Models Middle Room-->
   <!--    Models UML Board-->
   <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-2.83 1.3 -4.1" scale="3 3 3"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.5; width: 0.4" id="js--classDiagram"
-            material="src: images/classDiagram.png; transparent: true; side: double" position="-2.88 2.7 -2.9" rotation="0 90 0"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.1; width: 0.2" id="js--mainText" material="color: red; opacity: 0; side: double"
-            position="-2.88 2.3 -2.8" rotation="0 90 0" text="value: Main; color: black; width: 2; align: center"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.1; width: 0.8" id="js--helloWorldText" material="color: red; opacity: 0; side: double"
-            position="-2.88 2.1 -3.05" rotation="0 90 0" text="value: +printHelloWorld(); color: black; width: 2; align: center"></a-entity>
-  <a-entity geometry="primitive: plane; height: 2; width: 1.5" id="js--resultDiagram" material="opacity: 0; color: yellow"
-            position="-2.88 2.1 -4.9" rotation="0 90 0" sound="src: #drawSound; volume: 0.7;"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.5; width: 0.4" id="js--classDiagram" material="src: images/classDiagram.png; transparent: true; side: double" position="-2.88 2.7 -2.9" rotation="0 90 0"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.1; width: 0.2" id="js--mainText" material="color: red; opacity: 0; side: double" position="-2.88 2.3 -2.8" rotation="0 90 0" text="value: Main; color: black; width: 2; align: center"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.1; width: 0.8" id="js--helloWorldText" material="color: red; opacity: 0; side: double" position="-2.88 2.1 -3.05" rotation="0 90 0" text="value: +printHelloWorld(); color: black; width: 2; align: center"></a-entity>
+  <a-entity geometry="primitive: plane; height: 2; width: 1.5" id="js--resultDiagram" material="opacity: 0; color: yellow" position="-2.88 2.1 -4.9" rotation="0 90 0" sound="src: #drawSound; volume: 0.7;"></a-entity>
 
   <!--    Models Programming Exercise-->
-  <a-entity id="js--programmingChair" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 0.3 -5.8" rotation="0 180 0"
-            scale="0.78 0.78 0.78" sound="src: #chairSound; volume: 0.7;"></a-entity>
+  <a-entity id="js--programmingChair" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 0.3 -5.8" rotation="0 180 0" scale="0.78 0.78 0.78" sound="src: #chairSound; volume: 0.7;"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="0 0 -6.9" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1.03 -6.7" rotation="0 90 0"
-            scale="0.01 0.01 0.01"></a-entity>
+  <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1.03 -6.7" rotation="0 90 0" scale="0.01 0.01 0.01"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 0.30; width: 0.60" id="js--prResultPlane" material="color: black; opacity: 1; side: double"
-            position="-0.09 1.52 -6.59" rotation="-9 0 0" visible="false" sound="src: #typeSound; volume: 0.7;"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.15" id="js--prResult-Class" material="color: black; opacity: 0; side: double"
-            position="-0.3 1.63 -6.605" rotation="-9 0 0"
-            text="value: public class Main {; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.30" id="js--prResult-MainMethod" material="color: black; opacity: 0; side: double"
-            position="-0.2 1.60 -6.6" rotation="-9 0 0"
-            text="value: \tpublic static void main(String[] args) { ; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.15" id="js--prResult-MethodCall" material="color: black; opacity: 0; side: double"
-            position="-0.25 1.57 -6.5905" rotation="-9 0 0"
-            text="value: \t\tprintHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CloseMain" material="color: black; opacity: 0; side: double"
-            position="-0.34 1.54 -6.59" rotation="-9 0 0"
-            text="value: \t}; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.30; width: 0.60" id="js--prResultPlane" material="color: black; opacity: 1; side: double" position="-0.09 1.52 -6.59" rotation="-9 0 0" visible="false" sound="src: #typeSound; volume: 0.7;"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.15" id="js--prResult-Class" material="color: black; opacity: 0; side: double" position="-0.3 1.63 -6.605" rotation="-9 0 0" text="value: public class Main {; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.30" id="js--prResult-MainMethod" material="color: black; opacity: 0; side: double" position="-0.2 1.60 -6.6" rotation="-9 0 0" text="value: \tpublic static void main(String[] args) { ; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.15" id="js--prResult-MethodCall" material="color: black; opacity: 0; side: double" position="-0.25 1.57 -6.5905" rotation="-9 0 0" text="value: \t\tprintHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-semicolonCloseMethodCall" material="src: images/semicolon.png" position="-0.179 1.569 -6.596" rotation="-9 0 0" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CloseMain" material="color: black; opacity: 0; side: double" position="-0.34 1.54 -6.59" rotation="-9 0 0" text="value: \t}; color: white; width: 0.4; align: center" visible="false"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.05" id="js--prResult-public" material="color: red; opacity: 0; side: double"
-            position="-0.32 1.51 -6.587" rotation="-9 0 0"
-            text="value: \tpublic; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prResult-void" material="color: red; opacity: 0; side: double"
-            position="-0.27 1.51 -6.587" rotation="-9 0 0"
-            text="value: void; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.14" id="js--prResult-printHelloWorldMethod" material="color: red; opacity: 0; side: double"
-            position="-0.17 1.51 -6.587" rotation="-9 0 0"
-            text="value:printHelloWorld() ; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CurlyBracketOpen" material="color: red; opacity: 0; side: double"
-            position="-0.09 1.513 -6.582" rotation="-9 0 0"
-            text="value: {; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CurlyBracketClose" material="color: red; opacity: 0; side: double"
-            position="-0.34 1.445 -6.575" rotation="-9 0 0"
-            text="value: }; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prResult-print" material="color: red; opacity: 0; side: double"
-            position="-0.30 1.48 -6.575" rotation="-9 0 0"
-            text="value: \t\tprint; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printBracketOpen" material="color: red; opacity: 0; side: double"
-            position="-0.27 1.48 -6.575" rotation="-9 0 0"
-            text="value: (; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printQuoteOpen" material="color: red; opacity: 0; side: double"
-            position="-0.26 1.48 -6.575" rotation="-9 0 0"
-            text="value: '; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.1" id="js--prResult-printHelloWorld" material="color: red; opacity: 0; side: double"
-            position="-0.21 1.48 -6.575" rotation="-9 0 0"
-            text="value: Hello World; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printQuoteClose" material="color: red; opacity: 0; side: double"
-            position="-0.16 1.48 -6.575" rotation="-9 0 0"
-            text="value: '; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printBracketClose" material="color: black; opacity: 0; side: double"
-            position="-0.15 1.48 -6.575" rotation="-9 0 0"
-            text="value: ); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.05" id="js--prResult-public" material="color: red; opacity: 0; side: double" position="-0.32 1.51 -6.587" rotation="-9 0 0" text="value: \tpublic; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prResult-void" material="color: red; opacity: 0; side: double" position="-0.27 1.51 -6.587" rotation="-9 0 0" text="value: void; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.14" id="js--prResult-printHelloWorldMethod" material="color: red; opacity: 0; side: double" position="-0.17 1.51 -6.587" rotation="-9 0 0" text="value:printHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CurlyBracketOpen" material="color: red; opacity: 0; side: double" position="-0.09 1.513 -6.582" rotation="-9 0 0" text="value: {; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CurlyBracketClose" material="color: red; opacity: 0; side: double" position="-0.34 1.445 -6.575" rotation="-9 0 0" text="value: }; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prResult-print" material="color: red; opacity: 0; side: double" position="-0.30 1.48 -6.575" rotation="-9 0 0" text="value: \t\tprint; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printBracketOpen" material="color: red; opacity: 0; side: double" position="-0.27 1.48 -6.575" rotation="-9 0 0" text="value: (; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printQuoteOpen" material="color: red; opacity: 0; side: double" position="-0.26 1.48 -6.575" rotation="-9 0 0" text="value: '; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.1" id="js--prResult-printHelloWorld" material="color: red; opacity: 0; side: double" position="-0.21 1.48 -6.575" rotation="-9 0 0" text="value: Hello World; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printQuoteClose" material="color: red; opacity: 0; side: double" position="-0.16 1.48 -6.575" rotation="-9 0 0" text="value: '; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-printBracketClose" material="color: black; opacity: 0; side: double" position="-0.15 1.48 -6.575" rotation="-9 0 0" text="value: ); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-semicolonClosePrint" material="src: images/semicolon.png" position="-0.142 1.478 -6.582" rotation="-9 0 0" visible="false"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CloseClass" material="color: black; opacity: 0; side: double"
-            position="-0.36 1.42 -6.575" rotation="-9 0 0"
-            text="value: }; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prResult-CloseClass" material="color: black; opacity: 0; side: double" position="-0.36 1.42 -6.575" rotation="-9 0 0" text="value: }; color: white; width: 0.4; align: center" visible="false"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.05" id="js--prChoose-Public" material="color: black; opacity: 1; side: double"
-            position="-0.36 1.35 -6.55" rotation="-9 0 0"
-            text="value: public; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prChoose-Void" material="color: black; opacity: 1; side: double"
-            position="-0.23 1.35 -6.55" rotation="-9 0 0"
-            text="value: void; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.14" id="js--prChoose-printHelloWorld" material="color: black; opacity: 1; side: double"
-            position="-0.13 1.35 -6.55" rotation="-9 0 0"
-            text="value: printHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-openCurlyBracket" material="color: black; opacity: 1; side: double"
-            position="-0.32 1.35 -6.55" rotation="-9 0 0"
-            text="value: {; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-closeCurlyBracket" material="color: black; opacity: 1; side: double"
-            position="-0.04 1.35 -6.55" rotation="-9 0 0"
-            text="value: }; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prChoose-print" material="color: black; opacity: 1; side: double"
-            position="-0.28 1.35 -6.55" rotation="-9 0 0"
-            text="value: print; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-openBracket" material="color: black; opacity: 1; side: double"
-            position="-0.01 1.35 -6.55" rotation="-9 0 0"
-            text="value: (; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-quote" material="color: black; opacity: 1; side: double"
-            position="0.05 1.35 -6.55" rotation="-9 0 0"
-            text="value: '; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.10" id="js--prChoose-HelloWorld" material="color: black; opacity: 1; side: double"
-            position="0.12 1.35 -6.55" rotation="-9 0 0"
-            text="value: Hello World; color: white; width: 0.4; align: center" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-closeBracket" material="color: black; opacity: 1; side: double"
-            position="0.02 1.35 -6.55" rotation="-9 0 0"
-            text="value: ); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.05" id="js--prChoose-Public" material="color: black; opacity: 1; side: double" position="-0.36 1.35 -6.55" rotation="-9 0 0" text="value: public; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prChoose-Void" material="color: black; opacity: 1; side: double" position="-0.23 1.35 -6.55" rotation="-9 0 0" text="value: void; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.14" id="js--prChoose-printHelloWorld" material="color: black; opacity: 1; side: double" position="-0.13 1.35 -6.55" rotation="-9 0 0" text="value: printHelloWorld(); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-openCurlyBracket" material="color: black; opacity: 1; side: double" position="-0.32 1.35 -6.55" rotation="-9 0 0" text="value: {; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-closeCurlyBracket" material="color: black; opacity: 1; side: double" position="-0.04 1.35 -6.55" rotation="-9 0 0" text="value: }; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.04" id="js--prChoose-print" material="color: black; opacity: 1; side: double" position="-0.28 1.35 -6.55" rotation="-9 0 0" text="value: print; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-openBracket" material="color: black; opacity: 1; side: double" position="-0.01 1.35 -6.55" rotation="-9 0 0" text="value: (; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-quote" material="color: black; opacity: 1; side: double" position="0.05 1.35 -6.55" rotation="-9 0 0" text="value: '; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.10" id="js--prChoose-HelloWorld" material="color: black; opacity: 1; side: double" position="0.12 1.35 -6.55" rotation="-9 0 0" text="value: Hello World; color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-closeBracket" material="color: black; opacity: 1; side: double" position="0.02 1.35 -6.55" rotation="-9 0 0" text="value: ); color: white; width: 0.4; align: center" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.03; width: 0.02" id="js--prChoose-semicolon" material="src: images/semicolon.png" position="0.184 1.35 -6.55" rotation="-9 0 0" visible="false"></a-entity>
 
-  <a-entity geometry="primitive: plane; height: 0.1; width: 0.40" id="js--prInstructions" material="color: white; opacity: 1; side: double"
-            position="-0.19 1.27 -6.548" rotation="-9 0 0"
-            text="value: Instructions; color: black; width: 0.4; align: left" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; height: 0.1; width: 0.1" id="js--prNextInstruction" material="src: images/arrowRight.png; transparent: true;"
-            position="0.07 1.27 -6.548" rotation="-9 0 0" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.1; width: 0.40" id="js--prInstructions" material="color: white; opacity: 1; side: double" position="-0.19 1.27 -6.548" rotation="-9 0 0" text="value: Instructions; color: black; width: 0.4; align: left" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; height: 0.1; width: 0.1" id="js--prNextInstruction" material="src: images/arrowRight.png; transparent: true;" position="0.07 1.27 -6.548" rotation="-9 0 0" visible="false"></a-entity>
   <!--    Models Right Room-->
-  <a-entity id="js--exclamation" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="8 1.8 2" rotation="0 40 0"
-            scale="0.4 0.4 0.4" visible="false" sound="src: #teleportSound; volume: 0.7;"></a-entity>
-  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--jaButton" material="opacity: 0;" position="0.35 2.4 5.04"
-            text="value: Ja; width: 1.5; align: center; color: lightgreen" visible="false"></a-entity>
-  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--neeButton" material="opacity: 0;" position="0.35 2.4 5.04"
-            text="value: Nee; width: 1.5; align: center; color: red" visible="false"></a-entity>
+  <a-entity id="js--exclamation" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="8 1.8 2" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false" sound="src: #teleportSound; volume: 0.7;"></a-entity>
+  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--jaButton" material="opacity: 0;" position="0.35 2.4 5.04" text="value: Ja; width: 1.5; align: center; color: lightgreen" visible="false"></a-entity>
+  <a-entity geometry="primitive: plane; width: 0.2; height: 0.13" id="js--neeButton" material="opacity: 0;" position="0.35 2.4 5.04" text="value: Nee; width: 1.5; align: center; color: red" visible="false"></a-entity>
 
   <!--    Left-->
-  <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="4 1.07 -2" rotation="6 140 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="5 0.3 -2.3" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #bluestudentChair-mtl" position="4 1.07 -2" rotation="6 140 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="5 0.3 -2.3" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 -2.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.25 1.03 -2.7" rotation="-90 0 -90"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="4 0.3 0" rotation="0 150 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity id="js--askedStudent3" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="5 1.07 0" rotation="0 180 8"
-            rotation="6 180 3.5" scale="1.3 1.3 1.3"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--askedStudent3Pad"
-            material="src: textures/lightground.png; transparent: true" position="5 0.01 0"
-            rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.25 1.03 -2.7" rotation="-90 0 -90" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="4 0.3 0" rotation="0 150 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity id="js--askedStudent3" obj-model="obj: #studentChair-obj; mtl: #yellowstudentChair-mtl" position="5 1.07 0" rotation="0 180 8" rotation="6 180 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent3Pad" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="5 1.8 0" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 -0.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 -0.65" rotation="-90 0 -80"
-            scale="0.0035 0.0035 0.0035"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="4 0.3 1.6" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="5 0.3 1.6" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 -0.65" rotation="-90 0 -80" scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="4 0.3 1.6" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="5 0.3 1.6" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 1.3" rotation="0 0 0"></a-entity>
-  <a-entity id="js--askedStudent2" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="4 1.07 4" rotation="6 180 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="5 1.07 4" rotation="6 180 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent2" obj-model="obj: #studentChair-obj; mtl: #greenstudentChair-mtl" position="4 1.07 4" rotation="6 180 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #pinkstudentChair-mtl" position="5 1.07 4" rotation="6 180 3.5" scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="4.5 0 3.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4 1.03 3.5" rotation="-90 0 -80"
-            scale="0.0035 0.0035 0.0035"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 3.6" rotation="-90 0 -90"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="6.5 1.3 -7.35" rotation="0 -90 0"
-            scale="3 3 3"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4 1.03 3.5" rotation="-90 0 -80" scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="4.90 1.03 3.6" rotation="-90 0 -90" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="6.5 1.3 -7.35" rotation="0 -90 0" scale="3 3 3"></a-entity>
   <!--    Right-->
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 -2.3" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity id="js--sittingChairRightRoom" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="8 0.3 -2.3" rotation="0 180 0"
-            scale="0.78 0.78 0.78" sound="src: #chairSound; volume: 0.7;"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 -2.3" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity id="js--sittingChairRightRoom" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="8 0.3 -2.3" rotation="0 180 0" scale="0.78 0.78 0.78" sound="src: #chairSound; volume: 0.7;"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 -2.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 0.3" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="8 1.07 0" rotation="6 145 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 0.3" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #bluestudentChair-mtl" position="8 1.07 0" rotation="6 145 3.5" scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 -0.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8.25 1.03 -0.6" rotation="-90 0 -110"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="9 1.07 2" rotation="6 160 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity id="js--askedStudent1" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="8 1.07 2" rotation="6 160 3.5"
-            scale="1.3 1.3 1.3" sound="src: #backgroundSound; loop: true; volume: 0.3;"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--askedStudent1Pad"
-            material="src: textures/lightground.png; transparent: true" position="8 0.01 2"
-            rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8.25 1.03 -0.6" rotation="-90 0 -110" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="9 1.07 2" rotation="6 160 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent1" obj-model="obj: #studentChair-obj; mtl: #pinkstudentChair-mtl" position="8 1.07 2" rotation="6 160 3.5" scale="1.3 1.3 1.3" sound="src: #backgroundSound; loop: true; volume: 0.3;"></a-entity>
+  <a-entity id="js--askedStudent1Pad" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="8 1.8 2" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 1.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8.90 1.03 1.3" rotation="-90 0 -110"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8 1.03 1.64" rotation="-90 0 -90"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 3.7" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="8 1.07 4" rotation="6 180 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8.90 1.03 1.3" rotation="-90 0 -110" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="8 1.03 1.64" rotation="-90 0 -90" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="9 0.3 3.7" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #yellowstudentChair-mtl" position="8 1.07 4" rotation="6 180 3.5" scale="1.3 1.3 1.3"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="8.5 0 3.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="7.80 1.03 3.6" rotation="-90 0 -70"
-            scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="7.80 1.03 3.6" rotation="-90 0 -70" scale="0.0035 0.0035 0.0035"></a-entity>
 
   <!--    Models Left Room-->
   <!--    Right-->
-  <a-entity obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="-4 1.07 -3.5"
-            rotation="6 -30 3.5" scale="1.3 1.3 1.3"></a-entity>
-  <a-entity id="js--askedStudent7" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -3.5" rotation="6 -20 3.5"
-            scale="1.3 1.3 1.3" sound="src: #backgroundSound; loop: true; volume: 0.3;"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--askedStudent7Pad"
-            material="src: textures/lightground.png; transparent: true" position="-5 0.01 -3.50"
-            rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #bluestudentChair-mtl" position="-4 1.07 -3.5" rotation="6 -30 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent7" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-5 1.07 -3.5" rotation="6 -20 3.5" scale="1.3 1.3 1.3" sound="src: #backgroundSound; loop: true; volume: 0.3;"></a-entity>
+  <a-entity id="js--askedStudent7Pad" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="-5 1.8 -3.50" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-4.5 0 -2.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4.8 1.03 -3" rotation="-90 180 -70"
-            scale="0.0035 0.0035 0.0035"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4 1.03 -3" rotation="-90 150 -70"
-            scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4.8 1.03 -3" rotation="-90 180 -70" scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4 1.03 -3" rotation="-90 150 -70" scale="0.0035 0.0035 0.0035"></a-entity>
 
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 -1" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-5 0.3 -1" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 -1" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-5 0.3 -1" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-4.5 0 -1.7" rotation="0 0 0"></a-entity>
 
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 0.5" rotation="0 0 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity id="js--askedStudent4" obj-model="obj: #bluestudentChair-obj; mtl: #bluestudentChair-mtl" position="-5 1.07 0.5"
-            rotation="6 -10 3.5" scale="1.3 1.3 1.3"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--askedStudent4Pad"
-            material="src: textures/lightground.png; transparent: true" position="-5 0.01 0.5"
-            rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 0.5" rotation="0 0 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity id="js--askedStudent4" obj-model="obj: #studentChair-obj; mtl: #bluestudentChair-mtl" position="-5 1.07 0.5" rotation="6 -10 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent4Pad" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="-5 1.8 0.5" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-4.5 0 1.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4.8 1.03 1" rotation="-90 180 -70"
-            scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-4.8 1.03 1" rotation="-90 180 -70" scale="0.0045 0.0045 0.0045"></a-entity>
 
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 3" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-5 0.3 2.6" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-4 0.3 3" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-5 0.3 2.6" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-4.5 0 2.3" rotation="0 0 0"></a-entity>
 
-  <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-6.5 1.3 -7.35" rotation="0 -90 0"
-            scale="3 3 3"></a-entity>
+  <a-entity obj-model="obj: #whiteboard-obj; mtl: #whiteboard-mtl" position="-6.5 1.3 -7.35" rotation="0 -90 0" scale="3 3 3"></a-entity>
+  <a-entity position="-6.5164 2.18074 -7.41412" geometry="primitive: plane; height: 2; width: 3" text="align: center; color: #ff402a; value: De Specialisaties \n\n IAT - Interactie Technologie\n SE - Software Engineering \n BDAM- Business Data Management \n FICT - Forensisch ICT; width: 4.2" material="transparent: true"></a-entity>
   <!--    Left-->
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 -3.5" rotation="0 0 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity id="js--askedStudent6" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-8 1.07 -3.5" rotation="6 -30 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--askedStudent6Pad"
-            material="src: textures/lightground.png; transparent: true" position="-8 0.01 -3.5"
-            rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 -3.5" rotation="0 0 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity id="js--askedStudent6" obj-model="obj: #studentChair-obj; mtl: #pinkstudentChair-mtl" position="-8 1.07 -3.5" rotation="6 -30 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent6Pad" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="-8 1.8 -3.5" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 -2.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 -3" rotation="-90 160 -70"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 -1.2" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-8 0.3 -1.3" rotation="0 180 0"
-            scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 -3" rotation="-90 160 -70" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 -1.2" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-8 0.3 -1.3" rotation="0 180 0" scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 -1.7" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 0.5" rotation="0 0 0"
-            scale="0.78 0.78 0.78"></a-entity>
-  <a-entity id="js--askedStudent5" obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-8 1.07 0.5" rotation="6 -25 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity geometry="primitive: circle; radius: 0.5" id="js--askedStudent5Pad"
-            material="src: textures/lightground.png; transparent: true" position="-8 0.01 0.5"
-            rotation="-90 0 0" visible="false"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-9 0.3 0.5" rotation="0 0 0" scale="0.78 0.78 0.78"></a-entity>
+  <a-entity id="js--askedStudent5" obj-model="obj: #studentChair-obj; mtl: #yellowstudentChair-mtl" position="-8 1.07 0.5" rotation="6 -25 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity id="js--askedStudent5Pad" material="color: #f9b640" obj-model="obj: #exclamation-obj" position="-8 1.8 0.5" rotation="0 40 0" scale="0.4 0.4 0.4" visible="false"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 1.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 1" rotation="-90 160 -70"
-            scale="0.0035 0.0035 0.0035"></a-entity>
-  <a-entity obj-model="obj: #studentChair-obj; mtl: #studentChair-mtl" position="-9 1.07 2.7" rotation="6 160 3.5"
-            scale="1.3 1.3 1.3"></a-entity>
-  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-8 0.3 3" rotation="0 75 0"
-            scale="0.78 0.78 0.78"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 1" rotation="-90 160 -70" scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #studentChair-obj; mtl: #greenstudentChair-mtl" position="-9 1.07 2.7" rotation="6 160 3.5" scale="1.3 1.3 1.3"></a-entity>
+  <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-8 0.3 3" rotation="0 75 0" scale="0.78 0.78 0.78"></a-entity>
   <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="-8.5 0 2.3" rotation="0 0 0"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-9 1.03 2.2" rotation="-90 0 -70"
-            scale="0.0045 0.0045 0.0045"></a-entity>
-  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 2.3" rotation="-90 -10 -70"
-            scale="0.0035 0.0035 0.0035"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-9 1.03 2.2" rotation="-90 0 -70" scale="0.0045 0.0045 0.0045"></a-entity>
+  <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" position="-8 1.03 2.3" rotation="-90 -10 -70" scale="0.0035 0.0035 0.0035"></a-entity>
 </a-scene>
 <script src="main.js" type="text/javascript"></script>
-<!--<script src="/__/firebase/6.2.0/firebase-app.js"></script>-->
-<!--<script src="/__/firebase/init.js"></script>-->
 </body>
 </html>

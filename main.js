@@ -20,6 +20,8 @@ let initialPanelButton = document.getElementById("js--initialPanelButton");
 
 let teacher = document.getElementById("js--teacher");
 let dialogBox = document.getElementById("js--dialogBox");
+let dialogBoxMirrored = document.getElementById("js--dialogBoxMirrored");
+
 let dialogText = document.getElementById("js--dialogText");
 let nextDialog = document.getElementById("js--nextButton");
 let beginButton = document.getElementById("js--beginButton");
@@ -35,6 +37,7 @@ let prResultPlane = document.getElementById("js--prResultPlane");
 let prResultClass = document.getElementById("js--prResult-Class");
 let prResultMainMethod = document.getElementById("js--prResult-MainMethod");
 let prResultMethodCall = document.getElementById("js--prResult-MethodCall");
+let prResultSemicolonCloseMethodCall = document.getElementById("js--prResult-semicolonCloseMethodCall");
 let prResultCloseMain = document.getElementById("js--prResult-CloseMain");
 
 let prResultPublic = document.getElementById("js--prResult-public");
@@ -48,8 +51,9 @@ let prResultPrintQuoteOpen = document.getElementById("js--prResult-printQuoteOpe
 let prResultPrintHelloWorld = document.getElementById("js--prResult-printHelloWorld");
 let prResultPrintQuoteClose = document.getElementById("js--prResult-printQuoteClose");
 let prResultPrintBracketClose = document.getElementById("js--prResult-printBracketClose");
-
+let prResultSemicolonClosePrint = document.getElementById("js--prResult-semicolonClosePrint");
 let prResultCloseClass = document.getElementById("js--prResult-CloseClass");
+
 let prChoosePublic = document.getElementById("js--prChoose-Public");
 let prChooseVoid = document.getElementById("js--prChoose-Void");
 let prChoosePrintHelloWorld = document.getElementById("js--prChoose-printHelloWorld");
@@ -59,7 +63,9 @@ let prChoosePrint = document.getElementById("js--prChoose-print");
 let prChooseOpenBracket = document.getElementById("js--prChoose-openBracket");
 let prChooseQuote = document.getElementById("js--prChoose-quote");
 let prChooseHelloWorld = document.getElementById("js--prChoose-HelloWorld");
+let prChooseSemicolon = document.getElementById("js--prChoose-semicolon");
 let prChooseCloseBracket = document.getElementById("js--prChoose-closeBracket");
+
 let prInstructions = document.getElementById("js--prInstructions");
 let prNextInstruction = document.getElementById("js--prNextInstruction");
 
@@ -93,6 +99,7 @@ let cameraDepthUmlExercise;
 addConversationStudent3 = () => {
   askedStudent3Pad.setAttribute("visible", "true");
   askStudent3.onmouseenter = () => {
+    askedStudent3Pad.setAttribute("visible", "false");
     dialogBox.setAttribute("position", "5.579 1.81 0.04");
     dialogBox.setAttribute("rotation", "0 150 0");
     dialogBox.setAttribute("scale", "0.25 0.25 0.25");
@@ -108,26 +115,29 @@ addConversationStudent3 = () => {
   askStudent3.onmouseleave = () => {
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
+    askedStudent3Pad.setAttribute("visible", "true");
   };
 };
 
 addConversationStudent1 = () => {
   askedStudent1Pad.setAttribute("visible", "true");
   askStudent1.onmouseenter = () => {
-    dialogBox.setAttribute("position", "8.4 1.8 1.5");
-    dialogBox.setAttribute("rotation", "0 220 0");
-    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
-    dialogText.setAttribute("position", "8.385 1.8 1.5");
+    askedStudent1Pad.setAttribute("visible", "false");
+    dialogBoxMirrored.setAttribute("position", "7.524 1.8 2.163");
+    dialogBoxMirrored.setAttribute("rotation", "0 40 0");
+    dialogBoxMirrored.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "7.506 1.8 2.147");
     dialogText.setAttribute("rotation", "0 220 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: De opleiding bestaat uit 4 specialisaties,\n SE, BDAM, IAT en FICT");
     dialogText.components.sound.playSound();
-    dialogBox.setAttribute("visible", "true");
+    dialogBoxMirrored.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
 
   askStudent1.onmouseleave = () => {
-    dialogBox.setAttribute("visible", "false");
+    askedStudent1Pad.setAttribute("visible", "true");
+    dialogBoxMirrored.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
 };
@@ -135,6 +145,7 @@ addConversationStudent1 = () => {
 addConversationStudent4 = () => {
   askedStudent4Pad.setAttribute("visible", "true");
   askStudent4.onmouseenter = () => {
+    askedStudent4Pad.setAttribute("visible", "false");
     dialogBox.setAttribute("position", "-5.627 1.770 0.55");
     dialogBox.setAttribute("rotation", "0 -20 0");
     dialogBox.setAttribute("scale", "0.25 0.25 0.25");
@@ -148,6 +159,7 @@ addConversationStudent4 = () => {
   };
 
   askStudent4.onmouseleave = () => {
+    askedStudent4Pad.setAttribute("visible", "true");
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
@@ -156,20 +168,22 @@ addConversationStudent4 = () => {
 addConversationStudent5 = () => {
   askedStudent5Pad.setAttribute("visible", "true");
   askStudent5.onmouseenter = () => {
-    dialogBox.setAttribute("position", "-8.512 1.770 0.813");
-    dialogBox.setAttribute("rotation", "0 40 0");
-    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
-    dialogText.setAttribute("position", "-8.502 1.770 0.836");
+    askedStudent5Pad.setAttribute("visible", "false");
+    dialogBoxMirrored.setAttribute("position", "-7.491 1.793 0.296");
+    dialogBoxMirrored.setAttribute("rotation", "0 220 0");
+    dialogBoxMirrored.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "-7.448 1.803 0.327");
     dialogText.setAttribute("rotation", "0 40 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
-    dialogText.setAttribute("text", "value: Ik ben een IAT student. \n Wij werken met nieuwe technologieën en innovaties. \n De interactie tussen gebruikers en systemen is heel belangrijk");
+    dialogText.setAttribute("text", "value: Ik ben een IAT student. \n Wij werken met nieuwe technologie en innovaties. \n De interactie tussen gebruikers en systemen is heel belangrijk.");
     dialogText.components.sound.playSound();
-    dialogBox.setAttribute("visible", "true");
+    dialogBoxMirrored.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
 
   askStudent5.onmouseleave = () => {
-    dialogBox.setAttribute("visible", "false");
+    askedStudent5Pad.setAttribute("visible", "true");
+    dialogBoxMirrored.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
 };
@@ -177,20 +191,22 @@ addConversationStudent5 = () => {
 addConversationStudent6 = () => {
   askedStudent6Pad.setAttribute("visible", "true");
   askStudent6.onmouseenter = () => {
-    dialogBox.setAttribute("position", "-8.534 1.77 -3.255");
-    dialogBox.setAttribute("rotation", "0 40 0");
-    dialogBox.setAttribute("scale", "0.25 0.25 0.25");
-    dialogText.setAttribute("position", "-8.540 1.77 -3.224");
+    askedStudent6Pad.setAttribute("visible", "false");
+    dialogBoxMirrored.setAttribute("position", "-7.566 1.77 -3.696");
+    dialogBoxMirrored.setAttribute("rotation", "0 220 0");
+    dialogBoxMirrored.setAttribute("scale", "0.25 0.25 0.25");
+    dialogText.setAttribute("position", "-7.554 1.781 -3.687");
     dialogText.setAttribute("rotation", "0 40 0");
     dialogText.setAttribute("scale", "0.5 0.5 0.5");
     dialogText.setAttribute("text", "value: Ik ben een BDAM student.\n Data speelt steeds een belangrijkere rol in de maatschappij,\n wij werken veel met het behandelen en visualiseren van data.");
     dialogText.components.sound.playSound();
-    dialogBox.setAttribute("visible", "true");
+    dialogBoxMirrored.setAttribute("visible", "true");
     dialogText.setAttribute("visible", "true");
   };
 
   askStudent6.onmouseleave = () => {
-    dialogBox.setAttribute("visible", "false");
+    askedStudent6Pad.setAttribute("visible", "true");
+    dialogBoxMirrored.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
 };
@@ -198,6 +214,7 @@ addConversationStudent6 = () => {
 addConversationStudent7 = () => {
   askedStudent7Pad.setAttribute("visible", "true");
   askStudent7.onmouseenter = () => {
+    askedStudent7Pad.setAttribute("visible", "false");
     dialogBox.setAttribute("position", "-5.627 1.77 -3.634");
     dialogBox.setAttribute("rotation", "0 -20 0");
     dialogBox.setAttribute("scale", "0.25 0.25 0.25");
@@ -211,6 +228,7 @@ addConversationStudent7 = () => {
   };
 
   askStudent7.onmouseleave = () => {
+    askedStudent7Pad.setAttribute("visible", "true");
     dialogBox.setAttribute("visible", "false");
     dialogText.setAttribute("visible", "false");
   };
@@ -373,9 +391,9 @@ startFinalDialog = () => {
 
   let finalDialogArray = [
     "Dat was alles voor vandaag! Ik hoop dat je het leuk hebt gehad.",
-    "Je kan nu vrij rondlopen, misschien hebben andere studenten nog wat te zeggen,",
-    "of als je wilt, mag je naar huis gaan.",
-    "Als je meer vragen hebt over de opleiding kan je bij ons website terecht.",
+    "Als je aan het einde van de gang helemaal naar rechts gaat, zal je de specialisaties lokaal vinden",
+    "daar zullen studenten je nog wat informatie geven over de specialisaties.",
+    "Als je meer vragen hebt over de opleiding kan je bij ons website terecht.\n www.hsleiden.nl",
     "Bedankt voor je komst en tot ziens!"
   ];
 
@@ -388,7 +406,7 @@ startFinalDialog = () => {
   dialogText.setAttribute("text", "value: " + finalDialogArray[0] + "; width: 1.7");
   dialogText.setAttribute("rotation", "0 0 0");
   dialogText.setAttribute("visible", "true");
-  nextDialog.setAttribute("position", "7.373 2.433 -5.822");
+  nextDialog.setAttribute("position", "6.5 "+(cameraHeight-0.1)+" -3.8");
   nextDialog.setAttribute("rotation", "0 0 0");
   nextDialog.setAttribute("visible", "true");
 
@@ -447,10 +465,10 @@ askThirdQuestion = () => {
   dialogText.setAttribute("text", "value: Welke furry soort leeft op de \nforest moon van Endor?");
   dialogText.components.sound.playSound();
 
-  jaButton.setAttribute("position", "5.492 1.674 -0.067");
+  jaButton.setAttribute("position", "5.445 1.674 -0.091");
   jaButton.setAttribute("rotation", "0 150 0");
   jaButton.setAttribute("visible", "true");
-  neeButton.setAttribute("position", "5.750 1.680 0.064");
+  neeButton.setAttribute("position", "5.709 1.673 0.064");
   neeButton.setAttribute("rotation", "0 150 0");
   neeButton.setAttribute("visible", "true");
 
@@ -461,6 +479,7 @@ askThirdQuestion = () => {
   neeButton.setAttribute("text", "value: Wookies");
 
   jaButton.onmouseenter = () => {
+    neeButton.onmouseenter=()=>{};
     dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: The force is strong with this one.");
     dialogText.setAttribute("geometry", "width: 0.6; height: 0.05");
@@ -471,6 +490,7 @@ askThirdQuestion = () => {
 
   };
   neeButton.onmouseenter = () => {
+    jaButton.onmouseenter=()=>{};
     dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value:  Be mindful of your thoughts. \nThey will betray you.");
     jaButton.setAttribute("visible", "false");
@@ -510,13 +530,13 @@ askSecondQuestion = () => {
   dialogText.setAttribute("position", "4.519 1.8 4.069");
   dialogText.setAttribute("rotation", "0 140 0");
   dialogText.setAttribute("scale", "0.5 0.5 0.5");
-  dialogText.setAttribute("text", "value: Als a=1 en b=2, is a+b(b*4) = 16; width: 2.4 ");
+  dialogText.setAttribute("text", "value: int a = 2 \n int b = 4 \n int c = b(a*4) \n Is c = 34? ; width: 2.4");
   dialogText.components.sound.playSound();
 
-  jaButton.setAttribute("position", "4.450 1.666 3.969");
+  jaButton.setAttribute("position", "4.450 1.640 3.969");
   jaButton.setAttribute("rotation", "0 140 0");
   jaButton.setAttribute("visible", "true");
-  neeButton.setAttribute("position", "4.562 1.665 4.099");
+  neeButton.setAttribute("position", "4.634 1.644 4.099");
   neeButton.setAttribute("rotation", "0 140 0");
   neeButton.setAttribute("visible", "true");
 
@@ -524,16 +544,18 @@ askSecondQuestion = () => {
   dialogText.setAttribute("visible", "true");
 
   jaButton.onmouseenter = () => {
+    neeButton.onmouseenter=()=>{};
     dialogText.components.sound.playSound();
-    dialogText.setAttribute("text", "value: Hmm, ik kom op 17 uit... raar.");
+    dialogText.setAttribute("text", "value: Hmm, ik kom op 32 uit... raar.");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
     setTimeout(showThirdExclamationMark, 3000);
 
   };
   neeButton.onmouseenter = () => {
+    jaButton.onmouseenter=()=>{};
     dialogText.components.sound.playSound();
-    dialogText.setAttribute("text", "value: Oh ja, het is 17! Bedankt!");
+    dialogText.setAttribute("text", "value: Oh ja, het is 32! Bedankt!");
     jaButton.setAttribute("visible", "false");
     neeButton.setAttribute("visible", "false");
     setTimeout(showThirdExclamationMark, 3000);
@@ -582,6 +604,7 @@ askFirstQuestion = () => {
   dialogText.setAttribute("visible", "true");
 
   jaButton.onmouseenter = () => {
+    neeButton.onmouseenter=()=>{};
     dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: Ja, dat dacht ik ook, bedankt!");
     jaButton.setAttribute("visible", "false");
@@ -590,6 +613,7 @@ askFirstQuestion = () => {
 
   };
   neeButton.onmouseenter = () => {
+    jaButton.onmouseenter=()=>{};
     dialogText.components.sound.playSound();
     dialogText.setAttribute("text", "value: Hmmm, volgens Gerrit is het wel zo...");
     jaButton.setAttribute("visible", "false");
@@ -637,7 +661,7 @@ startAskingExercise = () => {
   dialogBox.setAttribute("rotation", "0 0 0");
   dialogText.setAttribute("position", "7 2.7 -4.98");
   dialogText.setAttribute("rotation", "0 0 0");
-  dialogText.setAttribute("text", "value: Ik zie dat jij geen laptop hebt. Als je wilt kan je opstaan en je medestudenten helpen met de opdrachten.");
+  dialogText.setAttribute("text", "value: Mmmm, ik zie dat jij geen laptop hebt. Je mag opstaan en je medestudenten helpen met de opdrachten.");
 
   dialogBox.components.sound.playSound();
   setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2500);
@@ -649,8 +673,8 @@ startTeacherLesson = () => {
   sittingChairRightRoom.onmouseenter=()=>{};
   sittingChairRightRoom.setAttribute("rotation", " 0 220 0");
   sittingChairRightRoom.setAttribute("position", "8 0.3 -1.8");
-  dialogText.setAttribute("text", "value: Nu gaan we beginnen met de opdrachten van vorige week, als jullie vragen hebben kunnen ze jullie gerust stellen.");
-  nextDialog.setAttribute("position", "7.3 2.35 -5.97");
+  dialogText.setAttribute("text", "value: Nu kunnen jullie beginnen met de opdrachten van vorige week van IOOP, als jullie nog vragen hebben kunnen ze jullie gerust stellen.");
+  nextDialog.setAttribute("position", "8 "+(cameraHeight-0.5)+ " -3.1");
   nextDialog.setAttribute("rotation", "0 0 0");
   nextDialog.setAttribute("visible", "true");
 
@@ -670,7 +694,7 @@ startAskingExerciseDialog = () => {
   dialogBox.setAttribute("rotation", "0 0 0");
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("position", "7 2.7 -5.98");
-  dialogText.setAttribute("text", "value: He, leuk dat je bent gekomen, je kan op de stoel aan je rechterkant zitten.");
+  dialogText.setAttribute("text", "value: Ik zie dat je het gevonden hebt! Je kan op de stoel aan je rechterkant zitten.");
   dialogText.setAttribute("rotation", "0 0 0");
   dialogText.setAttribute("visible", "true");
   dialogBox.components.sound.playSound();
@@ -745,12 +769,16 @@ teleportToRightRoom1 = () => {
 finishProgrammingDialogWithTeacher = () => {
   let finishProgrammingDialogArray = [
     "Dat was niet zo moeilijk, was het?",
-    "Ik ga nu even les geven, als je wilt mee doen wacht ik op je in het lokaal hiernaast, aan je linkerkant."
+    "We gaan nu naar het lokaal hiernaast om wat opdrachten te maken, aan het einde van de gang naar links."
   ];
   prNextInstruction.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 2500; easing: linear");
   cameraRig.components.sound.playSound();
-  setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 2500);
+  setTimeout(()=>{
+    cameraRig.components.sound.stopSound();
+    nextDialog.setAttribute("visible", "true");
+
+  }, 2500);
   programmingChair.components.sound.playSound();
   setTimeout(()=>{ programmingChair.components.sound.stopSound()}, 1000);
 
@@ -758,7 +786,6 @@ finishProgrammingDialogWithTeacher = () => {
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("text", "value: "+ finishProgrammingDialogArray[0]);
   dialogText.setAttribute("visible", "true");
-  nextDialog.setAttribute("visible", "true");
 
   dialogText.components.sound.playSound();
 
@@ -795,6 +822,19 @@ programmingExerciseSetCurlyCloseBracketOnResult = () => {
   setTimeout(finishProgrammingExercise, 1000);
 };
 
+programmingExerciseSetCloseSemicolonOnResult = () => {
+  prResultPlane.components.sound.playSound();
+  setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
+  prChooseSemicolon.onmouseenter=()=>{};
+  prChooseSemicolon.setAttribute("material", "src: images/semicolon.png");
+  prResultSemicolonClosePrint.setAttribute("visible", "true");
+
+  prChooseCloseCurlyBracket.setAttribute("text", "color: red");
+  prChooseCloseCurlyBracket.onmouseenter = () => {
+    programmingExerciseSetCurlyCloseBracketOnResult()
+  }
+};
+
 programmingExerciseSetCloseBracketOnResult = () => {
   prResultPlane.components.sound.playSound();
   setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
@@ -802,9 +842,9 @@ programmingExerciseSetCloseBracketOnResult = () => {
   prChooseCloseBracket.setAttribute("text", "color: white");
   prResultPrintBracketClose.setAttribute("visible", "true");
 
-  prChooseCloseCurlyBracket.setAttribute("text", "color: red");
-  prChooseCloseCurlyBracket.onmouseenter = () => {
-    programmingExerciseSetCurlyCloseBracketOnResult()
+  prChooseSemicolon.setAttribute("material", "src: images/semicolon_red.png");
+  prChooseSemicolon.onmouseenter = () => {
+    programmingExerciseSetCloseSemicolonOnResult()
   }
 };
 
@@ -834,7 +874,7 @@ programmingExerciseSetHelloWorldOnResult = () => {
   }
 };
 
-programmingExerciseSetOpenQuotetOnResult = () => {
+programmingExerciseSetOpenQuoteOnResult = () => {
   prResultPlane.components.sound.playSound();
   setTimeout(()=>{ prResultPlane.components.sound.stopSound()}, 500);
   prChooseQuote.onmouseenter=()=>{};
@@ -856,7 +896,7 @@ programmingExerciseSetOpenBracketOnResult = () => {
 
   prChooseQuote.setAttribute("text", "color: red");
   prChooseQuote.onmouseenter = () => {
-    programmingExerciseSetOpenQuotetOnResult()
+    programmingExerciseSetOpenQuoteOnResult()
   }
 };
 
@@ -941,6 +981,7 @@ startProgrammingExercise = () => {
   prChooseQuote.setAttribute("visible", "true");
   prChooseHelloWorld.setAttribute("visible", "true");
   prChooseCloseBracket.setAttribute("visible", "true");
+  prChooseSemicolon.setAttribute("visible", "true");
 
   prChoosePublic.setAttribute("text", "color: red");
 
@@ -957,6 +998,7 @@ showProgrammingExercise = () => {
   prResultClass.setAttribute("visible", "true");
   prResultMainMethod.setAttribute("visible", "true");
   prResultMethodCall.setAttribute("visible", "true");
+  prResultSemicolonCloseMethodCall.setAttribute("visible", "true");
   prResultCloseMain.setAttribute("visible", "true");
   prResultCloseClass.setAttribute("visible", "true");
 
@@ -992,20 +1034,11 @@ startFinalDialogUml = () => {
   helloWorldText.onmouseenter = () => {};
   resultDiagram.onmouseenter=()=>{};
   cameraRig.setAttribute("animation", "property: position; to: 0 "+cameraHeight+" -2.5; dur: 1000; easing: linear");
-
-  dialogBox.setAttribute("position", " -1.5 2.7 -5");
-  dialogBox.setAttribute("rotation", "0 30 0");
   dialogBox.setAttribute("visible", "true");
-
-  dialogText.setAttribute("position", " -1.46 2.7 -4.95");
-  dialogText.setAttribute("rotation", "0 30 0");
   dialogText.setAttribute("text", "value: " + finalUmlTextArray[0]);
   dialogText.setAttribute("text", "width: 1.9");
   dialogText.setAttribute("visible", "true");
-
-  nextDialog.setAttribute("position", "-1.147 2.396 -5.060");
-  nextDialog.setAttribute("rotation", "0 30 0");
-  nextDialog.setAttribute("visible", "true");
+  setTimeout(()=>{nextDialog.setAttribute("visible", "true")}, 1000);
 
   dialogText.components.sound.playSound();
 
@@ -1131,6 +1164,7 @@ drawFirstStageUml = () => {
 };
 
 startUmlDrawing = () => {
+  nextDialog.onmouseenter=()=>{};
   beginButton.onmouseenter=()=>{};
   dialogBox.setAttribute("visible", "false");
   dialogText.setAttribute("visible", "false");
@@ -1139,9 +1173,6 @@ startUmlDrawing = () => {
   cameraRig.setAttribute("animation", "property: position; to: "+cameraDepthUmlExercise +" "+(cameraHeight+0.1)+" -4.12; dur: 1000; easing: linear");
   cameraRig.components.sound.playSound();
   setTimeout(()=>{ cameraRig.components.sound.stopSound()}, 1000);
-  setTimeout( () => {
-    cameraRig.setAttribute("animation", "property: rotation; to: 0 60 0; dur: 2000; easing: linear");
-  },1000);
   setTimeout(drawFirstStageUml, 2000);
 };
 
@@ -1150,7 +1181,8 @@ startUmlDialog = () => {
   teleportationPad.setAttribute("visible", "false");
 
   let umlTextArray = [
-    "We gaan een klassendiagram tekenen van de klasse Main.java met een methode printHelloWorld().",
+    "Als eerst gaan we een UML diagram tekenen, UML diagrammen worden gebruikt om,\n in een gemeenschappelijke visuele taal, \nde complexe wereld van de softwareontwikkeling te visualiseren. ",
+    "In dit geval gaan we een klassediagram tekenen van de klasse Main.java met een methode printHelloWorld().",
     "Om deze opdracht te realiseren moet je de componenten pakken die je nodig hebt en deze op de goede plek zetten op het bord."
   ];
   textIndex = 1;
@@ -1165,12 +1197,14 @@ startUmlDialog = () => {
   dialogText.setAttribute("position", " -1.46 2.7 -4.95");
   dialogText.setAttribute("rotation", "0 30 0");
   dialogText.setAttribute("text", "value: " + umlTextArray[0]);
-  dialogText.setAttribute("text", "width: 1.9");
+  dialogText.setAttribute("text", "width: 1.7");
   dialogText.setAttribute("visible", "true");
 
-  nextDialog.setAttribute("position", "-1 2.35 -4.8");
-  nextDialog.setAttribute("rotation", "0 30 0");
+  nextDialog.setAttribute("position", "-0.45 "+(cameraHeight-0.1)+ " -3.3");
+  nextDialog.setAttribute("rotation", "0 28 0");
   nextDialog.setAttribute("visible", "true");
+  beginButton.setAttribute("position", "-0.990 "+(cameraHeight-0.1)+ " -3.041");
+  beginButton.setAttribute("rotation", "0 90 0");
 
   dialogBox.components.sound.playSound();
   setTimeout(()=>{ dialogBox.components.sound.stopSound()}, 2000);
@@ -1184,8 +1218,6 @@ startUmlDialog = () => {
       if(textIndex === umlTextArray.length){
         nextDialog.setAttribute("visible", "false");
         beginButton.setAttribute("visible", "true");
-        beginButton.setAttribute("rotation","0 30 0");
-        beginButton.setAttribute("position", "-1.4 2.35 -4.8");
         beginButton.onmouseenter = () => {
           setTimeout(startUmlDrawing,500);
         }
@@ -1220,7 +1252,6 @@ startInitialDialog = () => {
   teacher.setAttribute("visible", "true");
   dialogBox.setAttribute("visible", "true");
   dialogText.setAttribute("visible", "true");
-  nextDialog.setAttribute("visible", "true");
   askStudent7.components.sound.playSound();
   askStudent1.components.sound.playSound();
   dialogText.components.sound.playSound();
@@ -1230,23 +1261,30 @@ startInitialDialog = () => {
 
   let initialTextArray = [
     "Ik ben Gerrit en vandaag ga ik je rondleiden om een indruk te krijgen van de opleiding Informatica.",
-    "Als eerst gaan we wat UML tekenen, ik zal op je wachten in de ruimte achter mij.\n\n" +
-    "PS. Je kan het gele stip voor je gebruiken om daar naar toe te gaan."
+    "Je gaat vandaag meelopen met het vak IOOP (Object Oriented Programming)",
+    "Als eerst gaan we een aantal oefeningen maken\n die te maken hebben met OOP.",
+    "Ik zal op je wachten in de ruimte achter mij. \n\n" +
+    "PS. Je kan het gele stip voor je gebruiken om naar die locatie te gaan."
   ];
   textIndex = 0;
-  nextDialog.onmouseenter = () => {
-    if(textIndex >= 0 && textIndex < initialTextArray.length){
-      dialogText.setAttribute("text", "value: " + initialTextArray[textIndex]);
-      textIndex++;
-      dialogBox.components.sound.playSound();
-      setTimeout(()=>{ dialogText.components.sound.stopSound()}, 3000);
 
-      if(textIndex === initialTextArray.length){
-        nextDialog.setAttribute("visible", "false");
-        showTeleportationPad()
+  setTimeout(()=>{
+    nextDialog.setAttribute("visible", "true");
+    nextDialog.setAttribute("position", "0 "+ (cameraHeight-0.1)+" 6.5");
+    nextDialog.onmouseenter = () => {
+      if(textIndex >= 0 && textIndex < initialTextArray.length){
+        dialogText.setAttribute("text", "value: " + initialTextArray[textIndex]);
+        textIndex++;
+        dialogBox.components.sound.playSound();
+        setTimeout(()=>{ dialogText.components.sound.stopSound()}, 1500);
+
+        if(textIndex === initialTextArray.length){
+          nextDialog.setAttribute("visible", "false");
+          showTeleportationPad()
+        }
       }
     }
-  }
+  },2000);
 };
 
 window.mobilecheck = function(){
