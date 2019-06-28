@@ -1270,7 +1270,7 @@ startInitialDialog = () => {
 
   setTimeout(()=>{
     nextDialog.setAttribute("visible", "true");
-    nextDialog.setAttribute("position", "0 "+ (cameraHeight-0.1)+" 6.5");
+    nextDialog.setAttribute("position", "0 1.8 6.5");
     nextDialog.onmouseenter = () => {
       if(textIndex >= 0 && textIndex < initialTextArray.length){
         dialogText.setAttribute("text", "value: " + initialTextArray[textIndex]);
